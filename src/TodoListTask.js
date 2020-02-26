@@ -5,8 +5,9 @@ class TodoListTask extends Component {
         this.props.changeStatus(this.props.task, e.currentTarget.checked)
     }
     render() {
+        let opacityTask = this.props.task.isDone ? 'todoList-task done' : 'todoList-task'
         return (
-            <div className="todoList-task">
+            <div className={opacityTask}>
                 <input type="checkbox"
                        onChange={this.onIsDoneChange}
                        checked={this.props.task.isDone}/>
