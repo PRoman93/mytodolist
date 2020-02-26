@@ -5,7 +5,8 @@ class TodoListTasks extends Component {
     render() {
 
         let tasksElements = this.props.tasks.map(task => <TodoListTask task={task}
-                                                                       changeStatus={this.props.changeStatus}/>)
+                                                                       changeStatus={this.props.changeStatus}
+                                                                       changeTitle={this.props.changeTitle}/>)
 
         // let tasksElements = [
         //     <TodoListTask title={this.props.tasks[0].title} isDone={this.props.tasks[0].isDone}/>,

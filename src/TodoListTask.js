@@ -1,9 +1,28 @@
 import React, {Component} from "react";
 
 class TodoListTask extends Component {
-    onIsDoneChange = (e) => {
-        this.props.changeStatus(this.props.task, e.currentTarget.checked)
+
+    state = {
+        editMode: false
     }
+
+    activateEditMode = () => {
+        this.setState({
+            editMode: true
+        })
+    }
+    deactivateEditMode = () => {
+        this.setState({
+            editMode: false
+        })
+    }
+    onIsDoneChange = (e) => {
+        this.props.changeStatus(this.props.task.id, e.currentTarget.checked)
+    }
+    onTaskChange = (e) => {
+        this.props.changeTitle(this.props.task.id, e.currentTarget.value)
+    }
+
     render() {
         let opacityTask = this.props.task.isDone ? 'todoList-task done' : 'todoList-task'
         return (
@@ -11,7 +30,11 @@ class TodoListTask extends Component {
                 <input type="checkbox"
                        onChange={this.onIsDoneChange}
                        checked={this.props.task.isDone}/>
-                <span>{this.props.task.title}, priority : {this.props.task.priority}</span>
+                {this.props.task.id} -
+                 {this.state.editMode
+                    ? <input value={this.props.task.title} autoFocus={true} onBlur={this.deactivateEditMode} onChange={this.onTaskChange}/>
+                    : <span onClick={this.activateEditMode}> {this.props.task.title}</span>}
+                <span> , priority : {this.props.task.priority}</span>
             </div>
         )
     }
