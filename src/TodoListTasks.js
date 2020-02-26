@@ -4,9 +4,8 @@ import TodoListTask from "./TodoListTask";
 class TodoListTasks extends Component {
     render() {
 
-        let tasksElements = this.props.tasks.map(task => <TodoListTask title={task.title}
-                                                                       isDone={task.isDone}
-                                                                       priority={task.priority}/>)
+        let tasksElements = this.props.tasks.map(task => <TodoListTask task={task}
+                                                                       changeStatus={this.props.changeStatus}/>)
 
         // let tasksElements = [
         //     <TodoListTask title={this.props.tasks[0].title} isDone={this.props.tasks[0].isDone}/>,
