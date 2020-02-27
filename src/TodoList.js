@@ -90,7 +90,7 @@ class TodoList extends React.Component {
     render = () => {
         return (
                 <div className="todoList">
-                    <TodoListHeader addTask={this.addTask}/>
+                    <TodoListHeader addTask={this.addTask} title={this.props.title}/>
 
                     <TodoListTasks changeStatus={this.changeStatus}
                                    changeTitle={this.changeTitle}
