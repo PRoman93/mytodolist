@@ -1,26 +1,67 @@
 import React from 'react';
 import './App.css';
 import TodoList from "./TodoList";
+import AddNewItemForm from "./AddNewItemForm";
+
 
 class App extends React.Component {
 
     state = {
-        todolists: [
-            {title: 'What to learn?', id: 1},
-            {title: 'Week tasks', id: 2},
-            {title: 'Year tasks', id: 3},
-            {title: 'Day tasks', id: 4}
-        ]
+        todoLists: []
+    };
+    nextItemId = 1
+
+  componentDidMount() {
+        this.restoreState()
+  }
+
+    saveState = () => {
+        let stateAsString = JSON.stringify(this.state)
+        localStorage.setItem('todolist', stateAsString)
     }
 
-    render = () => {
+    restoreState = () => {
         debugger
+        let state = {
+            todoLists: []
+        }
+        let stateAsString = localStorage.getItem('todolist')
+        if(stateAsString !== null) {
+            state = JSON.parse(stateAsString)
+        }
+        this.state.todoLists.forEach(t=> {
+            if(t.id >= this.nextItemId){
+                this.nextItemId = t.id +1
+            }
+        })
+        this.setState(state)
+    }
 
-        let todolists = this.state.todolists.map(t => <TodoList title={t.title} id={t.id}/>)
+    addTodoList = (title) => {
+        let newList = {
+            id: this.nextItemId,
+            title
+        }
+        this.nextItemId++
+        let newLists = [...this.state.todoLists, newList]
+        this.setState({
+            todoLists: newLists
+        }, () => {this.saveState()})
+    }
+
+
+    render = () => {
+
+        let todolists = this.state.todoLists.map(t => <TodoList id={t.id} title={t.title}/>)
         return (
-            <div className="App">
-                {todolists}
-            </div>
+            <>
+                <div>
+                    <AddNewItemForm addItem={this.addTodoList}/>
+                </div>
+                <div className="App">
+                    {todolists}
+                </div>
+            </>
         );
     }
 }

@@ -16,6 +16,7 @@ class TodoListTask extends Component {
             editMode: false
         })
     }
+
     onIsDoneChange = (e) => {
         this.props.changeStatus(this.props.task.id, e.currentTarget.checked)
     }
