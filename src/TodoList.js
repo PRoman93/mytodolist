@@ -52,23 +52,20 @@ class TodoList extends React.Component {
     changeFilter = (newFilterValue) => {
         this.setState({
             filterValue: newFilterValue
-        }, () => {
-            this.saveState()
         })
     }
     changeTask = (taskId, obj) => {
-        let newTasks = this.props.tasks.map(t => {
-            if (t.id != taskId) {
-                return t
-            } else {
-                return {...t, ...obj}
-            }
-        })
-        this.setState({
-            tasks: newTasks
-        }, () => {
-            this.saveState()
-        })
+        this.props.changeTask(this.props.id, taskId, obj)
+        // let newTasks = this.props.tasks.map(t => {
+        //     if (t.id != taskId) {
+        //         return t
+        //     } else {
+        //         return {...t, ...obj}
+        //     }
+        // })
+        // this.setState({
+        //     tasks: newTasks
+        // })
     }
 
     changeStatus = (taskId, isDone) => {
@@ -110,6 +107,15 @@ const mapDispatchToProps = (dispatch) => {
                 type: 'ADD-TASK',
                 newTask,
                 todoListId
+            }
+            dispatch(action)
+        },
+        changeTask(todoListId, taskId, obj) {
+            let action = {
+                type:'CHANGE-TASK',
+                todoListId,
+                taskId,
+                obj
             }
             dispatch(action)
         }
