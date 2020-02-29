@@ -27,10 +27,10 @@ const reducer = (state = initialState, action) => {
         case 'CHANGE-TASK':
             debugger
             return {
-                ...state, todoList: state.todoList.map(t => {
-                    if (t.id === action.todoListId) {
+                ...state, todoList: state.todoList.map(todo => {
+                    if (todo.id === action.todoListId) {
                         return {
-                            ...t, tasks: state.todoList.tasks.map(t => {
+                            ...todo, tasks: todo.tasks.map(t => {
                                 if (t.id === action.taskId) {
                                     return {...t, ...action.obj}
                                 } else {
@@ -39,7 +39,7 @@ const reducer = (state = initialState, action) => {
                             })
                         }
                     } else {
-                        return t
+                        return todo
                     }
                 })
             }
