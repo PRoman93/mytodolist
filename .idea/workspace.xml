@@ -78,6 +78,7 @@
       <workItem from="1582635873893" duration="7625000" />
       <workItem from="1582705552279" duration="11269000" />
       <workItem from="1582959844617" duration="2628000" />
+      <workItem from="1582962576865" duration="100000" />
     </task>
     <task id="LOCAL-00001" summary="1-st todolist is done">
       <created>1582638692320</created>
@@ -142,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582962465854</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="11-th task of 9-th todolist is done">
+      <created>1582962665612</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1582962665612</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +179,7 @@
     <MESSAGE value="7-th todolist is made for sure" />
     <MESSAGE value="10-th task of 9-th todolist is made" />
     <MESSAGE value="11-th task of 9-th todolist is fail" />
-    <option name="LAST_COMMIT_MESSAGE" value="11-th task of 9-th todolist is fail" />
+    <MESSAGE value="11-th task of 9-th todolist is done" />
+    <option name="LAST_COMMIT_MESSAGE" value="11-th task of 9-th todolist is done" />
   </component>
 </project>
