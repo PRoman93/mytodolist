@@ -70,8 +70,8 @@ const mapDispatchToProps = (dispatch) => {
                 id
             }
             dispatch(action)
+        },
 
-        }
     }
 }
 

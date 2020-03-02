@@ -46,7 +46,7 @@ class TodoList extends React.Component {
             priority: 'low'
         }
         this.nextItemId++
-        this.props.addTask(newTask,this.props.id)
+        this.props.addTask(newTask, this.props.id)
     }
 
     changeFilter = (newFilterValue) => {
@@ -74,16 +74,24 @@ class TodoList extends React.Component {
     changeTitle = (taskId, title) => {
         this.changeTask(taskId, {title: title})
     }
+    deleteTodoList = () => {
+        this.props.deleteTodoList(this.props.id)
+    }
+    deleteTask = (taskId) => {
+        this.props.deleteTask(taskId, this.props.id)
+    }
+
 
     render = () => {
         return (
             <div className="todoList">
                 <div className='todoList-header'>
-                    <TodoListTitle title={this.props.title}/>
+                    <TodoListTitle title={this.props.title} deleteTodoList={this.deleteTodoList}/>
                     <AddNewItemForm addItem={this.addTask}/>
                 </div>
                 <TodoListTasks changeStatus={this.changeStatus}
                                changeTitle={this.changeTitle}
+                               deleteTask={this.deleteTask}
                                tasks={this.props.tasks.filter(t => {
                                    switch (this.state.filterValue) {
                                        case "All":
@@ -112,10 +120,25 @@ const mapDispatchToProps = (dispatch) => {
         },
         changeTask(todoListId, taskId, obj) {
             let action = {
-                type:'CHANGE-TASK',
+                type: 'CHANGE-TASK',
                 todoListId,
                 taskId,
                 obj
+            }
+            dispatch(action)
+        },
+        deleteTodoList: (todoListId) => {
+            const action = {
+                type: 'DELETE-TODOLIST',
+                todoListId,
+            }
+            dispatch(action)
+        },
+        deleteTask: (taskId, todoListId) => {
+            const action = {
+                type: 'DELETE-TASK',
+                todoListId,
+                taskId
             }
             dispatch(action)
         }

@@ -22,6 +22,9 @@ class TodoListTask extends Component {
     onTaskChange = (e) => {
         this.props.changeTitle(this.props.task.id, e.currentTarget.value)
     }
+    onDeleteTask = () => {
+        this.props.deleteTask(this.props.task.id);
+    }
 
     render() {
         let opacityTask = this.props.task.isDone ? 'todoList-task done' : 'todoList-task'
@@ -34,7 +37,7 @@ class TodoListTask extends Component {
                  {this.state.editMode
                     ? <input value={this.props.task.title} autoFocus={true} onBlur={this.deactivateEditMode} onChange={this.onTaskChange}/>
                     : <span onClick={this.activateEditMode}> {this.props.task.title}</span>}
-                <span> , priority : {this.props.task.priority}</span>
+                <span> , priority : {this.props.task.priority} <button onClick={this.props.onDeleteTask}>x</button></span>
             </div>
         )
     }

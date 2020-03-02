@@ -2,13 +2,11 @@ import {createStore} from "redux";
 
 const initialState = {
     todoList: [
-        {id: 1, title: "Day tasks", tasks: [{id: 1, title: "фы", isDone: false, priority: "low"}]},
-        {id: 2, title: "Month tasks", tasks: [{id: 1, title: "фa", isDone: false, priority: "low"}]}
+        {title:'JS', id:0, tasks:[{id:1, title:'React', isDone:true, priority:'low'}]}
     ]
 }
 
 const reducer = (state = initialState, action) => {
-    console.log('reducer: ', action);
     switch (action.type) {
         case 'ADD-TODOLIST':
             return {
@@ -25,7 +23,6 @@ const reducer = (state = initialState, action) => {
                 })
             }
         case 'CHANGE-TASK':
-            debugger
             return {
                 ...state, todoList: state.todoList.map(todo => {
                     if (todo.id === action.todoListId) {
@@ -43,9 +40,24 @@ const reducer = (state = initialState, action) => {
                     }
                 })
             }
+        case 'DELETE-TASK':
+            // debugger
+            return {
+                ...state, todoList: state.todoList.map(todo => {
+                    if (todo.id === action.todoListId) {
+                        return {
+                            ...todo, tasks: todo.tasks.filter(t => t.id != action.taskId)
+                        }
+                    }
+                })
+            }
 
+        case 'DELETE-TODOLIST':
+            return {
+                ...state, todoList: state.todoList.filter(t => t.id != action.todolistId)
+                // todolists: state.todolists.filter(tl => tl.id != action.todolistId)
+            }
     }
-
     return state;
 }
 
