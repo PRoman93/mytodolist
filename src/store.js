@@ -41,20 +41,22 @@ const reducer = (state = initialState, action) => {
                 })
             }
         case 'DELETE-TASK':
-            // debugger
+            debugger
             return {
                 ...state, todoList: state.todoList.map(todo => {
                     if (todo.id === action.todoListId) {
                         return {
                             ...todo, tasks: todo.tasks.filter(t => t.id != action.taskId)
                         }
+                    }else {
+                        return todo
                     }
                 })
             }
 
         case 'DELETE-TODOLIST':
             return {
-                ...state, todoList: state.todoList.filter(t => t.id != action.todolistId)
+                ...state, todoList: state.todoList.filter(t => t.id != action.todoListId)
                 // todolists: state.todolists.filter(tl => tl.id != action.todolistId)
             }
     }
