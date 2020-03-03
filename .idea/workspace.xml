@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +26,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Todolists/10-todolist-for-students/10-todolist-for-students" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -89,6 +86,8 @@
       <workItem from="1583150117057" duration="1635000" />
       <workItem from="1583156186264" duration="1782000" />
       <workItem from="1583164071267" duration="768000" />
+      <workItem from="1583255875881" duration="24000" />
+      <workItem from="1583255972100" duration="288000" />
     </task>
     <task id="LOCAL-00001" summary="1-st todolist is done">
       <created>1582638692320</created>
@@ -174,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583157959518</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="10-th todolist is done">
+      <created>1583254730859</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1583254730860</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +211,7 @@
     <MESSAGE value="11-th task of 9-th todolist is fail" />
     <MESSAGE value="11-th task of 9-th todolist is done" />
     <MESSAGE value="12-th task of 9-th todolist is done" />
-    <option name="LAST_COMMIT_MESSAGE" value="12-th task of 9-th todolist is done" />
+    <MESSAGE value="10-th todolist is done" />
+    <option name="LAST_COMMIT_MESSAGE" value="10-th todolist is done" />
   </component>
 </project>
