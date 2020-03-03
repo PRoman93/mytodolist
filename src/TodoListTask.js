@@ -25,7 +25,6 @@ class TodoListTask extends Component {
     onDeleteTask = () => {
         this.props.deleteTask(this.props.task.id);
     }
-
     render() {
         let opacityTask = this.props.task.isDone ? 'todoList-task done' : 'todoList-task'
         return (
@@ -42,5 +41,4 @@ class TodoListTask extends Component {
         )
     }
 }
-
 export default TodoListTask
