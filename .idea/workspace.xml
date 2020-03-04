@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="">
+    <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="refactoring again">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -88,6 +88,9 @@
       <workItem from="1583164071267" duration="768000" />
       <workItem from="1583255875881" duration="24000" />
       <workItem from="1583255972100" duration="1538000" />
+      <workItem from="1583335383872" duration="145000" />
+      <workItem from="1583340735494" duration="1485000" />
+      <workItem from="1583343221090" duration="4265000" />
     </task>
     <task id="LOCAL-00001" summary="1-st todolist is done">
       <created>1582638692320</created>
@@ -187,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583256308656</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="10-th todolist is done">
+      <created>1583335419575</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1583335419575</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,8 +228,8 @@
     <MESSAGE value="11-th task of 9-th todolist is fail" />
     <MESSAGE value="11-th task of 9-th todolist is done" />
     <MESSAGE value="12-th task of 9-th todolist is done" />
-    <MESSAGE value="10-th todolist is done" />
     <MESSAGE value="refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
+    <MESSAGE value="10-th todolist is done" />
+    <option name="LAST_COMMIT_MESSAGE" value="10-th todolist is done" />
   </component>
 </project>
