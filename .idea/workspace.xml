@@ -87,7 +87,7 @@
       <workItem from="1583156186264" duration="1782000" />
       <workItem from="1583164071267" duration="768000" />
       <workItem from="1583255875881" duration="24000" />
-      <workItem from="1583255972100" duration="288000" />
+      <workItem from="1583255972100" duration="1538000" />
     </task>
     <task id="LOCAL-00001" summary="1-st todolist is done">
       <created>1582638692320</created>
@@ -180,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583254730860</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="refactoring">
+      <created>1583256308656</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1583256308656</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +219,7 @@
     <MESSAGE value="11-th task of 9-th todolist is done" />
     <MESSAGE value="12-th task of 9-th todolist is done" />
     <MESSAGE value="10-th todolist is done" />
-    <option name="LAST_COMMIT_MESSAGE" value="10-th todolist is done" />
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
   </component>
 </project>
