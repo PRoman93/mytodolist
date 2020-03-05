@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="refactoring again">
+    <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +92,9 @@
       <workItem from="1583255972100" duration="1538000" />
       <workItem from="1583335383872" duration="145000" />
       <workItem from="1583340735494" duration="1485000" />
-      <workItem from="1583343221090" duration="4265000" />
+      <workItem from="1583343221090" duration="4524000" />
+      <workItem from="1583418008059" duration="436000" />
+      <workItem from="1583419167083" duration="1461000" />
     </task>
     <task id="LOCAL-00001" summary="1-st todolist is done">
       <created>1582638692320</created>
@@ -197,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583335419575</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="refactoring">
+      <created>1583348374541</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1583348374541</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,8 +239,8 @@
     <MESSAGE value="11-th task of 9-th todolist is fail" />
     <MESSAGE value="11-th task of 9-th todolist is done" />
     <MESSAGE value="12-th task of 9-th todolist is done" />
-    <MESSAGE value="refactoring" />
     <MESSAGE value="10-th todolist is done" />
-    <option name="LAST_COMMIT_MESSAGE" value="10-th todolist is done" />
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
   </component>
 </project>

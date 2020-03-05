@@ -3,7 +3,7 @@ import './App.css';
 import AddNewItemForm from './AddNewItemForm'
 import TodoList from "./TodoList";
 import {connect} from "react-redux";
-import {ADD_TODOLIST, addTodoListAC} from "./reducer";
+import {addTodoListAC} from "./reducer";
 
 class App extends React.Component {
 
@@ -12,29 +12,7 @@ class App extends React.Component {
     };
     nextItemId = 1
 
-    componentDidMount() {
-        this.restoreState()
-    }
 
-    saveState = () => {
-        let stateAsString = JSON.stringify(this.state)
-        localStorage.setItem('todoList', stateAsString)
-    }
-    restoreState = () => {
-        let state = {
-            todoList: []
-        }
-        let stateAsString = localStorage.getItem('todoList')
-        if (stateAsString != null) {
-            state = JSON.parse(stateAsString)
-        }
-        state.todoList.forEach(t => {
-            if (t.id >= this.nextItemId) {
-                this.nextItemId = t.id + 1
-            }
-        })
-        this.setState(state)
-    }
     addTodoList = (title) => {
         let newTodoList = {id: this.nextItemId, title, tasks:[]}
         this.nextItemId++
