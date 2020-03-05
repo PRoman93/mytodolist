@@ -34,7 +34,6 @@ class App extends React.Component {
         );
     }
 }
-
 const mapStateToProps = (state) => {
     return {
         todoList: state.todoList
@@ -45,7 +44,6 @@ const mapDispatchToProps = (dispatch) => {
         addTodoList: (newTodoList) => {
             dispatch(addTodoListAC(newTodoList))
         }
-
     }
 }
 
