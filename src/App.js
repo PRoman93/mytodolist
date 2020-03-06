@@ -7,9 +7,9 @@ import {addTodoListAC} from "./reducer";
 
 class App extends React.Component {
 
-    state = {
-        todoList: []
-    };
+    // state = {
+    //     todoList: []
+    // };
     nextItemId = 1
 
 

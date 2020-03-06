@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +93,8 @@
       <workItem from="1583343221090" duration="4524000" />
       <workItem from="1583418008059" duration="436000" />
       <workItem from="1583419167083" duration="1461000" />
-      <workItem from="1583422824534" duration="543000" />
+      <workItem from="1583422824534" duration="638000" />
+      <workItem from="1583485000357" duration="401000" />
     </task>
     <task id="LOCAL-00001" summary="1-st todolist is done">
       <created>1582638692320</created>
@@ -215,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583422841544</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="refactoring new">
+      <created>1583423376135</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1583423376135</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +256,7 @@
     <MESSAGE value="10-th todolist is done" />
     <MESSAGE value="refactoring" />
     <MESSAGE value="refactoring,," />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring,," />
+    <MESSAGE value="refactoring new" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring new" />
   </component>
 </project>
