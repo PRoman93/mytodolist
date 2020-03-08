@@ -13,7 +13,6 @@ class TodoList extends React.Component {
         filterValue: 'All'
     };
     nextItemId = 1
-
     addTask = (newText) => {
         let newTask = {
             id: this.nextItemId,
@@ -24,7 +23,6 @@ class TodoList extends React.Component {
         this.nextItemId++
         this.props.addTask(newTask, this.props.id)
     }
-
     changeFilter = (newFilterValue) => {
         this.setState({
             filterValue: newFilterValue
@@ -45,8 +43,6 @@ class TodoList extends React.Component {
     deleteTask = (taskId) => {
         this.props.deleteTask(taskId, this.props.id)
     }
-
-
     render = () => {
         return (
             <div className="todoList">
@@ -72,7 +68,6 @@ class TodoList extends React.Component {
         );
     }
 }
-
 const mapDispatchToProps = (dispatch) => {
     return {
         addTask(newTask, todoListId) {
