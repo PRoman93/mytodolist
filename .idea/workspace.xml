@@ -95,6 +95,7 @@
       <workItem from="1583419167083" duration="1461000" />
       <workItem from="1583422824534" duration="638000" />
       <workItem from="1583485000357" duration="401000" />
+      <workItem from="1583488382256" duration="648000" />
     </task>
     <task id="LOCAL-00001" summary="1-st todolist is done">
       <created>1582638692320</created>
@@ -222,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583423376135</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="delete state in app">
+      <created>1583488527204</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1583488527205</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,6 +265,7 @@
     <MESSAGE value="refactoring" />
     <MESSAGE value="refactoring,," />
     <MESSAGE value="refactoring new" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring new" />
+    <MESSAGE value="delete state in app" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete state in app" />
   </component>
 </project>
