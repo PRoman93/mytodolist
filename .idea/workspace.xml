@@ -96,6 +96,10 @@
       <workItem from="1583422824534" duration="638000" />
       <workItem from="1583485000357" duration="401000" />
       <workItem from="1583488382256" duration="648000" />
+      <workItem from="1583682504881" duration="683000" />
+      <workItem from="1583748728517" duration="815000" />
+      <workItem from="1583857281807" duration="25000" />
+      <workItem from="1583908759446" duration="15000" />
     </task>
     <task id="LOCAL-00001" summary="1-st todolist is done">
       <created>1582638692320</created>
@@ -230,7 +234,21 @@
       <option name="project" value="LOCAL" />
       <updated>1583488527205</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="refresh state">
+      <created>1583682524627</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1583682524627</updated>
+    </task>
+    <task id="LOCAL-00021" summary="edit todolist component">
+      <created>1583682581822</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1583682581822</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,6 +284,8 @@
     <MESSAGE value="refactoring,," />
     <MESSAGE value="refactoring new" />
     <MESSAGE value="delete state in app" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete state in app" />
+    <MESSAGE value="refresh state" />
+    <MESSAGE value="edit todolist component" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit todolist component" />
   </component>
 </project>
