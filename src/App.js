@@ -44,7 +44,7 @@ class App extends React.Component {
 
     render = () => {
         let todoLists = this.props.todoList.map(t => <TodoList id={t.id} title={t.title} tasks={t.tasks}/>)
-
+        debugger
         return (
             <>
                 <div>

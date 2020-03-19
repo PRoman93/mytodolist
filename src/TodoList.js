@@ -37,6 +37,7 @@ class TodoList extends React.Component {
 
 
     addTask = (newText) => {
+        debugger
         let todolistId = this.props.id
         axios.post(`https://social-network.samuraijs.com/api/1.1/todo-lists/${todolistId}/tasks`,  {title: newText}, {
             withCredentials: true,
