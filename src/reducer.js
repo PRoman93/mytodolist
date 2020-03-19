@@ -43,14 +43,12 @@ export const reducer = (state = initialState, action) => {
                 })
             }
         case CHANGE_TASK:
-            debugger
             return {
                 ...state, todoList: state.todoList.map(todo => {
                     if (todo.id === action.task.todoListId) {
                         return {
                             ...todo, tasks: todo.tasks.map(t => {
                                 if (t.id === action.task.id) {
-                                    debugger
                                     return action.task
                                 } else {
                                     return t
@@ -63,6 +61,7 @@ export const reducer = (state = initialState, action) => {
                 })
             }
         case DELETE_TASK:
+            debugger
             return {
                 ...state, todoList: state.todoList.map(todo => {
                     if (todo.id === action.todoListId) {
@@ -94,10 +93,10 @@ export const addTodoListAC = (newTodoList) => {
     return {type: ADD_TODOLIST, newTodoList}
 }
 export const changeTaskAC = (task) => {
-    debugger
     return {type: CHANGE_TASK, task}
 }
 export const deleteTaskAC = (taskId, todoListId) => {
+    debugger
     return {type: DELETE_TASK, taskId, todoListId}
 }
 export const deleteTodoListAC = (todoListId) => {

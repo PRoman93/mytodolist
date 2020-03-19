@@ -17,14 +17,14 @@ class TodoListTask extends Component {
         })
     }
     onIsDoneChange = (e) => {
-        debugger
         let status = e.currentTarget.checked ? 2 : 0
         this.props.changeStatus(this.props.task, status)
     }
     onTaskChange = (e) => {
-        this.props.changeTitle(this.props.task.id, e.currentTarget.value)
+        this.props.changeTitle(this.props.task, e.currentTarget.value)
     }
     onDeleteTask = () => {
+        debugger
         this.props.deleteTask(this.props.task.id);
     }
     render() {

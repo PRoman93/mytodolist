@@ -29,7 +29,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Todolists/11-todolists-for-students" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -111,7 +111,8 @@
       <workItem from="1584548723925" duration="227000" />
       <workItem from="1584551644450" duration="37000" />
       <workItem from="1584555210344" duration="19000" />
-      <workItem from="1584603182978" duration="5164000" />
+      <workItem from="1584603182978" duration="5393000" />
+      <workItem from="1584614200293" duration="3466000" />
     </task>
     <task id="LOCAL-00001" summary="1-st todolist is done">
       <created>1582638692320</created>
@@ -281,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584537542630</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="change status if fail">
+      <created>1584608523236</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1584608523236</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,6 +330,7 @@
     <MESSAGE value="add some files to git" />
     <MESSAGE value="add axios" />
     <MESSAGE value="13-th is done 11 list" />
-    <option name="LAST_COMMIT_MESSAGE" value="13-th is done 11 list" />
+    <MESSAGE value="change status if fail" />
+    <option name="LAST_COMMIT_MESSAGE" value="change status if fail" />
   </component>
 </project>
