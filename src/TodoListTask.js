@@ -17,7 +17,9 @@ class TodoListTask extends Component {
         })
     }
     onIsDoneChange = (e) => {
-        this.props.changeStatus(this.props.task.id, e.currentTarget.checked)
+        debugger
+        let status = e.currentTarget.checked ? 2 : 0
+        this.props.changeStatus(this.props.task, status)
     }
     onTaskChange = (e) => {
         this.props.changeTitle(this.props.task.id, e.currentTarget.value)
@@ -26,12 +28,12 @@ class TodoListTask extends Component {
         this.props.deleteTask(this.props.task.id);
     }
     render() {
-        let opacityTask = this.props.task.isDone ? 'todoList-task done' : 'todoList-task'
+        let opacityTask = this.props.task.status === 2 ? 'todoList-task done' : 'todoList-task'
         return (
             <div className={opacityTask}>
                 <input type="checkbox"
                        onChange={this.onIsDoneChange}
-                       checked={this.props.task.isDone}/>
+                       checked={this.props.task.status === 2 ? true : false}/>
                 {this.props.task.id} -
                  {this.state.editMode
                     ? <input value={this.props.task.title} autoFocus={true} onBlur={this.deactivateEditMode} onChange={this.onTaskChange}/>

@@ -12,15 +12,15 @@ const initialState = {
     ]
 }
 export const reducer = (state = initialState, action) => {
-    
+
     switch (action.type) {
         case SET_TODOLIST:
             return {
                 ...state, todoList: action.todoList
             }
-            case ADD_TODOLIST:
+        case ADD_TODOLIST:
             return {
-                ...state, todoList: [...state.todoList, action.newTodoList]
+                ...state, todoList: [...state.todoList, {...action.newTodoList, tasks: []}]
             }
         case ADD_TASK:
             return {
@@ -32,7 +32,7 @@ export const reducer = (state = initialState, action) => {
                     }
                 })
             }
-            case SET_TASKS:
+        case SET_TASKS:
             return {
                 ...state, todoList: state.todoList.map(t => {
                     if (t.id === action.todoListId) {
@@ -43,13 +43,15 @@ export const reducer = (state = initialState, action) => {
                 })
             }
         case CHANGE_TASK:
+            debugger
             return {
                 ...state, todoList: state.todoList.map(todo => {
-                    if (todo.id === action.todoListId) {
+                    if (todo.id === action.task.todoListId) {
                         return {
                             ...todo, tasks: todo.tasks.map(t => {
-                                if (t.id === action.taskId) {
-                                    return {...t, ...action.obj}
+                                if (t.id === action.task.id) {
+                                    debugger
+                                    return action.task
                                 } else {
                                     return t
                                 }
@@ -67,13 +69,12 @@ export const reducer = (state = initialState, action) => {
                         return {
                             ...todo, tasks: todo.tasks.filter(t => t.id != action.taskId)
                         }
-                    }else {
+                    } else {
                         return todo
                     }
                 })
             }
         case DELETE_TODOLIST:
-            // debugger
             return {
                 ...state, todoList: state.todoList.filter(t => t.id != action.todoListId)
             }
@@ -92,8 +93,9 @@ export const setTodoListAC = (todoList) => {
 export const addTodoListAC = (newTodoList) => {
     return {type: ADD_TODOLIST, newTodoList}
 }
-export const changeTaskAC = (todoListId, taskId, obj) => {
-    return {type: CHANGE_TASK, todoListId, taskId, obj}
+export const changeTaskAC = (task) => {
+    debugger
+    return {type: CHANGE_TASK, task}
 }
 export const deleteTaskAC = (taskId, todoListId) => {
     return {type: DELETE_TASK, taskId, todoListId}
