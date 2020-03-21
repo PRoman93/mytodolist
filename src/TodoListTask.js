@@ -29,11 +29,8 @@ class TodoListTask extends Component {
     }
 
     render() {
-        let priority = this.props.task.priority === 0 ? 'Low'
-            : this.props.task.priority === 1 ? 'Middle'
-                : this.props.task.priority === 2 ? 'Hi'
-                    : this.props.task.priority === 3 ? 'Urgently'
-                        : 'Later'
+        let priority = this.props.task.priority === 0 ? 'Low' : 1 ? 'Medium' : 2 ? 'Hi' : 3 ? 'Urgent' : 'Later'
+
         let opacityTask = this.props.task.status === 2 ? 'todoList-task done' : 'todoList-task'
         return (
             <div className={opacityTask}>

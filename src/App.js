@@ -8,14 +8,10 @@ import axios from "axios";
 
 class App extends React.Component {
 
-    // state = {
-    //     todoList: []
-    // };
     componentDidMount() {
         this._restoreState()
     }
 
-    nextItemId = 1
 
 
     addTodoList = (title) => {
@@ -25,11 +21,8 @@ class App extends React.Component {
         })
             .then(res => {
                 let todoList = res.data.data.item
-                // console.log(res.data);
                 this.props.addTodoList(todoList)
             });
-        // this.nextItemId++
-        // this.props.addTodoList(newTodoList)
     }
 
 
@@ -44,7 +37,6 @@ class App extends React.Component {
 
     render = () => {
         let todoLists = this.props.todoList.map(t => <TodoList id={t.id} title={t.title} tasks={t.tasks}/>)
-        debugger
         return (
             <>
                 <div>
