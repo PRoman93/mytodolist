@@ -27,12 +27,8 @@ class TodoList extends React.Component {
         })
             .then(res => {
                 let tasks = res.data.items
-                // debugger
-                // console.log(res.data);
                 this.props.setTasks(tasks, todolistId)
             });
-        // this.nextItemId++
-        // this.props.addTodoList(newTodoList)
     }
 
 

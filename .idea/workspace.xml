@@ -4,7 +4,6 @@
     <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoListTask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTask.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,6 +114,10 @@
       <workItem from="1584621591985" duration="47000" />
       <workItem from="1584624009621" duration="29000" />
       <workItem from="1584635190290" duration="638000" />
+      <workItem from="1584772604429" duration="111000" />
+      <workItem from="1584807423267" duration="2433000" />
+      <workItem from="1584812505475" duration="712000" />
+      <workItem from="1584869144690" duration="16000" />
     </task>
     <task id="LOCAL-00001" summary="1-st todolist is done">
       <created>1582638692320</created>
@@ -305,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584620372268</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="start 12-th list">
+      <created>1584772665026</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1584772665026</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,6 +359,7 @@
     <MESSAGE value="change status if fail" />
     <MESSAGE value="delete task is done" />
     <MESSAGE value="11-th todolist is done" />
-    <option name="LAST_COMMIT_MESSAGE" value="11-th todolist is done" />
+    <MESSAGE value="start 12-th list" />
+    <option name="LAST_COMMIT_MESSAGE" value="start 12-th list" />
   </component>
 </project>
