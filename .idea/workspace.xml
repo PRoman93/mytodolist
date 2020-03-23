@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-    </list>
+    <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +115,7 @@
       <workItem from="1584807423267" duration="2433000" />
       <workItem from="1584812505475" duration="712000" />
       <workItem from="1584869144690" duration="16000" />
+      <workItem from="1584891676487" duration="42000" />
     </task>
     <task id="LOCAL-00001" summary="1-st todolist is done">
       <created>1582638692320</created>
@@ -315,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584772665026</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="delete some comments">
+      <created>1584891705708</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1584891705708</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,7 +340,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1-st todolist is done" />
     <MESSAGE value="2-nd todolist is done" />
     <MESSAGE value="3-rd todolist is done" />
     <MESSAGE value="4-th todolist is done" />
@@ -360,6 +364,7 @@
     <MESSAGE value="delete task is done" />
     <MESSAGE value="11-th todolist is done" />
     <MESSAGE value="start 12-th list" />
-    <option name="LAST_COMMIT_MESSAGE" value="start 12-th list" />
+    <MESSAGE value="delete some comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete some comments" />
   </component>
 </project>

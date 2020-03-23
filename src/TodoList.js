@@ -13,7 +13,6 @@ class TodoList extends React.Component {
     state = {
         filterValue: 'All'
     };
-    nextItemId = 1
 
     componentDidMount() {
         this._restoreState()
@@ -30,8 +29,6 @@ class TodoList extends React.Component {
                 this.props.setTasks(tasks, todolistId)
             });
     }
-
-
     addTask = (newText) => {
         debugger
         let todolistId = this.props.id
