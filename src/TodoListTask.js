@@ -1,52 +1,69 @@
-import React, {Component} from "react";
+import React from 'react';
+import './App.css';
 
-class TodoListTask extends Component {
+class TodoListTask extends React.Component {
+
+    onIsDoneChanged = (e) => {
+        let status = e.currentTarget.checked ? 2 : 0;
+        this.props.changeStatus(this.props.task.id, status);
+    }
+
+    onTitleChanged = (e) => {
+        this.setState({title: e.currentTarget.value});
+        // this.props.changeTitle(this.props.task.id, e.currentTarget.value);
+    }
 
     state = {
-        editMode: false
+        editMode: false,
+        title: this.props.task.title
     }
 
     activateEditMode = () => {
-        this.setState({
-            editMode: true
-        })
+        this.setState({editMode: true});
     }
+
     deactivateEditMode = () => {
-        this.setState({
-            editMode: false
-        })
-    }
-    onIsDoneChange = (e) => {
-        let status = e.currentTarget.checked ? 2 : 0
-        this.props.changeStatus(this.props.task, status)
-    }
-    onTaskChange = (e) => {
-        this.props.changeTitle(this.props.task, e.currentTarget.value)
+        this.props.changeTitle(this.props.task.id, this.state.title)
+        this.setState({editMode: false});
     }
     onDeleteTask = () => {
-        debugger
+            console.log(this.props.task.id)
         this.props.deleteTask(this.props.task.id);
     }
-
-    render() {
-        let priority = this.props.task.priority === 0 ? 'Low' : 1 ? 'Medium' : 2 ? 'Hi' : 3 ? 'Urgent' : 'Later'
-
-        let opacityTask = this.props.task.status === 2 ? 'todoList-task done' : 'todoList-task'
+    render = () => {
+        let containerCssClass = this.props.task.status === 2 ? "todoList-task done" : "todoList-task";
+        let priorityTitle = "";
+        switch (this.props.task.priority) {
+            case 0:
+                priorityTitle = "Low";
+                break;
+            case 1:
+                priorityTitle = "Middle";
+                break;
+            case 2:
+                priorityTitle = "High";
+                break;
+            case 3:
+                priorityTitle = "Urgently";
+                break;
+            case 4:
+                priorityTitle = "Later";
+                break;
+        }
         return (
-            <div className={opacityTask}>
-                <input type="checkbox"
-                       onChange={this.onIsDoneChange}
-                       checked={this.props.task.status === 2 ? true : false}/>
-                {this.props.task.id} -
+            <div className={containerCssClass}>
+                <input type="checkbox" checked={this.props.task.status === 2}
+                       onChange={this.onIsDoneChanged}/>
                 {this.state.editMode
-                    ? <input value={this.props.task.title} autoFocus={true} onBlur={this.deactivateEditMode}
-                             onChange={this.onTaskChange}/>
-                    : <span onClick={this.activateEditMode}> {this.props.task.title}</span>}
-                <span> , priority : {priority}
-                    <button onClick={this.onDeleteTask}>x</button></span>
+                    ? <input onBlur={this.deactivateEditMode} onChange={this.onTitleChanged} autoFocus={true}
+                             value={this.state.title}/>
+                    : <span onClick={this.activateEditMode}>{this.state.title}</span>
+                }, priority: {priorityTitle}
+                <button onClick={this.onDeleteTask}>X</button>
             </div>
-        )
+        );
     }
 }
 
-export default TodoListTask
+export default TodoListTask;
+

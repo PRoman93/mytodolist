@@ -1,19 +1,54 @@
-import React, {Component} from "react";
+import React from 'react';
+import './App.css';
 
-class TodoListTitle extends Component {
+class TodoListTitle extends React.Component {
 
     state = {
-        error: false,
-        title:''
+        editMode: false,
+        title: this.props.title
     }
+    onEditTitleMode = () => {
+        this.setState({
+            editMode: true
+        })
+    }
+    onChangeHeader = (e) => {
+        // debugger
+        this.setState({
+            title: e.currentTarget.value
+        })
+    }
+    changeHeader = () => {
+        if (this.state.title === '') {
+            this.setState({
+                editMode: true
+            })
+        } else {
+            this.props.changeHeader(this.state.title)
+            this.setState({editMode: false})
+        }
+        debugger
 
-    render() {
+    }
+    render = () => {
         return (
-                <h3 className="todoList-header__title">{this.props.title}
-                <button onClick={this.props.deleteTodoList}>x</button></h3>
+            <>
+                {!this.state.editMode &&
+                <h3 onDoubleClick={this.onEditTitleMode}
+                    className="todoList-header__title">{this.state.title}
+                    <button onClick={this.props.onDelete}>X</button>
+                </h3>}
+
+                {this.state.editMode && <input type="text"
+                                               autoFocus={true}
+                                               value={this.state.title}
+                                               onBlur={this.changeHeader}
+                                               onChange={this.onChangeHeader}/>}
+
+            </>
         )
     }
 }
 
+export default TodoListTitle;
 
-export default TodoListTitle

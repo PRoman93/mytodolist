@@ -1,104 +1,164 @@
-export const SET_TODOLIST = 'Todolist/Reducer/SET-TODOLIST'
-export const ADD_TODOLIST = 'Todolist/Reducer/ADD-TODOLIST'
-export const CHANGE_TASK = 'Todolist/Reducer/CHANGE-TASK'
-export const ADD_TASK = 'Todolist/Reducer/ADD-TASK'
-export const SET_TASKS = 'Todolist/Reducer/SET-TASKS'
-export const DELETE_TASK = 'Todolist/Reducer/DELETE-TASK'
-export const DELETE_TODOLIST = 'Todolist/Reducer/DELETE-TODOLIST'
+export const ADD_TODOLIST = "TodoList/Reducer/ADD-TODOLIST";
+export const DELETE_TODOLIST = "TodoList/Reducer/DELETE-TODOLIST";
+export const DELETE_TASK = "TodoList/Reducer/DELETE-TASK";
+export const ADD_TASK = "TodoList/Reducer/ADD-TASK";
+export const SET_TASKS = "TodoList/Reducer/SET-TASKS";
+export const UPDATE_TASK = "TodoList/Reducer/UPDATE-TASK";
+export const SET_TODOLISTS = "TodoList/Reducer/SET-TODOLISTS";
+export const CHANGE_HEADER = "TodoList/Reducer/CHANGE-HEADER";
 
 const initialState = {
-    todoList: [
-        // {title:'JS', id:0, tasks:[{id:1, title:'React', isDone:true, priority:'low'}]}
+    "todolists": [
+        // {
+        //     "id": 0, "title": "every day",
+        //     tasks: [
+        //         {"title": "css11", "isDone": false, "priority": "low", "id": 0},
+        //         {"title": "js", "isDone": false, "priority": "low", "id": 1},
+        //         {"title": "react", "isDone": false, "priority": "low", "id": 2},
+        //         {"title": "sasasa", "isDone": false, "priority": "low", "id": 3},
+        //         {"title": "yoaa", "isDone": false, "priority": "low", "id": 4},
+        //         {"title": "sddsdsds", "isDone": false, "priority": "low", "id": 5}]
+        // },
+        // {"id": 1, "title": "tomorrow", tasks: []},
+        // {"id": 2, "title": "weewwe`", tasks: []},
+        // {"id": 3, "title": "dddd", tasks: []}
     ]
 }
-export const reducer = (state = initialState, action) => {
 
+const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_TODOLIST:
+        case SET_TASKS:
             return {
-                ...state, todoList: action.todoList
+                ...state,
+                todolists: state.todolists.map(tl => {
+                    if (tl.id !== action.todolistId) {
+                        return tl;
+                    } else {
+                        return {...tl, tasks: action.tasks}
+                    }
+                })
+            }
+        case SET_TODOLISTS:
+            return {
+                ...state,
+                todolists: action.todolists.map(tl => ({...tl, tasks: []}))
             }
         case ADD_TODOLIST:
             return {
-                ...state, todoList: [...state.todoList, {...action.newTodoList, tasks: []}]
+                ...state,
+                todolists: [...state.todolists, action.newTodolist]
             }
-        case ADD_TASK:
+        case CHANGE_HEADER:
+            // debugger
             return {
-                ...state, todoList: state.todoList.map(t => {
-                    if (t.id === action.todoListId) {
-                        return {...t, tasks: [...t.tasks, action.newTask]}
-                    } else {
-                        return t
-                    }
-                })
-            }
-        case SET_TASKS:
-            return {
-                ...state, todoList: state.todoList.map(t => {
-                    if (t.id === action.todoListId) {
-                        return {...t, tasks: action.tasks}
-                    } else {
-                        return t
-                    }
-                })
-            }
-        case CHANGE_TASK:
-            return {
-                ...state, todoList: state.todoList.map(todo => {
-                    if (todo.id === action.task.todoListId) {
+                ...state,
+                todolists: state.todolists.map(t => {
+                    if (t.id === action.todolistId) {
                         return {
-                            ...todo, tasks: todo.tasks.map(t => {
-                                if (t.id === action.task.id) {
-                                    return action.task
-                                } else {
-                                    return t
-                                }
-                            })
+                            ...t, title: action.title
                         }
                     } else {
-                        return todo
-                    }
-                })
-            }
-        case DELETE_TASK:
-            debugger
-            return {
-                ...state, todoList: state.todoList.map(todo => {
-                    if (todo.id === action.todoListId) {
-                        return {
-                            ...todo, tasks: todo.tasks.filter(t => t.id != action.taskId)
-                        }
-                    } else {
-                        return todo
+                        return t
                     }
                 })
             }
         case DELETE_TODOLIST:
             return {
-                ...state, todoList: state.todoList.filter(t => t.id != action.todoListId)
+                ...state,
+                todolists: state.todolists.filter(tl => tl.id !== action.todolistId)
+            }
+        case DELETE_TASK:
+            return {
+                ...state,
+                todolists: state.todolists.map(tl => {
+                    if (tl.id === action.todolistId) {
+                        return {
+                            ...tl,
+                            tasks: tl.tasks.filter(t => t.id !== action.taskId)
+                        }
+                    } else {
+                        return tl
+                    }
+                })
+            }
+        case ADD_TASK:
+            return {
+                ...state,
+                todolists: state.todolists.map(tl => {
+                    if (tl.id === action.task.todoListId) {
+                        return {...tl, tasks: [...tl.tasks, action.task]}
+                    } else {
+                        return tl
+                    }
+                })
+            }
+        case UPDATE_TASK:
+            return {
+                ...state,
+                todolists: state.todolists.map(tl => {
+                    if (tl.id === action.todolistId) {
+                        return {
+                            ...tl,
+                            tasks: tl.tasks.map(t => {
+                                if (t.id !== action.taskId) {
+                                    return t;
+                                } else {
+                                    return {...t, ...action.obj};
+                                }
+                            })
+                        }
+                    } else {
+                        return tl
+                    }
+                })
             }
     }
+    console.log("reducer: ", action);
     return state;
 }
-export const addTaskAC = (newTask, todoListId) => {
-    return {type: ADD_TASK, newTask, todoListId}
+
+export const updateTaskAC = (taskId, obj, todolistId) => {
+    return {type: UPDATE_TASK, taskId, obj, todolistId};
 }
-export const setTasksAC = (tasks, todoListId) => {
-    return {type: SET_TASKS, tasks, todoListId}
+export const deleteTodolistAC = (todolistId) => {
+    return {
+        type: DELETE_TODOLIST,
+        todolistId: todolistId
+    };
 }
-export const setTodoListAC = (todoList) => {
-    return {type: SET_TODOLIST, todoList}
+export const deleteTaskAC = (taskId, todolistId) => {
+    return {
+        type: DELETE_TASK,
+        taskId,
+        todolistId
+    };
 }
-export const addTodoListAC = (newTodoList) => {
-    return {type: ADD_TODOLIST, newTodoList}
+export const addTaskAC = (task) => {
+    return {type: ADD_TASK, task};
 }
-export const changeTaskAC = (task) => {
-    return {type: CHANGE_TASK, task}
+export const setTasksAC = (tasks, todolistId) => {
+    return {type: SET_TASKS, tasks, todolistId};
 }
-export const deleteTaskAC = (taskId, todoListId) => {
-    debugger
-    return {type: DELETE_TASK, taskId, todoListId}
+export const addTodolistAC = (newTodolist) => {
+    return {
+        type: ADD_TODOLIST,
+        newTodolist: newTodolist
+    }
 }
-export const deleteTodoListAC = (todoListId) => {
-    return {type: DELETE_TODOLIST, todoListId}
+export const changeHeaderAC = (todolistId, title) => {
+    // debugger
+    return {
+        type: CHANGE_HEADER,
+        todolistId,
+        title
+    }
 }
+export const setTodolistsAC = (todolists) => {
+    return {
+        type: SET_TODOLISTS,
+        todolists: todolists
+    }
+}
+
+
+export default reducer;
