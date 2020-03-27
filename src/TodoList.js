@@ -5,7 +5,15 @@ import TodoListFooter from "./TodoListFooter";
 import TodoListTitle from "./TodoListTitle";
 import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
-import {addTaskAC, changeHeaderAC, deleteTaskAC, deleteTodolistAC, setTasksAC, updateTaskAC} from "./reducer";
+import {
+    addTaskAC,
+    changeHeaderAC,
+    deleteTaskAC,
+    deleteTodolistAC, getTasks,
+    setTasksAC,
+    setTasksSuccess,
+    updateTaskAC
+} from "./reducer";
 import axios from "axios";
 import {api} from "./DAL/api";
 
@@ -19,12 +27,13 @@ class TodoList extends React.Component {
 
 
     restoreState = () => {
+        debugger
 
-        api.getTasks(this.props.id)
-            .then(res => {
-                let allTasks = res.data.items
-                this.props.setTasks(allTasks, this.props.id)
-            })
+        // api.getTasks(this.props.id)
+        //     .then(res => {
+        //         let allTasks = res.data.items
+                this.props.setTasks(this.props.id)
+            // })
     }
 
 
@@ -126,8 +135,11 @@ const mapDispatchToProps = (dispatch) => {
         addTask(task) {
             dispatch(addTaskAC(task));
         },
-        setTasks(tasks, todolistId) {
-            dispatch(setTasksAC(tasks, todolistId));
+        setTasks: (todolistId) => {
+            debugger
+            const thunk = getTasks(todolistId)
+            dispatch(thunk)
+            // dispatch(setTasksAC(tasks, todolistId));
         },
         updateTask(taskId, obj, todolistId) {
             const action = updateTaskAC(taskId, obj, todolistId);

@@ -3,13 +3,11 @@ import './App.css';
 import TodoList from "./TodoList";
 import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
-import {ADD_TODOLIST, addTodolistAC, setTodolistsAC} from "./reducer";
+import {ADD_TODOLIST, addTodolistAC, getTodo, setTodolistsAC, setTodolistsSuccess} from "./reducer";
 import axios from "axios";
 import {api} from "./DAL/api";
 
 class App extends React.Component {
-
-    nextTodoListId = 0;
 
     state = {
         todolists: []
@@ -21,32 +19,10 @@ class App extends React.Component {
                 let todolist = res.data.data.item
                 this.props.addTodolist(todolist)
             })
-        // axios.post(
-        //     "https://social-network.samuraijs.com/api/1.0/todo-lists",                // адрес endpoint-а
-        //     {title: title},                                         // объект, который нужен серваку для совершения действия
-        //     настройки запроса
-        // {
-        //     withCredentials: true,                                       // передавай с запросом куки для запрашиваемого домена
-        //     headers: {"API-KEY": "cde98104-6e07-4290-87b8-6584c1b2a239"} // специальный ключ в заголовках передаём
-        // }                                                                // (у каждого свой ключ должен быть)
-        // )
-        //     .then(res => {
-        //         let todolist = res.data.data.item;                           // todolist, который создался на серваке и вернулся нам
-        //         this.props.addTodolist(todolist);
-        //     });
     }
-
 
     componentDidMount() {
         this.restoreState();
-    }
-
-
-    saveState = () => {
-        // переводим объект в строку
-        let stateAsString = JSON.stringify(this.state);
-        // сохраняем нашу строку в localStorage под ключом "our-state"
-        localStorage.setItem("todolists-state", stateAsString);
     }
 
     restoreState = () => {
@@ -54,35 +30,9 @@ class App extends React.Component {
             .then(res => {
                 this.props.setTodolists(res.data)
             })
-        // axios.get("https://social-network.samuraijs.com/api/1.0/todo-lists", {withCredentials: true})
-        //     .then(res => {
-        //         this.props.setTodolists(res.data);
-        //     });
-    }
-
-
-    ___restoreState = () => {
-        // объявляем наш стейт стартовый
-        let state = this.state;
-        // считываем сохранённую ранее строку из localStorage
-        let stateAsString = localStorage.getItem("todolists-state");
-        // а вдруг ещё не было ни одного сохранения?? тогда будет null.
-        // если не null, тогда превращаем строку в объект
-        if (stateAsString != null) {
-            state = JSON.parse(stateAsString);
-        }
-        // устанавливаем стейт (либо пустой, либо восстановленный) в стейт
-        this.setState(state, () => {
-            this.state.todolists.forEach(t => {
-                if (t.id >= this.nextTodoListId) {
-                    this.nextTodoListId = t.id + 1;
-                }
-            })
-        });
     }
 
     render = () => {
-        debugger
         const todolists = this.props
             .todolists
             .map(tl => <TodoList key={tl.id} id={tl.id} title={tl.title} tasks={tl.tasks}/>)
@@ -108,9 +58,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setTodolists: (todolists) => {
-            const action = setTodolistsAC(todolists);
-            dispatch(action)
+        setTodolists: () => {
+            const thunk = getTodo();
+            dispatch(thunk)
         },
         addTodolist: (newTodolist) => {
             const action = addTodolistAC(newTodolist);
