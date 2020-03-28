@@ -153,6 +153,4 @@ export const getTasks = (todolistId) => (dispatch) => {
             dispatch(setTasksSuccess(res.data.items, todolistId))
         })
 }
-
-
 export default reducer;
