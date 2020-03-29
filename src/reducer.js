@@ -129,14 +129,6 @@ export const changeHeaderAC = (todolistId, title) => {return {type: CHANGE_HEADE
 const setTodolistsSuccess = (todolists) => {return {type: SET_TODOLISTS, todolists: todolists}}
 
 
-// const thunkCreator = () => {
-//     return (dispatch, getState) => {
-//         api.getTasks()
-//             .then(res => {
-//                 dispatch(actionCreator())
-//             })
-//     }
-// };
 
 
 export const getTodo = () => (dispatch) => {
