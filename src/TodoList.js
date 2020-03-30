@@ -27,13 +27,7 @@ class TodoList extends React.Component {
 
 
     restoreState = () => {
-        debugger
-
-        // api.getTasks(this.props.id)
-        //     .then(res => {
-        //         let allTasks = res.data.items
-                this.props.setTasks(this.props.id)
-            // })
+        this.props.setTasks(this.props.id)
     }
 
 

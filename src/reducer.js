@@ -123,8 +123,8 @@ export const updateTaskAC = (taskId, obj, todolistId) => {return {type: UPDATE_T
 export const deleteTodolistAC = (todolistId) => {return {type: DELETE_TODOLIST, todolistId: todolistId};}
 export const deleteTaskAC = (taskId, todolistId) => {return {type: DELETE_TASK, taskId, todolistId};}
 export const addTaskAC = (task) => {return {type: ADD_TASK, task};}
-export const setTasksSuccess = (tasks, todolistId) => {return {type: SET_TASKS, tasks, todolistId};}
-export const addTodolistAC = (newTodolist) => {return {type: ADD_TODOLIST, newTodolist: newTodolist}}
+const setTasksSuccess = (tasks, todolistId) => {return {type: SET_TASKS, tasks, todolistId};}
+export const addTodolistSuccess = (newTodolist) => {return {type: ADD_TODOLIST, newTodolist: newTodolist}}
 export const changeHeaderAC = (todolistId, title) => {return {type: CHANGE_HEADER, todolistId, title}}
 const setTodolistsSuccess = (todolists) => {return {type: SET_TODOLISTS, todolists: todolists}}
 
@@ -138,11 +138,17 @@ export const getTodo = () => (dispatch) => {
         })
 }
 export const getTasks = (todolistId) => (dispatch) => {
-    debugger
     api.getTasks(todolistId)
         .then(res => {
-            debugger
             dispatch(setTasksSuccess(res.data.items, todolistId))
+        })
+}
+export const addTodo = (newTodo) => (dispatch) => {
+    debugger
+    api.createTodolist(newTodo)
+        .then(res => {
+            debugger
+            dispatch(addTodolistSuccess(res.data.data.item))
         })
 }
 export default reducer;

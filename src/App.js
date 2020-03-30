@@ -3,7 +3,7 @@ import './App.css';
 import TodoList from "./TodoList";
 import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
-import {ADD_TODOLIST, addTodolistAC, getTodo, setTodolistsAC, setTodolistsSuccess} from "./reducer";
+import {ADD_TODOLIST, addTodo, addTodolistAC, getTodo, setTodolistsAC, setTodolistsSuccess} from "./reducer";
 import axios from "axios";
 import {api} from "./DAL/api";
 
@@ -13,12 +13,13 @@ class App extends React.Component {
         todolists: []
     }
 
-    addTodoList = (title) => {
-        api.createTodolist(title)
-            .then(res => {
-                let todolist = res.data.data.item
-                this.props.addTodolist(todolist)
-            })
+    addTodoList = (newTodolist) => {
+        debugger
+        // api.createTodolist(title)
+        //     .then(res => {
+        //         let todolist = res.data.data.item
+                this.props.addTodolist(newTodolist)
+            // })
     }
 
     componentDidMount() {
@@ -63,8 +64,9 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(thunk)
         },
         addTodolist: (newTodolist) => {
-            const action = addTodolistAC(newTodolist);
-            dispatch(action)
+            debugger
+            const thunk = addTodo(newTodolist);
+            dispatch(thunk)
         }
     }
 }
