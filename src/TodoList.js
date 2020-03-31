@@ -6,8 +6,9 @@ import TodoListTitle from "./TodoListTitle";
 import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
 import {
-    addTaskAC,
-    changeHeaderAC,
+    addTask,
+    addTaskAC, addTaskSuccess,
+    changeHeaderAC, deleteTask,
     deleteTaskAC,
     deleteTodolistAC, getTasks,
     setTasksAC,
@@ -35,11 +36,7 @@ class TodoList extends React.Component {
         filterValue: "All"
     };
     addTask = (newText) => {
-        let todolistId = this.props.id
-        api.createTask(newText, todolistId)
-            .then(res => {
-                this.props.addTask(res.data.data.item)
-            })
+        this.props.addTask(newText, this.props.id)
     }
     changeFilter = (newFilterValue) => {
         this.setState({
@@ -71,18 +68,11 @@ class TodoList extends React.Component {
             })
     }
     deleteTask = (taskId) => {
-        api.deleteTask(taskId, this.props.id)
-            .then(res => {
-                if (res.data.resultCode === 0) {
-                    this.props.deleteTask(taskId, this.props.id)
-                }
-            })
+        this.props.deleteTask(taskId, this.props.id)
     }
     changeHeader = (title) => {
-        debugger
         api.changeHeader(this.props.id, title)
             .then(res => {
-                debugger
                 if (res.data.resultCode === 0) {
                     // debugger
                     this.props.changeHeader(this.props.id, title)
@@ -126,11 +116,11 @@ class TodoList extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addTask(task) {
-            dispatch(addTaskAC(task));
+        addTask(task, todolistId) {
+            const thunk = addTask(task, todolistId)
+            dispatch(thunk);
         },
         setTasks: (todolistId) => {
-            debugger
             const thunk = getTasks(todolistId)
             dispatch(thunk)
             // dispatch(setTasksAC(tasks, todolistId));
@@ -144,11 +134,10 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(action)
         },
         deleteTask: (taskId, todolistId) => {
-            const action = deleteTaskAC(taskId, todolistId);
-            dispatch(action)
+            const thunk = deleteTask(taskId, todolistId);
+            dispatch(thunk)
         },
         changeHeader: (todolistId, title) => {
-            debugger
             const action = changeHeaderAC(todolistId, title)
             dispatch(action)
         }

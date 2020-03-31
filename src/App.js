@@ -14,7 +14,6 @@ class App extends React.Component {
     }
 
     addTodoList = (newTodolist) => {
-        debugger
         // api.createTodolist(title)
         //     .then(res => {
         //         let todolist = res.data.data.item
@@ -64,7 +63,6 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(thunk)
         },
         addTodolist: (newTodolist) => {
-            debugger
             const thunk = addTodo(newTodolist);
             dispatch(thunk)
         }
