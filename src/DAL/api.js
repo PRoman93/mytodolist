@@ -15,14 +15,13 @@ export const api = {
         return instance.post('', {title: title})
     },
     changeHeader(todolistId, title) {
-        debugger
         return instance.put(`/${todolistId}`, {title: title})
     },
     getTodolists() {
         return instance.get(``)
     },
     changeTask(task, todolistId, taskId) {
-        // debugger
+        debugger
         return instance.put(`${todolistId}/tasks/${taskId}`, task)
     },
     deleteTodolist(id) {

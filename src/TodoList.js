@@ -8,11 +8,11 @@ import {connect} from "react-redux";
 import {
     addTask,
     addTaskAC, addTaskSuccess,
-    changeHeaderAC, deleteTask,
-    deleteTaskAC,
+    changeHeaderAC, changeTitle, deleteTask,
+    deleteTaskAC, deleteTodo,
     deleteTodolistAC, getTasks,
     setTasksAC,
-    setTasksSuccess,
+    setTasksSuccess, updateTask,
     updateTaskAC
 } from "./reducer";
 import axios from "axios";
@@ -43,17 +43,18 @@ class TodoList extends React.Component {
             filterValue: newFilterValue
         });
     }
-    changeTask = (taskId, obj) => {
-        this.props.tasks.forEach(t => {
-            if (t.id === taskId) {
-                api.changeTask({...t, ...obj}, this.props.id, taskId)
-                    .then(res => {
-                        if (res.data.resultCode === 0) {
-                            this.props.updateTask(taskId, obj, this.props.id)
-                        }
-                    })
-            }
-        })
+    changeTask = (task, obj) => {
+        debugger
+        // this.props.tasks.forEach(t => {
+        //     if (t.id === taskId) {
+        //         api.changeTask({...t, ...obj}, this.props.id, taskId)
+        //             .then(res => {
+        //                 if (res.data.resultCode === 0) {
+                            this.props.updateTask(task.id, {...task, ...obj}, this.props.id)
+                        // }
+                    // })
+            // }
+        // })
     }
     changeStatus = (taskId, status) => {
         this.changeTask(taskId, {status: status});
@@ -62,22 +63,13 @@ class TodoList extends React.Component {
         this.changeTask(task, {title: title});
     }
     deleteTodolist = () => {
-        api.deleteTodolist(this.props.id)
-            .then(res => {
-                this.props.deleteTodolist(this.props.id)
-            })
+        this.props.deleteTodolist(this.props.id)
     }
     deleteTask = (taskId) => {
         this.props.deleteTask(taskId, this.props.id)
     }
     changeHeader = (title) => {
-        api.changeHeader(this.props.id, title)
-            .then(res => {
-                if (res.data.resultCode === 0) {
-                    // debugger
-                    this.props.changeHeader(this.props.id, title)
-                }
-            })
+        this.props.changeHeader(this.props.id, title)
     }
 
     render = () => {
@@ -125,21 +117,22 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(thunk)
             // dispatch(setTasksAC(tasks, todolistId));
         },
-        updateTask(taskId, obj, todolistId) {
-            const action = updateTaskAC(taskId, obj, todolistId);
+        updateTask(taskId, task, todolistId) {
+            debugger
+            const action = updateTask(taskId, task, todolistId);
             dispatch(action);
         },
         deleteTodolist: (todolistId) => {
-            const action = deleteTodolistAC(todolistId);
-            dispatch(action)
+            const thunk = deleteTodo(todolistId);
+            dispatch(thunk)
         },
         deleteTask: (taskId, todolistId) => {
             const thunk = deleteTask(taskId, todolistId);
             dispatch(thunk)
         },
         changeHeader: (todolistId, title) => {
-            const action = changeHeaderAC(todolistId, title)
-            dispatch(action)
+            const thunk = changeTitle(todolistId, title)
+            dispatch(thunk)
         }
     }
 }
