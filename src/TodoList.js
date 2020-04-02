@@ -43,18 +43,16 @@ class TodoList extends React.Component {
             filterValue: newFilterValue
         });
     }
-    changeTask = (task, obj) => {
+
+        changeTask = (taskId, obj) => {
         debugger
-        // this.props.tasks.forEach(t => {
-        //     if (t.id === taskId) {
-        //         api.changeTask({...t, ...obj}, this.props.id, taskId)
-        //             .then(res => {
-        //                 if (res.data.resultCode === 0) {
-                            this.props.updateTask(task.id, {...task, ...obj}, this.props.id)
-                        // }
-                    // })
-            // }
-        // })
+            let changedTask = this.props.tasks.find(task => {
+                return task.id === taskId
+            });
+            let task = {...changedTask, ...obj};
+
+            // this.props.changeTask(taskId, this.props.id, task, obj);
+                            this.props.updateTask(taskId, this.props.id, task, obj)
     }
     changeStatus = (taskId, status) => {
         this.changeTask(taskId, {status: status});
@@ -117,10 +115,10 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(thunk)
             // dispatch(setTasksAC(tasks, todolistId));
         },
-        updateTask(taskId, task, todolistId) {
+        updateTask(taskId, todolistId, task, obj) {
             debugger
-            const action = updateTask(taskId, task, todolistId);
-            dispatch(action);
+            const thunk = updateTask(taskId, todolistId, task, obj);
+            dispatch(thunk);
         },
         deleteTodolist: (todolistId) => {
             const thunk = deleteTodo(todolistId);

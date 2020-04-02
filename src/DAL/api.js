@@ -20,7 +20,7 @@ export const api = {
     getTodolists() {
         return instance.get(``)
     },
-    changeTask(task, todolistId, taskId) {
+    changeTask(taskId, todolistId, task) {
         debugger
         return instance.put(`${todolistId}/tasks/${taskId}`, task)
     },

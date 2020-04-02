@@ -98,11 +98,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 todolists: state.todolists.map(tl => {
-                    if (tl.id === action.task.todolistId) {
+                    if (tl.id === action.todolistId) {
                         return {
                             ...tl,
                             tasks: tl.tasks.map(t => {
-                                if (t.id !== action.task.taskId) {
+                                if (t.id !== action.taskId) {
                                     return t;
                                 } else {
                                     debugger
@@ -119,26 +119,26 @@ const reducer = (state = initialState, action) => {
     return state;
 }
 
-export const updateTaskSuccess = (taskId, task, todolistId) => {
+const updateTaskSuccess = (taskId, obj, todolistId) => {
     debugger
-    return {type: UPDATE_TASK, taskId, task, todolistId};
+    return {type: UPDATE_TASK, taskId, obj, todolistId};
 }
-export const deleteTodolistSuccess = (todolistId) => {
+const deleteTodolistSuccess = (todolistId) => {
     return {type: DELETE_TODOLIST, todolistId: todolistId};
 }
-export const deleteTaskSuccess = (taskId, todolistId) => {
+const deleteTaskSuccess = (taskId, todolistId) => {
     return {type: DELETE_TASK, taskId, todolistId};
 }
-export const addTaskSuccess = (task) => {
+const addTaskSuccess = (task) => {
     return {type: ADD_TASK, task};
 }
 const setTasksSuccess = (tasks, todolistId) => {
     return {type: SET_TASKS, tasks, todolistId};
 }
-export const addTodolistSuccess = (newTodolist) => {
+const addTodolistSuccess = (newTodolist) => {
     return {type: ADD_TODOLIST, newTodolist: newTodolist}
 }
-export const changeHeaderSuccess = (todolistId, title) => {
+const changeHeaderSuccess = (todolistId, title) => {
     return {type: CHANGE_HEADER, todolistId, title}
 }
 const setTodolistsSuccess = (todolists) => {
@@ -198,13 +198,13 @@ export const changeTitle = (todolistId, title) => (dispatch) => {
             }
         })
 }
-export const updateTask = (taskId, task, todolistId) => (dispatch) => {
+export const updateTask = (taskId, todolistId, task, obj) => (dispatch) => {
     debugger
-    api.changeTask(taskId, task, todolistId)
+    api.changeTask(taskId, todolistId, task)
         .then(res => {
             debugger
             if (res.data.resultCode === 0) {
-            dispatch(updateTaskSuccess(taskId, task, todolistId))
+            dispatch(updateTaskSuccess(taskId, obj, todolistId))
             }
         })
 }
