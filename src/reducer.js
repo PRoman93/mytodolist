@@ -119,9 +119,9 @@ const reducer = (state = initialState, action) => {
     return state;
 }
 
-const updateTaskSuccess = (taskId, obj, todolistId) => {
+const updateTaskSuccess = (todolistId, taskId, obj) => {
     debugger
-    return {type: UPDATE_TASK, taskId, obj, todolistId};
+    return {type: UPDATE_TASK, todolistId, taskId, obj};
 }
 const deleteTodolistSuccess = (todolistId) => {
     return {type: DELETE_TODOLIST, todolistId: todolistId};
@@ -162,7 +162,7 @@ export const addTodo = (newTodo) => (dispatch) => {
     api.createTodolist(newTodo)
         .then(res => {
             if (res.data.resultCode === 0) {
-            dispatch(addTodolistSuccess(res.data.data.item))
+                dispatch(addTodolistSuccess(res.data.data.item))
             }
         })
 }
@@ -170,7 +170,7 @@ export const addTask = (task, todolistId) => (dispatch) => {
     api.createTask(task, todolistId)
         .then(res => {
             if (res.data.resultCode === 0) {
-            dispatch(addTaskSuccess(res.data.data.item, todolistId))
+                dispatch(addTaskSuccess(res.data.data.item, todolistId))
             }
         })
 }
@@ -178,7 +178,7 @@ export const deleteTask = (taskId, todolistId) => (dispatch) => {
     api.deleteTask(taskId, todolistId)
         .then(res => {
             if (res.data.resultCode === 0) {
-            dispatch(deleteTaskSuccess(taskId, todolistId))
+                dispatch(deleteTaskSuccess(taskId, todolistId))
             }
         })
 }
@@ -186,7 +186,7 @@ export const deleteTodo = (todolistId) => (dispatch) => {
     api.deleteTodolist(todolistId)
         .then(res => {
             if (res.data.resultCode === 0) {
-            dispatch(deleteTodolistSuccess(todolistId))
+                dispatch(deleteTodolistSuccess(todolistId))
             }
         })
 }
@@ -194,18 +194,16 @@ export const changeTitle = (todolistId, title) => (dispatch) => {
     api.changeHeader(todolistId, title)
         .then(res => {
             if (res.data.resultCode === 0) {
-            dispatch(changeHeaderSuccess(todolistId, title))
+                dispatch(changeHeaderSuccess(todolistId, title))
             }
         })
 }
-export const updateTask = (taskId, todolistId, task, obj) => (dispatch) => {
-    debugger
-    api.changeTask(taskId, todolistId, task)
+export const updateTask = (todolistId, taskId, obj, task) => (dispatch) => {
+    api.changeTask(todolistId, taskId, task)
         .then(res => {
             debugger
-            if (res.data.resultCode === 0) {
-            dispatch(updateTaskSuccess(taskId, obj, todolistId))
-            }
+            dispatch(updateTaskSuccess(todolistId, taskId, obj))
         })
 }
+
 export default reducer;

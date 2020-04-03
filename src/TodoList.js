@@ -44,17 +44,16 @@ class TodoList extends React.Component {
         });
     }
 
-        changeTask = (taskId, obj) => {
+    changeTask = (taskId, obj) => {
         debugger
-            let changedTask = this.props.tasks.find(task => {
-                return task.id === taskId
-            });
-            let task = {...changedTask, ...obj};
-
-            // this.props.changeTask(taskId, this.props.id, task, obj);
-                            this.props.updateTask(taskId, this.props.id, task, obj)
+        let changedTask = this.props.tasks.find(task => {
+            return task.id === taskId
+        });
+        let task = {...changedTask, ...obj};
+        this.props.updateTask(this.props.id, taskId, obj, task)
     }
     changeStatus = (taskId, status) => {
+        debugger
         this.changeTask(taskId, {status: status});
     }
     changeTitle = (task, title) => {
@@ -115,9 +114,9 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(thunk)
             // dispatch(setTasksAC(tasks, todolistId));
         },
-        updateTask(taskId, todolistId, task, obj) {
+        updateTask(todolistId, taskId, obj, task) {
             debugger
-            const thunk = updateTask(taskId, todolistId, task, obj);
+            const thunk = updateTask(todolistId, taskId, obj, task);
             dispatch(thunk);
         },
         deleteTodolist: (todolistId) => {

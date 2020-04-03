@@ -29,7 +29,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Todolists/14-ts lesson" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Todolists/13-thunk lesson" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -135,7 +135,11 @@
       <workItem from="1585476089493" duration="649000" />
       <workItem from="1585574415867" duration="479000" />
       <workItem from="1585639843245" duration="1576000" />
-      <workItem from="1585823102924" duration="3342000" />
+      <workItem from="1585823102924" duration="3477000" />
+      <workItem from="1585838564754" duration="298000" />
+      <workItem from="1585844849908" duration="1981000" />
+      <workItem from="1585848990397" duration="457000" />
+      <workItem from="1585896899821" duration="1809000" />
     </task>
     <task id="LOCAL-00001" summary="1-st todolist is done">
       <created>1582638692320</created>
@@ -389,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585729384977</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="13-th todolist, update task is failed again">
+      <created>1585828277997</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1585828277997</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,7 +420,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="11-th task of 9-th todolist is fail" />
     <MESSAGE value="11-th task of 9-th todolist is done" />
     <MESSAGE value="12-th task of 9-th todolist is done" />
     <MESSAGE value="10-th todolist is done" />
@@ -434,6 +444,7 @@
     <MESSAGE value="13-th todolist, thunk addTask isDone, refactoring(delete some comments)" />
     <MESSAGE value="13-th todolist, thunk addTodo isDone" />
     <MESSAGE value="13-th todolist, update task is failed" />
-    <option name="LAST_COMMIT_MESSAGE" value="13-th todolist, update task is failed" />
+    <MESSAGE value="13-th todolist, update task is failed again" />
+    <option name="LAST_COMMIT_MESSAGE" value="13-th todolist, update task is failed again" />
   </component>
 </project>
