@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-    baseURL: "https://social-network.samuraijs.com/api/1.0/todo-lists",
+    baseURL: "https://social-network.samuraijs.com/api/1.1/todo-lists",
     withCredentials: true,
     headers: {"API-KEY": "cde98104-6e07-4290-87b8-6584c1b2a239"}
 

@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAL/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAL/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +28,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Todolists/13-thunk lesson" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -139,7 +138,9 @@
       <workItem from="1585838564754" duration="298000" />
       <workItem from="1585844849908" duration="1981000" />
       <workItem from="1585848990397" duration="457000" />
-      <workItem from="1585896899821" duration="1809000" />
+      <workItem from="1585896899821" duration="1856000" />
+      <workItem from="1585908231781" duration="2412000" />
+      <workItem from="1585912753969" duration="355000" />
     </task>
     <task id="LOCAL-00001" summary="1-st todolist is done">
       <created>1582638692320</created>
@@ -400,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585828277997</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="13-th todolist, update task is failed again and again">
+      <created>1585898726438</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1585898726439</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -420,7 +428,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="11-th task of 9-th todolist is done" />
     <MESSAGE value="12-th task of 9-th todolist is done" />
     <MESSAGE value="10-th todolist is done" />
     <MESSAGE value="refactoring" />
@@ -445,6 +452,7 @@
     <MESSAGE value="13-th todolist, thunk addTodo isDone" />
     <MESSAGE value="13-th todolist, update task is failed" />
     <MESSAGE value="13-th todolist, update task is failed again" />
-    <option name="LAST_COMMIT_MESSAGE" value="13-th todolist, update task is failed again" />
+    <MESSAGE value="13-th todolist, update task is failed again and again" />
+    <option name="LAST_COMMIT_MESSAGE" value="13-th todolist, update task is failed again and again" />
   </component>
 </project>

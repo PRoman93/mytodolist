@@ -3,9 +3,7 @@ import './App.css';
 import TodoList from "./TodoList";
 import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
-import {ADD_TODOLIST, addTodo, addTodolistAC, getTodo, setTodolistsAC, setTodolistsSuccess} from "./reducer";
-import axios from "axios";
-import {api} from "./DAL/api";
+import {addTodo, getTodo} from "./reducer";
 
 class App extends React.Component {
 
@@ -14,11 +12,7 @@ class App extends React.Component {
     }
 
     addTodoList = (newTodolist) => {
-        // api.createTodolist(title)
-        //     .then(res => {
-        //         let todolist = res.data.data.item
-                this.props.addTodolist(newTodolist)
-            // })
+        this.props.addTodolist(newTodolist)
     }
 
     componentDidMount() {
@@ -26,10 +20,7 @@ class App extends React.Component {
     }
 
     restoreState = () => {
-        api.getTodolists()
-            .then(res => {
-                this.props.setTodolists(res.data)
-            })
+        this.props.setTodolists(this.props.id)
     }
 
     render = () => {

@@ -7,16 +7,12 @@ import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
 import {
     addTask,
-    addTaskAC, addTaskSuccess,
-    changeHeaderAC, changeTitle, deleteTask,
-    deleteTaskAC, deleteTodo,
-    deleteTodolistAC, getTasks,
-    setTasksAC,
-    setTasksSuccess, updateTask,
-    updateTaskAC
+    changeTitle,
+    deleteTask,
+    deleteTodo,
+    getTasks,
+    updateTask
 } from "./reducer";
-import axios from "axios";
-import {api} from "./DAL/api";
 
 
 class TodoList extends React.Component {
@@ -112,7 +108,6 @@ const mapDispatchToProps = (dispatch) => {
         setTasks: (todolistId) => {
             const thunk = getTasks(todolistId)
             dispatch(thunk)
-            // dispatch(setTasksAC(tasks, todolistId));
         },
         updateTask(todolistId, taskId, obj, task) {
             debugger
