@@ -10,6 +10,7 @@ class TodoListTasks extends React.Component {
                                                                         changeTitle={this.props.changeTitle}
                                                                         changeHeader={this.props.changeHeader}
                                                                         deleteTask={this.props.deleteTask}
+                                                                        preloader={this.props.preloader}
                                                                         />);
 
         return (

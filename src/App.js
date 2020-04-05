@@ -4,6 +4,7 @@ import TodoList from "./TodoList";
 import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
 import {addTodo, getTodo} from "./reducer";
+import Preloader from "./Preloader";
 
 class App extends React.Component {
 
@@ -26,16 +27,22 @@ class App extends React.Component {
     render = () => {
         const todolists = this.props
             .todolists
-            .map(tl => <TodoList key={tl.id} id={tl.id} title={tl.title} tasks={tl.tasks}/>)
+            .map(tl => <TodoList key={tl.id} id={tl.id} title={tl.title} tasks={tl.tasks} preloader={this.props.preloader}/>)
 
         return (
             <>
-                <div>
-                    <AddNewItemForm addItem={this.addTodoList}/>
-                </div>
-                <div className="App">
-                    {todolists}
-                </div>
+                {
+                    this.props.preloader
+                        ? <Preloader/>
+                        : <>
+                            <div>
+                                <AddNewItemForm addItem={this.addTodoList}/>
+                            </div>
+                            <div className="App">
+                                {todolists}
+                            </div>
+                        </>
+                }
             </>
         );
     }
@@ -43,7 +50,8 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        todolists: state.todolists
+        todolists: state.todolists,
+        preloader: state.preloader
     }
 }
 

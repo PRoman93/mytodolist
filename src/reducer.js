@@ -8,23 +8,11 @@ export const SET_TASKS = "TodoList/Reducer/SET-TASKS";
 export const UPDATE_TASK = "TodoList/Reducer/UPDATE-TASK";
 export const SET_TODOLISTS = "TodoList/Reducer/SET-TODOLISTS";
 export const CHANGE_HEADER = "TodoList/Reducer/CHANGE-HEADER";
+export const CHANGE_PRELOADER = "TodoList/Reducer/CHANGE-PRELOADER";
 
 const initialState = {
-    "todolists": [
-        // {
-        //     "id": 0, "title": "every day",
-        //     tasks: [
-        //         {"title": "css11", "isDone": false, "priority": "low", "id": 0},
-        //         {"title": "js", "isDone": false, "priority": "low", "id": 1},
-        //         {"title": "react", "isDone": false, "priority": "low", "id": 2},
-        //         {"title": "sasasa", "isDone": false, "priority": "low", "id": 3},
-        //         {"title": "yoaa", "isDone": false, "priority": "low", "id": 4},
-        //         {"title": "sddsdsds", "isDone": false, "priority": "low", "id": 5}]
-        // },
-        // {"id": 1, "title": "tomorrow", tasks: []},
-        // {"id": 2, "title": "weewwe`", tasks: []},
-        // {"id": 3, "title": "dddd", tasks: []}
-    ]
+    todolists: [],
+    preloader: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -115,12 +103,15 @@ const reducer = (state = initialState, action) => {
                     }
                 })
             }
+        case CHANGE_PRELOADER:
+            return {
+                ...state, preloader: action.status
+            }
     }
     return state;
 }
 
 const updateTaskSuccess = (todolistId, taskId, obj) => {
-    debugger
     return {type: UPDATE_TASK, todolistId, taskId, obj};
 }
 const deleteTodolistSuccess = (todolistId) => {
@@ -144,12 +135,15 @@ const changeHeaderSuccess = (todolistId, title) => {
 const setTodolistsSuccess = (todolists) => {
     return {type: SET_TODOLISTS, todolists: todolists}
 }
+const changePreloader = (status) => ({type: CHANGE_PRELOADER, status})
 
 
 export const getTodo = () => (dispatch) => {
+    dispatch(changePreloader(true))
     api.getTodolists()
         .then(res => {
             dispatch(setTodolistsSuccess(res.data))
+            dispatch(changePreloader(false))
         })
 }
 export const getTasks = (todolistId) => (dispatch) => {
@@ -199,10 +193,12 @@ export const changeTitle = (todolistId, title) => (dispatch) => {
         })
 }
 export const updateTask = (todolistId, taskId, obj, task) => (dispatch) => {
+    dispatch(changePreloader(true))
     api.changeTask(todolistId, taskId, task)
         .then(res => {
             debugger
             dispatch(updateTaskSuccess(todolistId, taskId, obj))
+            dispatch(changePreloader(false))
         })
 }
 

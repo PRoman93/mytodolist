@@ -79,6 +79,7 @@ class TodoList extends React.Component {
                 <TodoListTasks changeStatus={this.changeStatus}
                                changeTitle={this.changeTitle}
                                deleteTask={this.deleteTask}
+                               preloader={this.props.preloader}
                     /*tasks={this.props.tasks.filter(t => {*/
                                tasks={tasks
                                    .filter(t => {
