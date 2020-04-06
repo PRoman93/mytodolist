@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Preloader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/accets/6b449513765711.56277d303236b.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddNewItemForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddNewItemForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Preloader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Preloader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoListTask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTask.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoListTasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTasks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -149,7 +149,9 @@
       <workItem from="1585896899821" duration="1856000" />
       <workItem from="1585908231781" duration="2412000" />
       <workItem from="1585912753969" duration="619000" />
-      <workItem from="1586101808343" duration="1708000" />
+      <workItem from="1586101808343" duration="2535000" />
+      <workItem from="1586105213586" duration="52000" />
+      <workItem from="1586151736795" duration="7090000" />
     </task>
     <task id="LOCAL-00001" summary="1-st todolist is done">
       <created>1582638692320</created>
@@ -424,7 +426,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585913357974</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="13-th todolist add preloader to setTodo">
+      <created>1586103760622</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1586103760622</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +453,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="10-th todolist is done" />
     <MESSAGE value="refactoring" />
     <MESSAGE value="refactoring,," />
     <MESSAGE value="refactoring new" />
@@ -469,6 +477,7 @@
     <MESSAGE value="13-th todolist, update task is failed again" />
     <MESSAGE value="13-th todolist, update task is failed again and again" />
     <MESSAGE value="13-th todolist is done" />
-    <option name="LAST_COMMIT_MESSAGE" value="13-th todolist is done" />
+    <MESSAGE value="13-th todolist add preloader to setTodo" />
+    <option name="LAST_COMMIT_MESSAGE" value="13-th todolist add preloader to setTodo" />
   </component>
 </project>

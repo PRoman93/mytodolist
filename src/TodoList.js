@@ -13,6 +13,7 @@ import {
     getTasks,
     updateTask
 } from "./reducer";
+import Preloader from "./Preloader";
 
 
 class TodoList extends React.Component {
@@ -76,24 +77,27 @@ class TodoList extends React.Component {
                                    onDelete={this.deleteTodolist}/>
                     <AddNewItemForm addItem={this.addTask}/>
                 </div>
-                <TodoListTasks changeStatus={this.changeStatus}
-                               changeTitle={this.changeTitle}
-                               deleteTask={this.deleteTask}
-                               preloader={this.props.preloader}
-                    /*tasks={this.props.tasks.filter(t => {*/
-                               tasks={tasks
-                                   .filter(t => {
-                                       if (this.state.filterValue === "All") {
-                                           return true;
-                                       }
-                                       if (this.state.filterValue === "Active") {
-                                           return t.status === 0
-                                       }
-                                       if (this.state.filterValue === "Completed") {
-                                           return t.status === 2
-                                       }
-                                   })}
-                />
+                {this.props.todolists.preloader
+                    ? <Preloader preloader={'preloader'}/>
+                : <TodoListTasks changeStatus={this.changeStatus}
+                                 changeTitle={this.changeTitle}
+                                 deleteTask={this.deleteTask}
+                                 preloader={this.props.preloader}
+                        /*tasks={this.props.tasks.filter(t => {*/
+                                 tasks={tasks
+                                     .filter(t => {
+                                         if (this.state.filterValue === "All") {
+                                             return true;
+                                         }
+                                         if (this.state.filterValue === "Active") {
+                                             return t.status === 0
+                                         }
+                                         if (this.state.filterValue === "Completed") {
+                                             return t.status === 2
+                                         }
+                                     })}
+                    />}
+
                 <TodoListFooter changeFilter={this.changeFilter} filterValue={this.state.filterValue}/>
             </div>
         );

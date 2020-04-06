@@ -25,9 +25,10 @@ class App extends React.Component {
     }
 
     render = () => {
+        // const disabledTodo = this.props.todolists.map(t=> t.disabled)
         const todolists = this.props
             .todolists
-            .map(tl => <TodoList key={tl.id} id={tl.id} title={tl.title} tasks={tl.tasks} preloader={this.props.preloader}/>)
+            .map(tl => <TodoList key={tl.id} id={tl.id} title={tl.title} tasks={tl.tasks} todolists={tl}/>)
 
         return (
             <>
@@ -36,7 +37,9 @@ class App extends React.Component {
                         ? <Preloader/>
                         : <>
                             <div>
-                                <AddNewItemForm addItem={this.addTodoList}/>
+                                <AddNewItemForm addItem={this.addTodoList}
+                                                // todolists={disabledTodo}
+                                                disabled={this.props.disabled}/>
                             </div>
                             <div className="App">
                                 {todolists}
@@ -51,7 +54,8 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
     return {
         todolists: state.todolists,
-        preloader: state.preloader
+        preloader: state.preloader,
+        disabled:state.disabled
     }
 }
 

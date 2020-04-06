@@ -8,11 +8,15 @@ export const SET_TASKS = "TodoList/Reducer/SET-TASKS";
 export const UPDATE_TASK = "TodoList/Reducer/UPDATE-TASK";
 export const SET_TODOLISTS = "TodoList/Reducer/SET-TODOLISTS";
 export const CHANGE_HEADER = "TodoList/Reducer/CHANGE-HEADER";
-export const CHANGE_PRELOADER = "TodoList/Reducer/CHANGE-PRELOADER";
+export const LOADING_TODOS = "TodoList/Reducer/LOADING-TODOS";
+export const LOADING_TASKS = "TodoList/Reducer/LOADING-TASKS";
+export const DISABLED_TODOLIST = "TodoList/Reducer/DISABLED-TODOLIST";
+export const DISABLED_TASK = "TodoList/Reducer/DISABLED-TASK";
 
 const initialState = {
     todolists: [],
-    preloader: false
+    preloader: false,
+    disabled: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -31,21 +35,56 @@ const reducer = (state = initialState, action) => {
         case SET_TODOLISTS:
             return {
                 ...state,
-                todolists: action.todolists.map(tl => ({...tl, tasks: []}))
+                todolists: action.todolists.map(tl => ({
+                    ...tl,
+                    tasks: [],
+                    preloader: false
+                }))
             }
         case ADD_TODOLIST:
             return {
                 ...state,
                 todolists: [...state.todolists, action.newTodolist]
             }
+        case DISABLED_TODOLIST:
+            return {
+                ...state,
+                disabled: action.disabled
+            }
         case CHANGE_HEADER:
-            // debugger
             return {
                 ...state,
                 todolists: state.todolists.map(t => {
                     if (t.id === action.todolistId) {
                         return {
                             ...t, title: action.title
+                        }
+                    } else {
+                        return t
+                    }
+                })
+            }
+        case DISABLED_TASK:
+            return {
+                ...state,
+                todolists: state.todolists.map(t => {
+                    if (t.id === action.todolistId) {
+                        return {
+                            ...t, disabled: action.disabled
+                        }
+                    } else {
+                        return t
+                    }
+                })
+            }
+        case LOADING_TASKS:
+            // debugger
+            return {
+                ...state,
+                todolists: state.todolists.map(t => {
+                    if (t.id === action.todolistId) {
+                        return {
+                            ...t, preloader: action.status
                         }
                     } else {
                         return t
@@ -103,7 +142,7 @@ const reducer = (state = initialState, action) => {
                     }
                 })
             }
-        case CHANGE_PRELOADER:
+        case LOADING_TODOS:
             return {
                 ...state, preloader: action.status
             }
@@ -135,36 +174,45 @@ const changeHeaderSuccess = (todolistId, title) => {
 const setTodolistsSuccess = (todolists) => {
     return {type: SET_TODOLISTS, todolists: todolists}
 }
-const changePreloader = (status) => ({type: CHANGE_PRELOADER, status})
+const loadingTodosAC = (status) => ({type: LOADING_TODOS, status})
+const disabledTodoAC = (disabled) => ({type: DISABLED_TODOLIST, disabled})
+const disabledTaskAC = (disabled, todolistId) => ({type: DISABLED_TODOLIST, disabled, todolistId})
+const loadingTasksAC = (status, todolistId) => ({type: LOADING_TASKS, status, todolistId})
 
 
 export const getTodo = () => (dispatch) => {
-    dispatch(changePreloader(true))
+    dispatch(loadingTodosAC(true))
     api.getTodolists()
         .then(res => {
             dispatch(setTodolistsSuccess(res.data))
-            dispatch(changePreloader(false))
+            dispatch(loadingTodosAC(false))
         })
 }
 export const getTasks = (todolistId) => (dispatch) => {
+    dispatch(loadingTasksAC(true, todolistId))
     api.getTasks(todolistId)
         .then(res => {
+            dispatch(loadingTasksAC(false, todolistId))
             dispatch(setTasksSuccess(res.data.items, todolistId))
         })
 }
 export const addTodo = (newTodo) => (dispatch) => {
+    dispatch(disabledTodoAC(true))
     api.createTodolist(newTodo)
         .then(res => {
             if (res.data.resultCode === 0) {
                 dispatch(addTodolistSuccess(res.data.data.item))
+                dispatch(disabledTodoAC(false))
             }
         })
 }
 export const addTask = (task, todolistId) => (dispatch) => {
+    dispatch(disabledTaskAC(true, todolistId))
     api.createTask(task, todolistId)
         .then(res => {
             if (res.data.resultCode === 0) {
                 dispatch(addTaskSuccess(res.data.data.item, todolistId))
+                dispatch(disabledTaskAC(false, todolistId))
             }
         })
 }
@@ -193,12 +241,10 @@ export const changeTitle = (todolistId, title) => (dispatch) => {
         })
 }
 export const updateTask = (todolistId, taskId, obj, task) => (dispatch) => {
-    dispatch(changePreloader(true))
     api.changeTask(todolistId, taskId, task)
         .then(res => {
             debugger
             dispatch(updateTaskSuccess(todolistId, taskId, obj))
-            dispatch(changePreloader(false))
         })
 }
 

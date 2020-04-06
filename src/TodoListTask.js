@@ -52,18 +52,16 @@ class TodoListTask extends React.Component {
         }
         return (
             <>
-                {this.props.preloader
-                    ? <Preloader/>
-                    : <div className={containerCssClass}>
-                        <input type="checkbox" checked={this.props.task.status === 2}
-                               onChange={this.onIsDoneChanged}/>
-                        {this.state.editMode
-                            ? <input onBlur={this.deactivateEditMode} onChange={this.onTitleChanged} autoFocus={true}
-                                     value={this.state.title}/>
-                            : <span onClick={this.activateEditMode}>{this.state.title}</span>
-                        }, priority: {priorityTitle}
-                        <button onClick={this.onDeleteTask}>X</button>
-                    </div>}
+                <div className={containerCssClass}>
+                    <input type="checkbox" checked={this.props.task.status === 2}
+                           onChange={this.onIsDoneChanged}/>
+                    {this.state.editMode
+                        ? <input onBlur={this.deactivateEditMode} onChange={this.onTitleChanged} autoFocus={true}
+                                 value={this.state.title}/>
+                        : <span onClick={this.activateEditMode}>{this.state.title}</span>
+                    }, priority: {priorityTitle}
+                    <button onClick={this.onDeleteTask}>X</button>
+                </div>
             </>
         );
     }
