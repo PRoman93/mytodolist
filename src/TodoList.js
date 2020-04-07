@@ -75,7 +75,7 @@ class TodoList extends React.Component {
                                    id={this.props.id}
                                    title={this.props.title}
                                    onDelete={this.deleteTodolist}/>
-                    <AddNewItemForm addItem={this.addTask}/>
+                    <AddNewItemForm requestStatus={this.props.requestStatus} addItem={this.addTask}/>
                 </div>
                 {this.props.todolists.preloader
                     ? <Preloader preloader={'preloader'}/>

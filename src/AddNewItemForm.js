@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import {STATUSES} from "./reducer";
 
 class AddNewItemForm extends React.Component {
     state = {
@@ -35,7 +36,7 @@ class AddNewItemForm extends React.Component {
 
 
     render = () => {
-        console.log(this.props)
+        console.log(this.props.disabledTodo)
         let classNameForInput = this.state.error ? "error" : "";
         return (
             <div className="todoList-newTaskForm">
@@ -44,7 +45,7 @@ class AddNewItemForm extends React.Component {
                        onKeyPress={this.onKeyPress}
                        value={this.state.title}
                 />
-                <button disabled={this.props.disabled}
+                <button disabled={this.props.requestStatus === STATUSES.PENDING}
                         onClick={this.onAddItemClick}>Add
                 </button>
             </div>

@@ -12,11 +12,20 @@ export const LOADING_TODOS = "TodoList/Reducer/LOADING-TODOS";
 export const LOADING_TASKS = "TodoList/Reducer/LOADING-TASKS";
 export const DISABLED_TODOLIST = "TodoList/Reducer/DISABLED-TODOLIST";
 export const DISABLED_TASK = "TodoList/Reducer/DISABLED-TASK";
+export const SET_STATUS = "TodoList/Reducer/SET_STATUS";
+
+export const STATUSES = {
+    SUCCESS: 'SUCCESS',
+    ERROR: 'ERROR',
+    PENDING: 'PENDING',
+    NOT_INIT: 'NOT_INIT'
+}
 
 const initialState = {
     todolists: [],
     preloader: false,
-    disabled: false
+    disabled: false,
+    requestStatus: STATUSES.NOT_INIT
 }
 
 const reducer = (state = initialState, action) => {
@@ -78,7 +87,6 @@ const reducer = (state = initialState, action) => {
                 })
             }
         case LOADING_TASKS:
-            // debugger
             return {
                 ...state,
                 todolists: state.todolists.map(t => {
@@ -146,10 +154,16 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state, preloader: action.status
             }
+        case SET_STATUS:
+            return {
+                ...state, requestStatus: action.status
+            }
     }
     return state;
 }
-
+const setStatus = (status) => {
+    return {type: SET_STATUS, status};
+}
 const updateTaskSuccess = (todolistId, taskId, obj) => {
     return {type: UPDATE_TASK, todolistId, taskId, obj};
 }
@@ -176,7 +190,7 @@ const setTodolistsSuccess = (todolists) => {
 }
 const loadingTodosAC = (status) => ({type: LOADING_TODOS, status})
 const disabledTodoAC = (disabled) => ({type: DISABLED_TODOLIST, disabled})
-const disabledTaskAC = (disabled, todolistId) => ({type: DISABLED_TODOLIST, disabled, todolistId})
+const disabledTaskAC = (disabled, todolistId) => ({type: DISABLED_TASK, disabled, todolistId})
 const loadingTasksAC = (status, todolistId) => ({type: LOADING_TASKS, status, todolistId})
 
 
@@ -197,9 +211,11 @@ export const getTasks = (todolistId) => (dispatch) => {
         })
 }
 export const addTodo = (newTodo) => (dispatch) => {
+    dispatch(setStatus(STATUSES.PENDING))
     dispatch(disabledTodoAC(true))
     api.createTodolist(newTodo)
         .then(res => {
+            dispatch(setStatus(STATUSES.SUCCESS))
             if (res.data.resultCode === 0) {
                 dispatch(addTodolistSuccess(res.data.data.item))
                 dispatch(disabledTodoAC(false))
@@ -207,9 +223,11 @@ export const addTodo = (newTodo) => (dispatch) => {
         })
 }
 export const addTask = (task, todolistId) => (dispatch) => {
+    dispatch(setStatus(STATUSES.PENDING))
     dispatch(disabledTaskAC(true, todolistId))
     api.createTask(task, todolistId)
         .then(res => {
+            dispatch(setStatus(STATUSES.SUCCESS))
             if (res.data.resultCode === 0) {
                 dispatch(addTaskSuccess(res.data.data.item, todolistId))
                 dispatch(disabledTaskAC(false, todolistId))

@@ -21,7 +21,6 @@ export const api = {
         return instance.get(``)
     },
     changeTask(todolistId, taskId, task) {
-        debugger
         return instance.put(`${todolistId}/tasks/${taskId}`, task)
     },
     deleteTodolist(id) {
