@@ -47,7 +47,8 @@ const reducer = (state = initialState, action) => {
                 todolists: action.todolists.map(tl => ({
                     ...tl,
                     tasks: [],
-                    preloader: false
+                    preloader: false,
+                    disabled: false
                 }))
             }
         case ADD_TODOLIST:
@@ -140,7 +141,6 @@ const reducer = (state = initialState, action) => {
                                 if (t.id !== action.taskId) {
                                     return t;
                                 } else {
-                                    debugger
                                     return {...t, ...action.obj};
                                 }
                             })
@@ -211,11 +211,11 @@ export const getTasks = (todolistId) => (dispatch) => {
         })
 }
 export const addTodo = (newTodo) => (dispatch) => {
-    dispatch(setStatus(STATUSES.PENDING))
+    // dispatch(setStatus(STATUSES.PENDING))
     dispatch(disabledTodoAC(true))
     api.createTodolist(newTodo)
         .then(res => {
-            dispatch(setStatus(STATUSES.SUCCESS))
+            // dispatch(setStatus(STATUSES.SUCCESS))
             if (res.data.resultCode === 0) {
                 dispatch(addTodolistSuccess(res.data.data.item))
                 dispatch(disabledTodoAC(false))
@@ -223,11 +223,11 @@ export const addTodo = (newTodo) => (dispatch) => {
         })
 }
 export const addTask = (task, todolistId) => (dispatch) => {
-    dispatch(setStatus(STATUSES.PENDING))
+    // dispatch(setStatus(STATUSES.PENDING))
     dispatch(disabledTaskAC(true, todolistId))
     api.createTask(task, todolistId)
         .then(res => {
-            dispatch(setStatus(STATUSES.SUCCESS))
+            // dispatch(setStatus(STATUSES.SUCCESS))
             if (res.data.resultCode === 0) {
                 dispatch(addTaskSuccess(res.data.data.item, todolistId))
                 dispatch(disabledTaskAC(false, todolistId))
@@ -261,7 +261,6 @@ export const changeTitle = (todolistId, title) => (dispatch) => {
 export const updateTask = (todolistId, taskId, obj, task) => (dispatch) => {
     api.changeTask(todolistId, taskId, task)
         .then(res => {
-            debugger
             dispatch(updateTaskSuccess(todolistId, taskId, obj))
         })
 }

@@ -36,7 +36,6 @@ class AddNewItemForm extends React.Component {
 
 
     render = () => {
-        console.log(this.props.disabledTodo)
         let classNameForInput = this.state.error ? "error" : "";
         return (
             <div className="todoList-newTaskForm">
@@ -45,8 +44,9 @@ class AddNewItemForm extends React.Component {
                        onKeyPress={this.onKeyPress}
                        value={this.state.title}
                 />
-                <button disabled={this.props.requestStatus === STATUSES.PENDING}
-                        onClick={this.onAddItemClick}>Add
+                <button
+                    disabled={this.props.disabledTodo || this.props.disabled}
+                    onClick={this.onAddItemClick}>Add
                 </button>
             </div>
 
@@ -54,5 +54,7 @@ class AddNewItemForm extends React.Component {
     }
 }
 
+{/*{this.props.requestStatus === STATUSES.PENDING}*/
+}
 export default AddNewItemForm;
 

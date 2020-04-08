@@ -27,7 +27,6 @@ class TodoListTitle extends React.Component {
             this.props.changeHeader(this.state.title)
             this.setState({editMode: false})
         }
-        debugger
 
     }
     render = () => {

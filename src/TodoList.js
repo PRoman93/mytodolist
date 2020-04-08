@@ -42,7 +42,6 @@ class TodoList extends React.Component {
     }
 
     changeTask = (taskId, obj) => {
-        debugger
         let changedTask = this.props.tasks.find(task => {
             return task.id === taskId
         });
@@ -50,7 +49,6 @@ class TodoList extends React.Component {
         this.props.updateTask(this.props.id, taskId, obj, task)
     }
     changeStatus = (taskId, status) => {
-        debugger
         this.changeTask(taskId, {status: status});
     }
     changeTitle = (task, title) => {
@@ -67,7 +65,10 @@ class TodoList extends React.Component {
     }
 
     render = () => {
+        debugger
         let {tasks = []} = this.props;
+        let disabledTodo = this.props.todolists.disabled;
+        console.log('disabled: ', disabledTodo)
         return (
             <div className="todoList">
                 <div className="todoList-header">
@@ -75,27 +76,30 @@ class TodoList extends React.Component {
                                    id={this.props.id}
                                    title={this.props.title}
                                    onDelete={this.deleteTodolist}/>
-                    <AddNewItemForm requestStatus={this.props.requestStatus} addItem={this.addTask}/>
+                    <AddNewItemForm
+                        disabledTodo={disabledTodo}
+                        requestStatus={this.props.requestStatus}
+                        addItem={this.addTask}/>
                 </div>
                 {this.props.todolists.preloader
                     ? <Preloader preloader={'preloader'}/>
-                : <TodoListTasks changeStatus={this.changeStatus}
-                                 changeTitle={this.changeTitle}
-                                 deleteTask={this.deleteTask}
-                                 preloader={this.props.preloader}
+                    : <TodoListTasks changeStatus={this.changeStatus}
+                                     changeTitle={this.changeTitle}
+                                     deleteTask={this.deleteTask}
+                                     preloader={this.props.preloader}
                         /*tasks={this.props.tasks.filter(t => {*/
-                                 tasks={tasks
-                                     .filter(t => {
-                                         if (this.state.filterValue === "All") {
-                                             return true;
-                                         }
-                                         if (this.state.filterValue === "Active") {
-                                             return t.status === 0
-                                         }
-                                         if (this.state.filterValue === "Completed") {
-                                             return t.status === 2
-                                         }
-                                     })}
+                                     tasks={tasks
+                                         .filter(t => {
+                                             if (this.state.filterValue === "All") {
+                                                 return true;
+                                             }
+                                             if (this.state.filterValue === "Active") {
+                                                 return t.status === 0
+                                             }
+                                             if (this.state.filterValue === "Completed") {
+                                                 return t.status === 2
+                                             }
+                                         })}
                     />}
 
                 <TodoListFooter changeFilter={this.changeFilter} filterValue={this.state.filterValue}/>
@@ -115,7 +119,6 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(thunk)
         },
         updateTask(todolistId, taskId, obj, task) {
-            debugger
             const thunk = updateTask(todolistId, taskId, obj, task);
             dispatch(thunk);
         },
