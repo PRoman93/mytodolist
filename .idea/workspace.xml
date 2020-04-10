@@ -3,11 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddNewItemForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddNewItemForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoListTitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTitle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +41,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="D:\React\Projects\todolist\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -156,7 +159,13 @@
       <workItem from="1586338467200" duration="16000" />
       <workItem from="1586340109954" duration="2363000" />
       <workItem from="1586345191695" duration="551000" />
-      <workItem from="1586346084395" duration="3743000" />
+      <workItem from="1586346084395" duration="6762000" />
+      <workItem from="1586363394234" duration="146000" />
+      <workItem from="1586445736756" duration="730000" />
+      <workItem from="1586454349936" duration="329000" />
+      <workItem from="1586454703453" duration="1559000" />
+      <workItem from="1586501759660" duration="20000" />
+      <workItem from="1586513698477" duration="529000" />
     </task>
     <task id="LOCAL-00001" summary="1-st todolist is done">
       <created>1582638692320</created>
@@ -452,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586277834602</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="13-th todolist add preloader to setTask, and disabled to addTask correct">
+      <created>1586350402227</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1586350402227</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,7 +488,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactoring new" />
     <MESSAGE value="delete state in app" />
     <MESSAGE value="refresh state" />
     <MESSAGE value="edit todolist component" />
@@ -497,6 +512,7 @@
     <MESSAGE value="13-th todolist add preloader to setTodo" />
     <MESSAGE value="13-th todolist add preloader to setTask, and disabled to addTodo" />
     <MESSAGE value="13-th todolist add preloader to setTask, and disabled to addTask" />
-    <option name="LAST_COMMIT_MESSAGE" value="13-th todolist add preloader to setTask, and disabled to addTask" />
+    <MESSAGE value="13-th todolist add preloader to setTask, and disabled to addTask correct" />
+    <option name="LAST_COMMIT_MESSAGE" value="13-th todolist add preloader to setTask, and disabled to addTask correct" />
   </component>
 </project>

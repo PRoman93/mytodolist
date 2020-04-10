@@ -5,6 +5,7 @@ import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
 import {addTodo, getTodo} from "./reducer";
 import Preloader from "./Preloader";
+import TodoListTitle from "./TodoListTitle";
 
 class App extends React.Component {
 
@@ -27,8 +28,16 @@ class App extends React.Component {
     render = () => {
         const todolists = this.props
             .todolists
-            .map(tl => <TodoList requestStatus={this.props.requestStatus} key={tl.id} id={tl.id} title={tl.title} tasks={tl.tasks} todolists={tl}/>)
+            .map(tl => <TodoList disabledDeleteTodolist={this.props.disabledDeleteTodolist}
+                                 disabledDeleteTask={this.props.disabledDeleteTask}
+                                 requestStatus={this.props.requestStatus}
+                                 key={tl.id}
+                                 id={tl.id}
+                                 title={tl.title}
+                                 tasks={tl.tasks}
+                                 todolists={tl}/>)
 
+        // const disabledDeleteTodo = <TodoList disabled={this.props.disabled}/>
         return (
             <>
                 {
@@ -52,12 +61,13 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    debugger
     return {
-        todolists: state.todolists,
+        todolists: state.todolist.todolists,
         preloader: state.preloader,
         disabled: state.disabled,
-        requestStatus: state.requestStatus
+        requestStatus: state.requestStatus,
+        disabledDeleteTodolist: state.disabledDeleteTodolist,
+        disabledDeleteTask: state.disabledDeleteTask
     }
 }
 

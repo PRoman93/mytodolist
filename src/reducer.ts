@@ -12,23 +12,26 @@ export const LOADING_TODOS = "TodoList/Reducer/LOADING-TODOS";
 export const LOADING_TASKS = "TodoList/Reducer/LOADING-TASKS";
 export const DISABLED_TODOLIST = "TodoList/Reducer/DISABLED-TODOLIST";
 export const DISABLED_TASK = "TodoList/Reducer/DISABLED-TASK";
-export const SET_STATUS = "TodoList/Reducer/SET_STATUS";
+// export const SET_STATUS = "TodoList/Reducer/SET_STATUS";
+export const LOADING_DELETE_TODOLIST_SUCCESS = "TodoList/Reducer/LOADING-DELETE-TODOLIST-SUCCESS";
 
-export const STATUSES = {
-    SUCCESS: 'SUCCESS',
-    ERROR: 'ERROR',
-    PENDING: 'PENDING',
-    NOT_INIT: 'NOT_INIT'
-}
+// export const STATUSES = {
+//     SUCCESS: 'SUCCESS',
+//     ERROR: 'ERROR',
+//     PENDING: 'PENDING',
+//     NOT_INIT: 'NOT_INIT'
+// }
 
 const initialState = {
     todolists: [],
     preloader: false,
     disabled: false,
-    requestStatus: STATUSES.NOT_INIT
+    disabledDeleteTodolist: false,
+    disabledDeleteTask: false,
+    // requestStatus: STATUSES.NOT_INIT
 }
 
-const reducer = (state = initialState, action) => {
+const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_TASKS:
             return {
@@ -154,83 +157,97 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state, preloader: action.status
             }
-        case SET_STATUS:
+        case LOADING_DELETE_TODOLIST_SUCCESS:
             return {
-                ...state, requestStatus: action.status
+                ...state, todolists: state.todolists.map(t => {
+                    if (t.id === action.todolistId) {
+                        return {
+                            ...state,
+                            disabledDeleteTodolist: action.disabled
+                        }
+                    } else {
+                        return t
+                    }
+                })
             }
+        // case SET_STATUS:
+        //     return {
+        //         ...state, requestStatus: action.status
+        //     }
     }
     return state;
 }
-const setStatus = (status) => {
-    return {type: SET_STATUS, status};
-}
-const updateTaskSuccess = (todolistId, taskId, obj) => {
-    return {type: UPDATE_TASK, todolistId, taskId, obj};
-}
-const deleteTodolistSuccess = (todolistId) => {
-    return {type: DELETE_TODOLIST, todolistId: todolistId};
-}
-const deleteTaskSuccess = (taskId, todolistId) => {
-    return {type: DELETE_TASK, taskId, todolistId};
-}
-const addTaskSuccess = (task) => {
-    return {type: ADD_TASK, task};
-}
-const setTasksSuccess = (tasks, todolistId) => {
-    return {type: SET_TASKS, tasks, todolistId};
-}
-const addTodolistSuccess = (newTodolist) => {
-    return {type: ADD_TODOLIST, newTodolist: newTodolist}
-}
-const changeHeaderSuccess = (todolistId, title) => {
-    return {type: CHANGE_HEADER, todolistId, title}
-}
-const setTodolistsSuccess = (todolists) => {
-    return {type: SET_TODOLISTS, todolists: todolists}
-}
-const loadingTodosAC = (status) => ({type: LOADING_TODOS, status})
-const disabledTodoAC = (disabled) => ({type: DISABLED_TODOLIST, disabled})
-const disabledTaskAC = (disabled, todolistId) => ({type: DISABLED_TASK, disabled, todolistId})
-const loadingTasksAC = (status, todolistId) => ({type: LOADING_TASKS, status, todolistId})
+// const setStatus = (status) => {
+//     return {type: SET_STATUS, status};
+// }
+const updateTaskSuccess = (todolistId, taskId, obj) => ({type: UPDATE_TASK, todolistId, taskId, obj})
+
+const deleteTodolistSuccess = (todolistId) => ({type: DELETE_TODOLIST, todolistId: todolistId})
+
+const deleteTaskSuccess = (taskId, todolistId) => ({type: DELETE_TASK, taskId, todolistId})
+
+const addTaskSuccess = (task) => ({type: ADD_TASK, task})
+
+const setTasksSuccess = (tasks, todolistId) => ({type: SET_TASKS, tasks, todolistId})
+
+const addTodolistSuccess = (newTodolist) => ({type: ADD_TODOLIST, newTodolist: newTodolist})
+
+const changeHeaderSuccess = (todolistId, title) => ({type: CHANGE_HEADER, todolistId, title})
+
+const setTodolistsSuccess = (todolists) => ({type: SET_TODOLISTS, todolists: todolists})
+
+const loadingTodosSuccess = (status) => ({type: LOADING_TODOS, status})
+
+const disabledTodoSuccess = (disabled) => ({type: DISABLED_TODOLIST, disabled})
+
+const disabledTaskSuccess = (disabled, todolistId) => ({type: DISABLED_TASK, disabled, todolistId})
+
+const loadingTasksSuccess = (status, todolistId) => ({type: LOADING_TASKS, status, todolistId})
+
+const loadingDeleteTodolistSuccess = (todolistId, disabled) => ({
+    type: LOADING_DELETE_TODOLIST_SUCCESS,
+    todolistId,
+    disabled
+})
 
 
 export const getTodo = () => (dispatch) => {
-    dispatch(loadingTodosAC(true))
+    dispatch(loadingTodosSuccess(true))
     api.getTodolists()
         .then(res => {
             dispatch(setTodolistsSuccess(res.data))
-            dispatch(loadingTodosAC(false))
+            dispatch(loadingTodosSuccess(false))
         })
 }
 export const getTasks = (todolistId) => (dispatch) => {
-    dispatch(loadingTasksAC(true, todolistId))
+    dispatch(loadingTasksSuccess(true, todolistId))
     api.getTasks(todolistId)
         .then(res => {
-            dispatch(loadingTasksAC(false, todolistId))
+            dispatch(loadingTasksSuccess(false, todolistId))
             dispatch(setTasksSuccess(res.data.items, todolistId))
         })
 }
 export const addTodo = (newTodo) => (dispatch) => {
     // dispatch(setStatus(STATUSES.PENDING))
-    dispatch(disabledTodoAC(true))
+    dispatch(disabledTodoSuccess(true))
     api.createTodolist(newTodo)
         .then(res => {
             // dispatch(setStatus(STATUSES.SUCCESS))
             if (res.data.resultCode === 0) {
                 dispatch(addTodolistSuccess(res.data.data.item))
-                dispatch(disabledTodoAC(false))
+                dispatch(disabledTodoSuccess(false))
             }
         })
 }
 export const addTask = (task, todolistId) => (dispatch) => {
     // dispatch(setStatus(STATUSES.PENDING))
-    dispatch(disabledTaskAC(true, todolistId))
+    dispatch(disabledTaskSuccess(true, todolistId))
     api.createTask(task, todolistId)
         .then(res => {
             // dispatch(setStatus(STATUSES.SUCCESS))
             if (res.data.resultCode === 0) {
                 dispatch(addTaskSuccess(res.data.data.item, todolistId))
-                dispatch(disabledTaskAC(false, todolistId))
+                dispatch(disabledTaskSuccess(false, todolistId))
             }
         })
 }
@@ -243,9 +260,11 @@ export const deleteTask = (taskId, todolistId) => (dispatch) => {
         })
 }
 export const deleteTodo = (todolistId) => (dispatch) => {
+    dispatch(loadingDeleteTodolistSuccess(todolistId, true))
     api.deleteTodolist(todolistId)
         .then(res => {
             if (res.data.resultCode === 0) {
+                dispatch(loadingDeleteTodolistSuccess(todolistId, false))
                 dispatch(deleteTodolistSuccess(todolistId))
             }
         })
@@ -265,4 +284,4 @@ export const updateTask = (todolistId, taskId, obj, task) => (dispatch) => {
         })
 }
 
-export default reducer;
+export default rootReducer;

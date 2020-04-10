@@ -30,12 +30,13 @@ class TodoListTitle extends React.Component {
 
     }
     render = () => {
+        console.log(this.props)
         return (
             <>
                 {!this.state.editMode &&
                 <h3 onDoubleClick={this.onEditTitleMode}
                     className="todoList-header__title">{this.state.title}
-                    <button onClick={this.props.onDelete}>X</button>
+                    <button disabled={this.props.disabled} onClick={this.props.onDelete}>X</button>
                 </h3>}
 
                 {this.state.editMode && <input type="text"

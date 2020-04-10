@@ -65,19 +65,17 @@ class TodoList extends React.Component {
     }
 
     render = () => {
-        debugger
         let {tasks = []} = this.props;
-        let disabledTodo = this.props.todolists.disabled;
-        console.log('disabled: ', disabledTodo)
         return (
             <div className="todoList">
                 <div className="todoList-header">
                     <TodoListTitle changeHeader={this.changeHeader}
+                                   disabled={this.props.disabledDeleteTodolist}
                                    id={this.props.id}
                                    title={this.props.title}
                                    onDelete={this.deleteTodolist}/>
                     <AddNewItemForm
-                        disabledTodo={disabledTodo}
+                        disabledTodo={this.props.todolists.disabled}
                         requestStatus={this.props.requestStatus}
                         addItem={this.addTask}/>
                 </div>
