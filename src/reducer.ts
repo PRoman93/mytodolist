@@ -31,7 +31,7 @@ const initialState = {
     // requestStatus: STATUSES.NOT_INIT
 }
 
-const rootReducer = (state = initialState, action) => {
+const todolistReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_TASKS:
             return {
@@ -284,4 +284,4 @@ export const updateTask = (todolistId, taskId, obj, task) => (dispatch) => {
         })
 }
 
-export default rootReducer;
+export default todolistReducer;

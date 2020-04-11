@@ -1,10 +1,10 @@
 import {applyMiddleware, combineReducers, createStore} from "redux";
-import rootReducer from "./reducer";
+import todolistReducer from "./reducer";
 import thunkMiddleware from "redux-thunk";
 
 
 let rootReducer = combineReducers({
-    todolist:rootReducer
+    todolist:todolistReducer
 })
 const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 

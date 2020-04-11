@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoListTitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTitle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -166,6 +161,7 @@
       <workItem from="1586454703453" duration="1559000" />
       <workItem from="1586501759660" duration="20000" />
       <workItem from="1586513698477" duration="529000" />
+      <workItem from="1586518764053" duration="516000" />
     </task>
     <task id="LOCAL-00001" summary="1-st todolist is done">
       <created>1582638692320</created>
@@ -468,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586350402227</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="14-th lesson- try to change on typescript is failed">
+      <created>1586518798772</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1586518798772</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,7 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="delete state in app" />
     <MESSAGE value="refresh state" />
     <MESSAGE value="edit todolist component" />
     <MESSAGE value="add some files to git" />
@@ -513,6 +515,7 @@
     <MESSAGE value="13-th todolist add preloader to setTask, and disabled to addTodo" />
     <MESSAGE value="13-th todolist add preloader to setTask, and disabled to addTask" />
     <MESSAGE value="13-th todolist add preloader to setTask, and disabled to addTask correct" />
-    <option name="LAST_COMMIT_MESSAGE" value="13-th todolist add preloader to setTask, and disabled to addTask correct" />
+    <MESSAGE value="14-th lesson- try to change on typescript is failed" />
+    <option name="LAST_COMMIT_MESSAGE" value="14-th lesson- try to change on typescript is failed" />
   </component>
 </project>
