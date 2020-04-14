@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="" />
+    <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/types/action_creators_types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/constants.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/entities.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -24,7 +33,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-test-task-master (1)/react-test-task-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -159,6 +168,8 @@
       <workItem from="1586513698477" duration="529000" />
       <workItem from="1586518764053" duration="516000" />
       <workItem from="1586627310786" duration="65000" />
+      <workItem from="1586844575207" duration="68000" />
+      <workItem from="1586867597705" duration="5547000" />
     </task>
     <task id="LOCAL-00001" summary="1-st todolist is done">
       <created>1582638692320</created>
@@ -475,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586627359416</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="14-th lesson- delete some comments">
+      <created>1586844632234</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1586844632234</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +513,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="edit todolist component" />
     <MESSAGE value="add some files to git" />
     <MESSAGE value="add axios" />
     <MESSAGE value="13-th is done 11 list" />
@@ -520,6 +537,7 @@
     <MESSAGE value="13-th todolist add preloader to setTask, and disabled to addTask correct" />
     <MESSAGE value="14-th lesson- try to change on typescript is failed" />
     <MESSAGE value="14-th lesson- try to change on typescript is failed again" />
-    <option name="LAST_COMMIT_MESSAGE" value="14-th lesson- try to change on typescript is failed again" />
+    <MESSAGE value="14-th lesson- delete some comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="14-th lesson- delete some comments" />
   </component>
 </project>

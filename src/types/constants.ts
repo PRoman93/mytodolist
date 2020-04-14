@@ -1,0 +1,13 @@
+export const ADD_TODOLIST = "TodoList/Reducer/ADD-TODOLIST";
+export const DELETE_TODOLIST = "TodoList/Reducer/DELETE-TODOLIST";
+export const DELETE_TASK = "TodoList/Reducer/DELETE-TASK";
+export const ADD_TASK = "TodoList/Reducer/ADD-TASK";
+export const SET_TASKS = "TodoList/Reducer/SET-TASKS";
+export const UPDATE_TASK = "TodoList/Reducer/UPDATE-TASK";
+export const SET_TODOLISTS = "TodoList/Reducer/SET-TODOLISTS";
+export const CHANGE_HEADER = "TodoList/Reducer/CHANGE-HEADER";
+export const LOADING_TODOS = "TodoList/Reducer/LOADING-TODOS";
+export const LOADING_TASKS = "TodoList/Reducer/LOADING-TASKS";
+export const DISABLED_TODOLIST = "TodoList/Reducer/DISABLED-TODOLIST";
+export const DISABLED_TASK = "TodoList/Reducer/DISABLED-TASK";
+export const LOADING_DELETE_TODOLIST_SUCCESS = "TodoList/Reducer/LOADING-DELETE-TODOLIST-SUCCESS";
