@@ -22,12 +22,12 @@ export type deleteTaskSuccessActionType = {
 }
 export type addTaskSuccessActionType = {
     type: typeof ADD_TASK,
-    task: Array<TaskType>,
+    task: TaskType,
     todolistId:string
 }
 export type setTasksSuccessActionType = {
     type: typeof SET_TASKS,
-    tasks: TaskType,
+    tasks: TaskType[],
     todolistId:string
 }
 export type addTodolistSuccessActionType = {

@@ -19,11 +19,17 @@ import {ThunkAction, ThunkDispatch} from "redux-thunk";
 import {
     ADD_TASK,
     ADD_TODOLIST,
-    CHANGE_HEADER, DELETE_TASK, DELETE_TODOLIST,
+    CHANGE_HEADER,
+    DELETE_TASK,
+    DELETE_TODOLIST,
     DISABLED_TASK,
-    DISABLED_TODOLIST, LOADING_DELETE_TODOLIST_SUCCESS, LOADING_TASKS, LOADING_TODOS,
+    DISABLED_TODOLIST,
+    LOADING_DELETE_TODOLIST_SUCCESS,
+    LOADING_TASKS,
+    LOADING_TODOS,
     SET_TASKS,
-    SET_TODOLISTS, UPDATE_TASK
+    SET_TODOLISTS,
+    UPDATE_TASK
 } from "./types/constants";
 
 const initialState: InitialStateType = {
@@ -39,7 +45,7 @@ const todolistReducer = (state: InitialStateType = initialState, action: AppActi
         case SET_TASKS:
             return {
                 ...state,
-                todolists: state.todolists.map((tl:TodoListType) => {
+                todolists: state.todolists.map((tl: TodoListType) => {
                     if (tl.id !== action.todolistId) {
                         return tl;
                     } else {
@@ -160,19 +166,20 @@ const todolistReducer = (state: InitialStateType = initialState, action: AppActi
             return {
                 ...state, preloader: action.status
             }
-        case LOADING_DELETE_TODOLIST_SUCCESS:
-            return {
-                ...state, todolists: state.todolists.map(t => {
-                    if (t.id === action.todolistId) {
-                        return {
-                            ...state,
-                            disabledDeleteTodolist: action.disabled
-                        }
-                    } else {
-                        return t
-                    }
-                })
-            }
+        // case LOADING_DELETE_TODOLIST_SUCCESS:
+        //     return {
+        //         ...state, todolists: state.todolists.map(t => {
+        //             if (t.id === action.todolistId) {
+        //                 return {
+        //                     ...state,
+        //
+        //                     disabledDeleteTodolist: action.disabled
+        //                 }
+        //             } else {
+        //                 return t
+        //             }
+        //         })
+        //     }
     }
     return state;
 }
@@ -187,10 +194,10 @@ const deleteTodolistSuccess = (todolistId: string): deleteTodolistSuccessActionT
 const deleteTaskSuccess = (taskId: string, todolistId: string): deleteTaskSuccessActionType =>
     ({type: DELETE_TASK, taskId, todolistId})
 
-const addTaskSuccess = (task: Array<TaskType>, todolistId:string): addTaskSuccessActionType =>
+const addTaskSuccess = (task: TaskType, todolistId: string): addTaskSuccessActionType =>
     ({type: ADD_TASK, task, todolistId})
 
-const setTasksSuccess = (tasks: TaskType, todolistId: string): setTasksSuccessActionType =>
+const setTasksSuccess = (tasks: TaskType[], todolistId: string): setTasksSuccessActionType =>
     ({type: SET_TASKS, tasks, todolistId})
 
 const addTodolistSuccess = (newTodolist: TodoListType): addTodolistSuccessActionType =>
@@ -249,7 +256,7 @@ export const getTodo = (): ThunkType => (dispatch: ThunkDispatchType) => {
             dispatch(loadingTodosSuccess(false))
         })
 }
-export const getTasks = (todolistId:string): ThunkType => (dispatch: ThunkDispatchType) => {
+export const getTasks = (todolistId: string): ThunkType => (dispatch: ThunkDispatchType) => {
     dispatch(loadingTasksSuccess(true, todolistId))
     api.getTasks(todolistId)
         .then(res => {
@@ -257,7 +264,7 @@ export const getTasks = (todolistId:string): ThunkType => (dispatch: ThunkDispat
             dispatch(setTasksSuccess(res.data.items, todolistId))
         })
 }
-export const addTodo = (newTodo: Array<TodoListType>): ThunkType => (dispatch:ThunkDispatchType) => {
+export const addTodo = (newTodo: Array<TodoListType>): ThunkType => (dispatch: ThunkDispatchType) => {
     dispatch(disabledTodoSuccess(true))
     api.createTodolist(newTodo)
         .then(res => {
@@ -267,7 +274,7 @@ export const addTodo = (newTodo: Array<TodoListType>): ThunkType => (dispatch:Th
             }
         })
 }
-export const addTask = (task:TaskType, todolistId:string) => (dispatch:ThunkDispatchType) => {
+export const addTask = (task: TaskType, todolistId: string) => (dispatch: ThunkDispatchType) => {
     dispatch(disabledTaskSuccess(true, todolistId))
     api.createTask(task, todolistId)
         .then(res => {
@@ -277,7 +284,7 @@ export const addTask = (task:TaskType, todolistId:string) => (dispatch:ThunkDisp
             }
         })
 }
-export const deleteTask = (taskId:string, todolistId:string):ThunkType => (dispatch:ThunkDispatchType) => {
+export const deleteTask = (taskId: string, todolistId: string): ThunkType => (dispatch: ThunkDispatchType) => {
     api.deleteTask(taskId, todolistId)
         .then(res => {
             if (res.data.resultCode === 0) {
@@ -285,7 +292,7 @@ export const deleteTask = (taskId:string, todolistId:string):ThunkType => (dispa
             }
         })
 }
-export const deleteTodo = (todolistId:string) => (dispatch:ThunkDispatchType) => {
+export const deleteTodo = (todolistId: string) => (dispatch: ThunkDispatchType) => {
     dispatch(loadingDeleteTodolistSuccess(todolistId, true))
     api.deleteTodolist(todolistId)
         .then(res => {
@@ -295,7 +302,7 @@ export const deleteTodo = (todolistId:string) => (dispatch:ThunkDispatchType) =>
             }
         })
 }
-export const changeTitle = (todolistId:string, title:string) => (dispatch:ThunkDispatchType) => {
+export const changeTitle = (todolistId: string, title: string) => (dispatch: ThunkDispatchType) => {
     api.changeHeader(todolistId, title)
         .then(res => {
             if (res.data.resultCode === 0) {
@@ -303,7 +310,7 @@ export const changeTitle = (todolistId:string, title:string) => (dispatch:ThunkD
             }
         })
 }
-export const updateTask = (todolistId:string, taskId:string, obj:any, task:TaskType) => (dispatch:ThunkDispatchType) => {
+export const updateTask = (todolistId: string, taskId: string, obj: any, task: TaskType) => (dispatch: ThunkDispatchType) => {
     api.changeTask(todolistId, taskId, task)
         .then(res => {
             dispatch(updateTaskSuccess(todolistId, taskId, obj))
