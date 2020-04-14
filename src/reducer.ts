@@ -12,15 +12,8 @@ export const LOADING_TODOS = "TodoList/Reducer/LOADING-TODOS";
 export const LOADING_TASKS = "TodoList/Reducer/LOADING-TASKS";
 export const DISABLED_TODOLIST = "TodoList/Reducer/DISABLED-TODOLIST";
 export const DISABLED_TASK = "TodoList/Reducer/DISABLED-TASK";
-// export const SET_STATUS = "TodoList/Reducer/SET_STATUS";
 export const LOADING_DELETE_TODOLIST_SUCCESS = "TodoList/Reducer/LOADING-DELETE-TODOLIST-SUCCESS";
 
-// export const STATUSES = {
-//     SUCCESS: 'SUCCESS',
-//     ERROR: 'ERROR',
-//     PENDING: 'PENDING',
-//     NOT_INIT: 'NOT_INIT'
-// }
 
 const initialState = {
     todolists: [],
@@ -170,16 +163,9 @@ const todolistReducer = (state = initialState, action) => {
                     }
                 })
             }
-        // case SET_STATUS:
-        //     return {
-        //         ...state, requestStatus: action.status
-        //     }
     }
     return state;
 }
-// const setStatus = (status) => {
-//     return {type: SET_STATUS, status};
-// }
 const updateTaskSuccess = (todolistId, taskId, obj) => ({type: UPDATE_TASK, todolistId, taskId, obj})
 
 const deleteTodolistSuccess = (todolistId) => ({type: DELETE_TODOLIST, todolistId: todolistId})
