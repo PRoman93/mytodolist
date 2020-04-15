@@ -76,7 +76,7 @@ const todolistReducer = (state: InitialStateType = initialState, action: AppActi
         case CHANGE_HEADER:
             return {
                 ...state,
-                todolists: state.todolists.map(t => {
+                todolists: state.todolists.map((t: TodoListType) => {
                     if (t.id === action.todolistId) {
                         return {
                             ...t, title: action.title
@@ -89,7 +89,7 @@ const todolistReducer = (state: InitialStateType = initialState, action: AppActi
         case DISABLED_TASK:
             return {
                 ...state,
-                todolists: state.todolists.map(t => {
+                todolists: state.todolists.map((t: TodoListType) => {
                     if (t.id === action.todolistId) {
                         return {
                             ...t, disabled: action.disabled
@@ -102,7 +102,7 @@ const todolistReducer = (state: InitialStateType = initialState, action: AppActi
         case LOADING_TASKS:
             return {
                 ...state,
-                todolists: state.todolists.map(t => {
+                todolists: state.todolists.map((t: TodoListType) => {
                     if (t.id === action.todolistId) {
                         return {
                             ...t, preloader: action.status
@@ -115,12 +115,12 @@ const todolistReducer = (state: InitialStateType = initialState, action: AppActi
         case DELETE_TODOLIST:
             return {
                 ...state,
-                todolists: state.todolists.filter(tl => tl.id !== action.todolistId)
+                todolists: state.todolists.filter((tl: TodoListType) => tl.id !== action.todolistId)
             }
         case DELETE_TASK:
             return {
                 ...state,
-                todolists: state.todolists.map(tl => {
+                todolists: state.todolists.map((tl: TodoListType) => {
                     if (tl.id === action.todolistId) {
                         return {
                             ...tl,
@@ -134,7 +134,7 @@ const todolistReducer = (state: InitialStateType = initialState, action: AppActi
         case ADD_TASK:
             return {
                 ...state,
-                todolists: state.todolists.map(tl => {
+                todolists: state.todolists.map((tl: TodoListType) => {
                     if (tl.id === action.task.todoListId) {
                         return {...tl, tasks: [...tl.tasks, action.task]}
                     } else {
@@ -145,7 +145,7 @@ const todolistReducer = (state: InitialStateType = initialState, action: AppActi
         case UPDATE_TASK:
             return {
                 ...state,
-                todolists: state.todolists.map(tl => {
+                todolists: state.todolists.map((tl: TodoListType) => {
                     if (tl.id === action.todolistId) {
                         return {
                             ...tl,
@@ -244,9 +244,10 @@ type TodoActionType =
 type AppActionType = TodoActionType
 
 
-//thunk type
+//thunk types
 type ThunkType = ThunkAction<void, InitialStateType, unknown, AppActionType>
 type ThunkDispatchType = ThunkDispatch<InitialStateType, unknown, AppActionType>
+///
 
 export const getTodo = (): ThunkType => (dispatch: ThunkDispatchType) => {
     dispatch(loadingTodosSuccess(true))
@@ -264,7 +265,7 @@ export const getTasks = (todolistId: string): ThunkType => (dispatch: ThunkDispa
             dispatch(setTasksSuccess(res.data.items, todolistId))
         })
 }
-export const addTodo = (newTodo: Array<TodoListType>): ThunkType => (dispatch: ThunkDispatchType) => {
+export const addTodo = (newTodo: string): ThunkType => (dispatch: ThunkDispatchType) => {
     dispatch(disabledTodoSuccess(true))
     api.createTodolist(newTodo)
         .then(res => {
@@ -274,7 +275,8 @@ export const addTodo = (newTodo: Array<TodoListType>): ThunkType => (dispatch: T
             }
         })
 }
-export const addTask = (task: TaskType, todolistId: string) => (dispatch: ThunkDispatchType) => {
+export const addTask = (task: string, todolistId: string) => (dispatch: ThunkDispatchType) => {
+
     dispatch(disabledTaskSuccess(true, todolistId))
     api.createTask(task, todolistId)
         .then(res => {

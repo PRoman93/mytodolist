@@ -3,8 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddNewItemForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddNewItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAL/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAL/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Preloader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Preloader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoListTitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTitle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/action_creators_types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/action_creators_types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/entities.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/entities.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Todolists/ts-14-lesson" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -37,6 +45,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
     <property name="ts.external.directory.path" value="D:\React\Projects\todolist\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -166,7 +175,9 @@
       <workItem from="1586627310786" duration="65000" />
       <workItem from="1586844575207" duration="68000" />
       <workItem from="1586867597705" duration="5755000" />
-      <workItem from="1586876230711" duration="3268000" />
+      <workItem from="1586876230711" duration="3306000" />
+      <workItem from="1586932146567" duration="3975000" />
+      <workItem from="1586948600519" duration="9253000" />
     </task>
     <task id="LOCAL-00001" summary="1-st todolist is done">
       <created>1582638692320</created>
@@ -497,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586873922951</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="14-th lesson- reducer is done to ts">
+      <created>1586880977888</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1586880977888</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,7 +535,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add axios" />
     <MESSAGE value="13-th is done 11 list" />
     <MESSAGE value="change status if fail" />
     <MESSAGE value="delete task is done" />
@@ -542,6 +559,7 @@
     <MESSAGE value="14-th lesson- try to change on typescript is failed again" />
     <MESSAGE value="14-th lesson- delete some comments" />
     <MESSAGE value="14-th lesson- started to changing reducer to ts" />
-    <option name="LAST_COMMIT_MESSAGE" value="14-th lesson- started to changing reducer to ts" />
+    <MESSAGE value="14-th lesson- reducer is done to ts" />
+    <option name="LAST_COMMIT_MESSAGE" value="14-th lesson- reducer is done to ts" />
   </component>
 </project>

@@ -1,8 +1,17 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import './App.css';
-import {STATUSES} from "./reducer";
 
-class AddNewItemForm extends React.Component {
+type PropType = {
+    addItem:(newText:string )=>void,
+    disabledTodo?: Array<boolean>,
+    disabled?:any
+    requestStatus?:boolean
+}
+type StateType = {
+    error:boolean,
+    title:string
+}
+class AddNewItemForm extends React.Component<PropType, StateType> {
     state = {
         error: false,
         title: ""
@@ -21,14 +30,14 @@ class AddNewItemForm extends React.Component {
         }
     }
 
-    onTitleChanged = (e) => {
+    onTitleChanged = (e:ChangeEvent<HTMLInputElement>) => {
         this.setState({
             error: false,
             title: e.currentTarget.value
         });
     }
 
-    onKeyPress = (e) => {
+    onKeyPress = (e:React.KeyboardEvent<HTMLDivElement>) => {
         if (e.key === "Enter") {
             this.onAddItemClick();
         }

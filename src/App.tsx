@@ -5,15 +5,30 @@ import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
 import {addTodo, getTodo} from "./reducer";
 import Preloader from "./Preloader";
-import TodoListTitle from "./TodoListTitle";
+import {InitialStateType, TodoListType} from "./types/entities";
+import {ThunkDispatch} from "redux-thunk";
+import {AppStateType} from "./store";
+import {Dispatch} from "redux";
 
-class App extends React.Component {
+type MapStateToPropsType = {
+    todolists: Array<TodoListType>,
+    preloader: boolean,
+    disabled: boolean,
+    disabledDeleteTodolist: boolean,
+    disabledDeleteTask: boolean,
+}
+type MapDispatchToProps = {
+    setTodolists: () => void,
+    addTodolist: (newTodolist: string) => void
+}
 
-    state = {
-        todolists: []
-    }
+class App extends React.Component<MapStateToPropsType & MapDispatchToProps> {
 
-    addTodoList = (newTodolist) => {
+    // state = {
+    //     todolists: []
+    // }
+
+    addTodoList = (newTodolist: string) => {
         this.props.addTodolist(newTodolist)
     }
 
@@ -22,7 +37,7 @@ class App extends React.Component {
     }
 
     restoreState = () => {
-        this.props.setTodolists(this.props.id)
+        this.props.setTodolists()
     }
 
     render = () => {
@@ -30,14 +45,12 @@ class App extends React.Component {
             .todolists
             .map(tl => <TodoList disabledDeleteTodolist={this.props.disabledDeleteTodolist}
                                  disabledDeleteTask={this.props.disabledDeleteTask}
-                                 requestStatus={this.props.requestStatus}
                                  key={tl.id}
                                  id={tl.id}
                                  title={tl.title}
                                  tasks={tl.tasks}
                                  todolists={tl}/>)
 
-        // const disabledDeleteTodo = <TodoList disabled={this.props.disabled}/>
         return (
             <>
                 {
@@ -46,7 +59,6 @@ class App extends React.Component {
                         : <>
                             <div>
                                 <AddNewItemForm addItem={this.addTodoList}
-                                                requestStatus={this.props.requestStatus}
                                                 disabled={this.props.disabled}
                                 />
                             </div>
@@ -60,30 +72,29 @@ class App extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
     return {
         todolists: state.todolist.todolists,
-        preloader: state.preloader,
-        disabled: state.disabled,
-        requestStatus: state.requestStatus,
-        disabledDeleteTodolist: state.disabledDeleteTodolist,
-        disabledDeleteTask: state.disabledDeleteTask
+        preloader: state.todolist.preloader,
+        disabled: state.todolist.disabled,
+        disabledDeleteTodolist: state.todolist.disabledDeleteTodolist,
+        disabledDeleteTask: state.todolist.disabledDeleteTask
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any): MapDispatchToProps => { //
     return {
         setTodolists: () => {
             const thunk = getTodo();
             dispatch(thunk)
         },
-        addTodolist: (newTodolist) => {
+        addTodolist: (newTodolist: string) => {
             const thunk = addTodo(newTodolist);
             dispatch(thunk)
         }
     }
 }
 
-const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
+const ConnectedApp = connect<MapStateToPropsType, MapDispatchToProps, {}, AppStateType>(mapStateToProps, mapDispatchToProps)(App);
 export default ConnectedApp;
 

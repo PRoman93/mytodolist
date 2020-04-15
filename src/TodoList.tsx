@@ -14,58 +14,76 @@ import {
     updateTask
 } from "./reducer";
 import Preloader from "./Preloader";
+import {TaskType, TodoListType} from "./types/entities";
 
 
-class TodoList extends React.Component {
-
+type PropType = {
+    setTasks:(todolistId:string)=>void,
+    addTask:(newText:string, todolistId:string)=>void,
+    updateTask:(todolistid:string, taskId:string, obj:any, task:TaskType)=>void,
+    deleteTodolist:(todolistId:string)=>void,
+    deleteTask:(taskId:string, todolistid:string)=>void,
+    changeHeader:(todolistId:string, title:string)=>void,
+    id:string,
+    disabledDeleteTodolist:boolean,
+    title:string,
+    preloader:boolean,
+    requestStatus:boolean,
+    tasks:Array<TaskType>,
+    todolists:Array<TodoListType>
+}
+type StateType = {
+    filterValue:string
+}
+class TodoList extends React.Component<PropType, StateType> {
 
     componentDidMount() {
         this.restoreState();
     }
 
-
     restoreState = () => {
         this.props.setTasks(this.props.id)
     }
 
-
     state = {
         filterValue: "All"
     };
-    addTask = (newText) => {
+    addTask = (newText:string) => {
         this.props.addTask(newText, this.props.id)
     }
-    changeFilter = (newFilterValue) => {
+    changeFilter = (newFilterValue:string) => {
         this.setState({
             filterValue: newFilterValue
         });
     }
 
-    changeTask = (taskId, obj) => {
-        let changedTask = this.props.tasks.find(task => {
+    changeTask = (taskId:string, obj:any) => {
+        let changedTask = this.props.tasks.find((task:TaskType) => {
             return task.id === taskId
         });
         let task = {...changedTask, ...obj};
         this.props.updateTask(this.props.id, taskId, obj, task)
     }
-    changeStatus = (taskId, status) => {
+    changeStatus = (taskId:string, status:number) => {
         this.changeTask(taskId, {status: status});
     }
-    changeTitle = (task, title) => {
+    changeTitle = (task:string, title:string) => {
         this.changeTask(task, {title: title});
     }
     deleteTodolist = () => {
         this.props.deleteTodolist(this.props.id)
     }
-    deleteTask = (taskId) => {
+    deleteTask = (taskId:string) => {
         this.props.deleteTask(taskId, this.props.id)
     }
-    changeHeader = (title) => {
+    changeHeader = (title:string) => {
         this.props.changeHeader(this.props.id, title)
     }
 
     render = () => {
         let {tasks = []} = this.props;
+        let disabled = this.props.todolists.map(t=>t.disabled)
+        let preloader = this.props.todolists.map(t=>t.preloader)
         return (
             <div className="todoList">
                 <div className="todoList-header">
@@ -75,11 +93,14 @@ class TodoList extends React.Component {
                                    title={this.props.title}
                                    onDelete={this.deleteTodolist}/>
                     <AddNewItemForm
-                        disabledTodo={this.props.todolists.disabled}
+                        disabledTodo={disabled}
+                            /*{this.props.todolists.disabled}*/
+
                         requestStatus={this.props.requestStatus}
                         addItem={this.addTask}/>
                 </div>
-                {this.props.todolists.preloader
+                {/*{this.props.todolists.preloader*/}
+                {preloader
                     ? <Preloader preloader={'preloader'}/>
                     : <TodoListTasks changeStatus={this.changeStatus}
                                      changeTitle={this.changeTitle}
@@ -106,29 +127,29 @@ class TodoList extends React.Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch:any) => {
     return {
-        addTask(task, todolistId) {
+        addTask(task:string, todolistId:string) {
             const thunk = addTask(task, todolistId)
             dispatch(thunk);
         },
-        setTasks: (todolistId) => {
+        setTasks: (todolistId:string) => {
             const thunk = getTasks(todolistId)
             dispatch(thunk)
         },
-        updateTask(todolistId, taskId, obj, task) {
+        updateTask(todolistId:string, taskId:string, obj:any, task:TaskType) {
             const thunk = updateTask(todolistId, taskId, obj, task);
             dispatch(thunk);
         },
-        deleteTodolist: (todolistId) => {
+        deleteTodolist: (todolistId:string) => {
             const thunk = deleteTodo(todolistId);
             dispatch(thunk)
         },
-        deleteTask: (taskId, todolistId) => {
+        deleteTask: (taskId:string, todolistId:string) => {
             const thunk = deleteTask(taskId, todolistId);
             dispatch(thunk)
         },
-        changeHeader: (todolistId, title) => {
+        changeHeader: (todolistId:string, title:string) => {
             const thunk = changeTitle(todolistId, title)
             dispatch(thunk)
         }

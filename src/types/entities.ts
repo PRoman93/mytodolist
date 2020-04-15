@@ -3,7 +3,9 @@ export type TodoListType = {
     addedDate: string,
     order: number,
     title: string,
-    tasks: Array<TaskType>
+    tasks: Array<TaskType>,
+    preloader:Array<boolean>,
+    disabled:boolean
 }
 export type TaskType = {
     description: string,
@@ -19,9 +21,17 @@ export type TaskType = {
     addedDate: string
 }
 export type InitialStateType = {
-    todolists: Array<TodoListType>,
-    preloader: boolean,
+    todolists:any,
+    preloader:boolean,
     disabled: boolean,
     disabledDeleteTodolist: boolean,
     disabledDeleteTask: boolean
 }
+export type CreateTodoResponseType = {
+    data:{
+        item:TodoListType
+    },
+    messages?:Array<string>,
+    resultCode:number
+}
+
