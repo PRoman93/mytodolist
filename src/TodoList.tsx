@@ -30,6 +30,8 @@ type PropType = {
     preloader:boolean,
     tasks:Array<TaskType>,
     todolists:TodoListType[]
+    // disabled:boolean
+    // disabledTodo:boolean
 }
 type StateType = {
     filterValue:string
@@ -81,7 +83,7 @@ class TodoList extends React.Component<PropType, StateType> {
 
     render = () => {
         let {tasks = []} = this.props;
-        let disabled = this.props.todolists.map(t=>t.disabled)
+        // let disabled = this.props.todolists.map(t=>t.disabled)
         let preloader = this.props.todolists.map(t=>t.preloader)
         return (
             <div className="todoList">
@@ -92,13 +94,13 @@ class TodoList extends React.Component<PropType, StateType> {
                                    title={this.props.title}
                                    onDelete={this.deleteTodolist}/>
                     <AddNewItemForm
-                        disabledTodo={disabled}
-                            /*{this.props.todolists.disabled}*/////////////////
-
+                         // disabledTodo=
+                        /*{disabled}*/
+                        /*{this.props.todolists.disabled}*/
                         addItem={this.addTask}/>
                 </div>
                 {/*{this.props.todolists.preloader*/}
-                {preloader  ///////////////////
+                {preloader
                     ? <Preloader preloader={'preloader'}/>
                     : <TodoListTasks changeStatus={this.changeStatus}
                                      changeTitle={this.changeTitle}

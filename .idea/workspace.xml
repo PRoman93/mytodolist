@@ -7,12 +7,6 @@
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Preloader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Preloader.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoListFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListFooter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoListTask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTask.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoListTasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTasks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoListTitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTitle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/entities.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/entities.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -179,14 +173,8 @@
       <workItem from="1586932146567" duration="3975000" />
       <workItem from="1586948600519" duration="9971000" />
       <workItem from="1586974725725" duration="600000" />
-      <workItem from="1587023774116" duration="5208000" />
-    </task>
-    <task id="LOCAL-00001" summary="1-st todolist is done">
-      <created>1582638692320</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1582638692320</updated>
+      <workItem from="1587023774116" duration="5858000" />
+      <workItem from="1587036939687" duration="3351000" />
     </task>
     <task id="LOCAL-00002" summary="2-nd todolist is done">
       <created>1582642504242</created>
@@ -524,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586958554875</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="14-th lesson- all components are get in ts, but some disabled buttons failed">
+      <created>1587029158140</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1587029158140</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +539,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change status if fail" />
     <MESSAGE value="delete task is done" />
     <MESSAGE value="11-th todolist is done" />
     <MESSAGE value="start 12-th list" />
@@ -569,6 +563,7 @@
     <MESSAGE value="14-th lesson- started to changing reducer to ts" />
     <MESSAGE value="14-th lesson- reducer is done to ts" />
     <MESSAGE value="14-th lesson- app is failed to ts" />
-    <option name="LAST_COMMIT_MESSAGE" value="14-th lesson- app is failed to ts" />
+    <MESSAGE value="14-th lesson- all components are get in ts, but some disabled buttons failed" />
+    <option name="LAST_COMMIT_MESSAGE" value="14-th lesson- all components are get in ts, but some disabled buttons failed" />
   </component>
 </project>

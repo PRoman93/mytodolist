@@ -51,7 +51,8 @@ class App extends React.Component<MapStateToPropsType & MapDispatchToProps> {
                                  id={tl.id}
                                  title={tl.title}
                                  tasks={tl.tasks}
-                                 todolists={tl}/>)
+                                 todolists={tl}
+            />)
 
         return (
             <>
