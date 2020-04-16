@@ -1,15 +1,29 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import './App.css';
 import Preloader from "./Preloader";
+import {TaskType} from "./types/entities";
+import {fchmod} from "fs";
 
-class TodoListTask extends React.Component {
+type PropType = {
+    changeStatus: (taskId: string, status: number) => void,
+    changeTitle: (taskId: string, title: string) => void,
+    deleteTask: (taskId: string) => void,
+    task: TaskType,
+    preloader:boolean
+}
+type StateType = {
+    editMode: boolean,
+    title: string
+}
 
-    onIsDoneChanged = (e) => {
+class TodoListTask extends React.Component<PropType, StateType> {
+
+    onIsDoneChanged = (e: ChangeEvent<HTMLInputElement>) => {
         let status = e.currentTarget.checked ? 2 : 0;
         this.props.changeStatus(this.props.task.id, status);
     }
 
-    onTitleChanged = (e) => {
+    onTitleChanged = (e: ChangeEvent<HTMLInputElement>) => {
         this.setState({title: e.currentTarget.value});
     }
 
@@ -27,7 +41,6 @@ class TodoListTask extends React.Component {
         this.setState({editMode: false});
     }
     onDeleteTask = () => {
-        console.log(this.props.task.id)
         this.props.deleteTask(this.props.task.id);
     }
     render = () => {

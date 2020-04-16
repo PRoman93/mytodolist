@@ -13,9 +13,9 @@ import {Dispatch} from "redux";
 type MapStateToPropsType = {
     todolists: Array<TodoListType>,
     preloader: boolean,
-    disabled: boolean,
-    disabledDeleteTodolist: boolean,
-    disabledDeleteTask: boolean,
+    // disabled: boolean,
+    // disabledDeleteTodolist: boolean,
+    // disabledDeleteTask: boolean,
 }
 type MapDispatchToProps = {
     setTodolists: () => void,
@@ -43,8 +43,10 @@ class App extends React.Component<MapStateToPropsType & MapDispatchToProps> {
     render = () => {
         const todolists = this.props
             .todolists
-            .map(tl => <TodoList disabledDeleteTodolist={this.props.disabledDeleteTodolist}
-                                 disabledDeleteTask={this.props.disabledDeleteTask}
+            .map(tl => <TodoList
+                // disabledDeleteTodolist={this.props.disabledDeleteTodolist}
+                //                  disabledDeleteTask={this.props.disabledDeleteTask}
+                preloader={tl.preloader}
                                  key={tl.id}
                                  id={tl.id}
                                  title={tl.title}
@@ -59,7 +61,7 @@ class App extends React.Component<MapStateToPropsType & MapDispatchToProps> {
                         : <>
                             <div>
                                 <AddNewItemForm addItem={this.addTodoList}
-                                                disabled={this.props.disabled}
+                                                // disabled={this.props.disabled}
                                 />
                             </div>
                             <div className="App">
@@ -76,9 +78,9 @@ const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
     return {
         todolists: state.todolist.todolists,
         preloader: state.todolist.preloader,
-        disabled: state.todolist.disabled,
-        disabledDeleteTodolist: state.todolist.disabledDeleteTodolist,
-        disabledDeleteTask: state.todolist.disabledDeleteTask
+        // disabled: state.todolist.disabled,
+        // disabledDeleteTodolist: state.todolist.disabledDeleteTodolist,
+        // disabledDeleteTask: state.todolist.disabledDeleteTask
     }
 }
 

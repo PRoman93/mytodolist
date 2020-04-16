@@ -25,12 +25,11 @@ type PropType = {
     deleteTask:(taskId:string, todolistid:string)=>void,
     changeHeader:(todolistId:string, title:string)=>void,
     id:string,
-    disabledDeleteTodolist:boolean,
+    // disabledDeleteTodolist:boolean,
     title:string,
     preloader:boolean,
-    requestStatus:boolean,
     tasks:Array<TaskType>,
-    todolists:Array<TodoListType>
+    todolists:TodoListType[]
 }
 type StateType = {
     filterValue:string
@@ -88,25 +87,23 @@ class TodoList extends React.Component<PropType, StateType> {
             <div className="todoList">
                 <div className="todoList-header">
                     <TodoListTitle changeHeader={this.changeHeader}
-                                   disabled={this.props.disabledDeleteTodolist}
-                                   id={this.props.id}
+                                   // disabled={this.props.disabledDeleteTodolist}
+                                   // id={this.props.id}
                                    title={this.props.title}
                                    onDelete={this.deleteTodolist}/>
                     <AddNewItemForm
                         disabledTodo={disabled}
-                            /*{this.props.todolists.disabled}*/
+                            /*{this.props.todolists.disabled}*/////////////////
 
-                        requestStatus={this.props.requestStatus}
                         addItem={this.addTask}/>
                 </div>
                 {/*{this.props.todolists.preloader*/}
-                {preloader
+                {preloader  ///////////////////
                     ? <Preloader preloader={'preloader'}/>
                     : <TodoListTasks changeStatus={this.changeStatus}
                                      changeTitle={this.changeTitle}
                                      deleteTask={this.deleteTask}
                                      preloader={this.props.preloader}
-                        /*tasks={this.props.tasks.filter(t => {*/
                                      tasks={tasks
                                          .filter(t => {
                                              if (this.state.filterValue === "All") {
@@ -120,7 +117,6 @@ class TodoList extends React.Component<PropType, StateType> {
                                              }
                                          })}
                     />}
-
                 <TodoListFooter changeFilter={this.changeFilter} filterValue={this.state.filterValue}/>
             </div>
         );

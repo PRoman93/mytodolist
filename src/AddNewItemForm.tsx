@@ -2,9 +2,9 @@ import React, {ChangeEvent} from 'react';
 import './App.css';
 
 type PropType = {
-    addItem:(newText:string )=>void,
-    disabledTodo?: Array<boolean>,
-    disabled?:any
+    addItem:(newText:string)=>void,
+    disabledTodo:boolean,
+    disabled?:any ////////////
     requestStatus?:boolean
 }
 type StateType = {
@@ -63,7 +63,5 @@ class AddNewItemForm extends React.Component<PropType, StateType> {
     }
 }
 
-{/*{this.props.requestStatus === STATUSES.PENDING}*/
-}
 export default AddNewItemForm;
 

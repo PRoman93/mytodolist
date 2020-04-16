@@ -4,7 +4,7 @@ export type TodoListType = {
     order: number,
     title: string,
     tasks: Array<TaskType>,
-    preloader:Array<boolean>,
+    preloader:boolean,
     disabled:boolean
 }
 export type TaskType = {
@@ -21,7 +21,7 @@ export type TaskType = {
     addedDate: string
 }
 export type InitialStateType = {
-    todolists:any,
+    todolists?:any,///////////
     preloader:boolean,
     disabled: boolean,
     disabledDeleteTodolist: boolean,

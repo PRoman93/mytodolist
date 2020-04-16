@@ -1,7 +1,16 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import './App.css';
 
-class TodoListTitle extends React.Component {
+type PropType = {
+    changeHeader:(title:string)=>void,
+    onDelete:()=>void,
+    title:string
+}
+type StateType = {
+    editMode:boolean,
+    title:string
+}
+class TodoListTitle extends React.Component<PropType, StateType> {
 
     state = {
         editMode: false,
@@ -12,8 +21,7 @@ class TodoListTitle extends React.Component {
             editMode: true
         })
     }
-    onChangeHeader = (e) => {
-        // debugger
+    onChangeHeader = (e:ChangeEvent<HTMLInputElement>) => {
         this.setState({
             title: e.currentTarget.value
         })
@@ -35,7 +43,9 @@ class TodoListTitle extends React.Component {
                 {!this.state.editMode &&
                 <h3 onDoubleClick={this.onEditTitleMode}
                     className="todoList-header__title">{this.state.title}
-                    <button disabled={this.props.disabled} onClick={this.props.onDelete}>X</button>
+                    <button
+                        // disabled={this.props.disabled}
+                        onClick={this.props.onDelete}>X</button>
                 </h3>}
 
                 {this.state.editMode && <input type="text"
