@@ -85,6 +85,7 @@ class TodoList extends React.Component<PropType, StateType> {
         let {tasks = []} = this.props;
         // let disabled = this.props.todolists.map(t=>t.disabled)
         let preloader = this.props.todolists.map(t=>t.preloader)
+        console.log(preloader)
         return (
             <div className="todoList">
                 <div className="todoList-header">

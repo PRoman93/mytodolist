@@ -102,7 +102,7 @@ const todolistReducer = (state: InitialStateType = initialState, action: AppActi
         case LOADING_TASKS:
             return {
                 ...state,
-                todolists: state.todolists.map((t: TodoListType) => {
+                todolists: state.todolists.map((t: TaskType) => {
                     if (t.id === action.todolistId) {
                         return {
                             ...t, preloader: action.status

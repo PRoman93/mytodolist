@@ -18,7 +18,8 @@ export type TaskType = {
     id: string,
     todoListId: string,
     order: number,
-    addedDate: string
+    addedDate: string,
+    preloader?:boolean
 }
 export type InitialStateType = {
     todolists?:any,///////////

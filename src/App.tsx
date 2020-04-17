@@ -51,7 +51,7 @@ class App extends React.Component<MapStateToPropsType & MapDispatchToProps> {
                                  id={tl.id}
                                  title={tl.title}
                                  tasks={tl.tasks}
-                                 todolists={tl}
+                todolists={this.props.todolists}
             />)
 
         return (
@@ -78,7 +78,7 @@ class App extends React.Component<MapStateToPropsType & MapDispatchToProps> {
 const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
     return {
         todolists: state.todolist.todolists,
-        preloader: state.todolist.preloader,
+        preloader: state.todolist.todolists.preloader,
         // disabled: state.todolist.disabled,
         // disabledDeleteTodolist: state.todolist.disabledDeleteTodolist,
         // disabledDeleteTask: state.todolist.disabledDeleteTask
