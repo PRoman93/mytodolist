@@ -74,7 +74,6 @@ class App extends React.Component<MapStateToPropsType & MapDispatchToProps> {
         );
     }
 }
-
 const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
     return {
         todolists: state.todolist.todolists,
@@ -84,7 +83,6 @@ const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
         // disabledDeleteTask: state.todolist.disabledDeleteTask
     }
 }
-
 const mapDispatchToProps = (dispatch: any): MapDispatchToProps => { //
     return {
         setTodolists: () => {
@@ -97,7 +95,6 @@ const mapDispatchToProps = (dispatch: any): MapDispatchToProps => { //
         }
     }
 }
-
 const ConnectedApp = connect<MapStateToPropsType, MapDispatchToProps, {}, AppStateType>(mapStateToProps, mapDispatchToProps)(App);
 export default ConnectedApp;
 

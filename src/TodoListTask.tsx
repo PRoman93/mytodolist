@@ -79,6 +79,5 @@ class TodoListTask extends React.Component<PropType, StateType> {
         );
     }
 }
-
 export default TodoListTask;
 

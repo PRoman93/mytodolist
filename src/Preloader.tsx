@@ -9,6 +9,5 @@ const Preloader = (props: PropType) => {
 
     return <div><img className={props.preloader} src={preloader} alt=""/></div>
 }
-
 export default Preloader;
 

@@ -125,7 +125,6 @@ class TodoList extends React.Component<PropType, StateType> {
         );
     }
 }
-
 const mapDispatchToProps = (dispatch:any) => {
     return {
         addTask(task:string, todolistId:string) {
@@ -154,8 +153,6 @@ const mapDispatchToProps = (dispatch:any) => {
         }
     }
 }
-
 const ConnectedTodolist = connect(null, mapDispatchToProps)(TodoList);
-
 export default ConnectedTodolist;
 
