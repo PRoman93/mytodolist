@@ -3,13 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddNewItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddNewItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Preloader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Preloader.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoListTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTask.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoListTitle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTitle.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/action_creators_types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/action_creators_types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/constants.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types/entities.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/entities.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -180,14 +183,8 @@
       <workItem from="1587036939687" duration="8183000" />
       <workItem from="1587127396343" duration="67000" />
       <workItem from="1587312051876" duration="130000" />
-      <workItem from="1587365496042" duration="5253000" />
-    </task>
-    <task id="LOCAL-00005" summary="5-th todolist is done">
-      <created>1582716223108</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1582716223108</updated>
+      <workItem from="1587365496042" duration="5578000" />
+      <workItem from="1587374734816" duration="10276000" />
     </task>
     <task id="LOCAL-00006" summary="7-th todolist is done">
       <created>1582876889848</created>
@@ -525,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587312164619</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="14-th lesson- added disabled on added list and task, and falied disabled delete todo">
+      <created>1587371026551</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1587371026552</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -545,7 +549,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="delete some comments" />
     <MESSAGE value="delete unused data" />
     <MESSAGE value="12- th todolist is done" />
     <MESSAGE value="13-th todolist, thunk addTask isDone" />
@@ -570,6 +573,7 @@
     <MESSAGE value="14-th lesson- all components are get in ts, but some disabled buttons failed again" />
     <MESSAGE value="14-th lesson- all components are get in ts, delete some comments" />
     <MESSAGE value="14-th lesson- all components are get in ts, some changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="14-th lesson- all components are get in ts, some changes" />
+    <MESSAGE value="14-th lesson- added disabled on added list and task, and falied disabled delete todo" />
+    <option name="LAST_COMMIT_MESSAGE" value="14-th lesson- added disabled on added list and task, and falied disabled delete todo" />
   </component>
 </project>

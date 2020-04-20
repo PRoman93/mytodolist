@@ -2,8 +2,20 @@
 
 import {TaskType, TodoListType} from "./entities";
 import {
-    ADD_TASK, ADD_TODOLIST, CHANGE_HEADER, DELETE_TASK, DELETE_TODOLIST, DISABLED_TASK, DISABLED_TODOLIST,
-    LOADING_DELETE_TODOLIST_SUCCESS, LOADING_TASKS, LOADING_TODOS, SET_TASKS, SET_TODOLISTS, UPDATE_TASK
+    ADD_TASK,
+    ADD_TODOLIST,
+    CHANGE_HEADER,
+    DELETE_TASK,
+    DELETE_TODOLIST,
+    DISABLED_TASK,
+    DISABLED_TODOLIST,
+    LOADING_DELETE_TASK_SUCCESS,
+    LOADING_DELETE_TODOLIST_SUCCESS,
+    LOADING_TASKS,
+    LOADING_TODOS,
+    SET_TASKS,
+    SET_TODOLISTS,
+    UPDATE_TASK
 } from './constants';
 export type updateTaskSuccessActionType = {
     type: typeof UPDATE_TASK,
@@ -64,5 +76,11 @@ export type loadingTasksSuccessActionType = {
 export type loadingDeleteTodolistSuccessActionType = {
     type: typeof LOADING_DELETE_TODOLIST_SUCCESS,
     todolistId:string,
+    disabled:boolean
+}
+export type loadingDeleteTaskSuccessActionType = {
+    type: typeof LOADING_DELETE_TASK_SUCCESS,
+    todolistId:string,
+    taskId:string,
     disabled:boolean
 }

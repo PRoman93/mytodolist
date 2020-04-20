@@ -6,6 +6,7 @@ export type TodoListType = {
     tasks: Array<TaskType>,
     preloader:boolean,
     disabled:boolean,
+    disabledDeleteTodolist?:boolean
 }
 export type TaskType = {
     description: string,
@@ -20,13 +21,14 @@ export type TaskType = {
     order: number,
     addedDate: string,
     preloader?:boolean,
-    disabled?:boolean[]
+    disabled?:boolean[],
+    disabledDeleteTask?:boolean
 }
 export type InitialStateType = {
-    todolists?:any,///////////
+    todolists:any //????????????
     preloader:boolean,
     disabled: boolean,
-    disabledDeleteTodolist: boolean,
+    // disabledDeleteTodolist: boolean,
     disabledDeleteTask: boolean
 }
 export type CreateTodoResponseType = {

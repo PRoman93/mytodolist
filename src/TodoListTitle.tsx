@@ -1,17 +1,27 @@
 import React, {ChangeEvent} from 'react';
 import './App.css';
+import {connect, MapStateToProps} from "react-redux";
+import {AppStateType} from "./store";
+import {TodoListType} from "./types/entities";
 
+// type MapStateToPropsType = {
+//     disabledDeleteTodolist?:boolean,
+//     todolists: TodoListType[]
+// }
 type PropType = {
-    changeHeader:(title:string)=>void,
-    onDelete:()=>void,
-    title:string,
-    disabledDeleteTodolist:boolean
+    changeHeader: (title: string) => void,
+    onDelete: () => void,
+    title: string,
+    disabledDeleteTodolist?:boolean
 }
 type StateType = {
-    editMode:boolean,
-    title:string
+    editMode: boolean,
+    title: string
 }
-class TodoListTitle extends React.Component<PropType, StateType> {
+
+class TodoListTitle extends React.Component<
+    // MapStateToPropsType &
+    PropType, StateType> {
 
     state = {
         editMode: false,
@@ -22,7 +32,7 @@ class TodoListTitle extends React.Component<PropType, StateType> {
             editMode: true
         })
     }
-    onChangeHeader = (e:ChangeEvent<HTMLInputElement>) => {
+    onChangeHeader = (e: ChangeEvent<HTMLInputElement>) => {
         this.setState({
             title: e.currentTarget.value
         })
@@ -39,6 +49,8 @@ class TodoListTitle extends React.Component<PropType, StateType> {
 
     }
     render = () => {
+
+        // let disabledDeleteTodolist = this.props.todolists.map(t=>t.disabledDeleteTodolist)
         console.log(this.props.disabledDeleteTodolist)
         return (
             <>
@@ -47,7 +59,8 @@ class TodoListTitle extends React.Component<PropType, StateType> {
                     className="todoList-header__title">{this.state.title}
                     <button
                         disabled={this.props.disabledDeleteTodolist}
-                        onClick={this.props.onDelete}>X</button>
+                        onClick={this.props.onDelete}>X
+                    </button>
                 </h3>}
 
                 {this.state.editMode && <input type="text"
@@ -61,5 +74,13 @@ class TodoListTitle extends React.Component<PropType, StateType> {
     }
 }
 
-export default TodoListTitle;
+// const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
+//     return {
+//         todolists: state.todolist.todolists,
+        // disabledDeleteTodolist:state.todolist.todolists.disabledDeleteTodolist
+    // }
+// }
 
+// const ConnectedTodolistTitle = connect(mapStateToProps, {})(TodoListTitle);
+// export default ConnectedTodolistTitle
+export default TodoListTitle

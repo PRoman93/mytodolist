@@ -7,7 +7,7 @@ import {
     deleteTaskSuccessActionType,
     deleteTodolistSuccessActionType,
     disabledTaskSuccessActionType,
-    disabledTodoSuccessActionType,
+    disabledTodoSuccessActionType, loadingDeleteTaskSuccessActionType,
     loadingDeleteTodolistSuccessActionType,
     loadingTasksSuccessActionType,
     loadingTodosSuccessActionType,
@@ -23,7 +23,7 @@ import {
     DELETE_TASK,
     DELETE_TODOLIST,
     DISABLED_TASK,
-    DISABLED_TODOLIST,
+    DISABLED_TODOLIST, LOADING_DELETE_TASK_SUCCESS,
     LOADING_DELETE_TODOLIST_SUCCESS,
     LOADING_TASKS,
     LOADING_TODOS,
@@ -36,7 +36,7 @@ const initialState: InitialStateType = {
     todolists: [],
     preloader: false,
     disabled: false,
-    disabledDeleteTodolist: false,
+    // disabledDeleteTodolist: false,
     disabledDeleteTask: false,
 }
 
@@ -119,7 +119,7 @@ const todolistReducer = (state: InitialStateType = initialState, action: AppActi
             }
         case LOADING_DELETE_TODOLIST_SUCCESS:
             return {
-                ...state, todolists: state.todolists.map((t:TodoListType) => {
+                ...state, todolists: state.todolists.map((t: TodoListType) => {
                     if (t.id === action.todolistId) {
                         return {
                             ...t,
@@ -138,6 +138,27 @@ const todolistReducer = (state: InitialStateType = initialState, action: AppActi
                         return {
                             ...tl,
                             tasks: tl.tasks.filter(t => t.id !== action.taskId)
+                        }
+                    } else {
+                        return tl
+                    }
+                })
+            }
+        case LOADING_DELETE_TASK_SUCCESS:
+            return {
+                ...state, todolists: state.todolists.map((tl: TodoListType) => {
+                    if (tl.id === action.todolistId) {
+                        return {
+                            ...tl,
+                            tasks: tl.tasks.map(t => {
+                                if (t.id === action.taskId) {
+                                    return {
+                                        ...t, disabledDeleteTask: action.disabled
+                                    }
+                                } else {
+                                    return t
+                                }
+                            })
                         }
                     } else {
                         return tl
@@ -220,9 +241,11 @@ const disabledTaskSuccess = (disabled: boolean, todolistId: string): disabledTod
 const loadingTasksSuccess = (status: boolean, todolistId: string): loadingTasksSuccessActionType =>
     ({type: LOADING_TASKS, status, todolistId})
 
-
 const loadingDeleteTodolistSuccess = (todolistId: string, disabled: boolean): loadingDeleteTodolistSuccessActionType =>
     ({type: LOADING_DELETE_TODOLIST_SUCCESS, todolistId, disabled})
+const loadingDeleteTaskSuccess = (todolistId: string, taskId: string, disabled: boolean): loadingDeleteTaskSuccessActionType =>
+    ({type: LOADING_DELETE_TASK_SUCCESS, todolistId, taskId, disabled})
+
 
 // ACTION TYPES
 type TodoActionType =
@@ -239,6 +262,7 @@ type TodoActionType =
     | disabledTodoSuccessActionType
     | loadingTasksSuccessActionType
     | loadingDeleteTodolistSuccessActionType
+    | loadingDeleteTaskSuccessActionType
 
 type AppActionType = TodoActionType
 
@@ -286,9 +310,11 @@ export const addTask = (task: string, todolistId: string) => (dispatch: ThunkDis
         })
 }
 export const deleteTask = (taskId: string, todolistId: string): ThunkType => (dispatch: ThunkDispatchType) => {
+    dispatch(loadingDeleteTaskSuccess(todolistId, taskId, true))
     api.deleteTask(taskId, todolistId)
         .then(res => {
             if (res.data.resultCode === 0) {
+                dispatch(loadingDeleteTaskSuccess(todolistId, taskId, true))
                 dispatch(deleteTaskSuccess(taskId, todolistId))
             }
         })

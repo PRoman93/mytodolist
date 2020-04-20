@@ -2,19 +2,13 @@ import React from 'react';
 import './App.css';
 import TodoListTasks from "./TodoListTasks";
 import TodoListFooter from "./TodoListFooter";
-import TodoListTitle from "./TodoListTitle";
+import ConnectedTodolistTitle from "./TodoListTitle";
 import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
-import {
-    addTask,
-    changeTitle,
-    deleteTask,
-    deleteTodo,
-    getTasks,
-    updateTask
-} from "./reducer";
+import {addTask, changeTitle, deleteTask, deleteTodo, getTasks, updateTask} from "./reducer";
 import Preloader from "./Preloader";
 import {TaskType, TodoListType} from "./types/entities";
+import TodoListTitle from "./TodoListTitle";
 
 
 type PropType = {
@@ -25,12 +19,12 @@ type PropType = {
     deleteTask: (taskId: string, todolistid: string) => void,
     changeHeader: (todolistId: string, title: string) => void,
     id: string,
-    disabledDeleteTodolist: boolean,
     title: string,
     preloader: boolean,
     tasks: Array<TaskType>,
     todolists: TodoListType[]
     disabled?: boolean
+    disabledDeleteTodolist?:boolean
     // disabledTodo:boolean
 }
 type StateType = {
@@ -84,7 +78,7 @@ class TodoList extends React.Component<PropType, StateType> {
 
     render = () => {
         let {tasks = []} = this.props;
-        console.log(this.props.disabledDeleteTodolist)
+        // console.log(this.props.disabledDeleteTodolist)
         return (
             <div className="todoList">
                 <div className="todoList-header">

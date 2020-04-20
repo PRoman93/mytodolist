@@ -73,7 +73,7 @@ class TodoListTask extends React.Component<PropType, StateType> {
                                  value={this.state.title}/>
                         : <span onClick={this.activateEditMode}>{this.state.title}</span>
                     }, priority: {priorityTitle}
-                    <button onClick={this.onDeleteTask}>X</button>
+                    <button disabled={this.props.task.disabledDeleteTask} onClick={this.onDeleteTask}>X</button>
                 </div>
             </>
         );

@@ -10,11 +10,12 @@ import {ThunkDispatch} from "redux-thunk";
 import {AppStateType} from "./store";
 import {Dispatch} from "redux";
 
+
 type MapStateToPropsType = {
     todolists: Array<TodoListType>,
     preloader: boolean,
     disabled: boolean,
-    disabledDeleteTodolist: boolean,
+    disabledDeleteTodolist?: boolean,
     // disabledDeleteTask: boolean,
 }
 type MapDispatchToProps = {
@@ -51,8 +52,9 @@ class App extends React.Component<MapStateToPropsType & MapDispatchToProps> {
                 title={tl.title}
                 tasks={tl.tasks}
                 disabled={tl.disabled}
-                disabledDeleteTodolist={this.props.disabledDeleteTodolist}
+                disabledDeleteTodolist={tl.disabledDeleteTodolist}
                 todolists={this.props.todolists}
+
             />)
 
         return (
@@ -81,7 +83,7 @@ const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
         todolists: state.todolist.todolists,
         preloader: state.todolist.preloader,
         disabled: state.todolist.disabled,
-        disabledDeleteTodolist: state.todolist.disabledDeleteTodolist,
+        // disabledDeleteTodolist: state.todolist.disabledDeleteTodolist,
         // disabledDeleteTask: state.todolist.disabledDeleteTask
     }
 }
