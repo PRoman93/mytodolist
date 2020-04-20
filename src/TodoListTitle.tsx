@@ -4,7 +4,8 @@ import './App.css';
 type PropType = {
     changeHeader:(title:string)=>void,
     onDelete:()=>void,
-    title:string
+    title:string,
+    disabledDeleteTodolist:boolean
 }
 type StateType = {
     editMode:boolean,
@@ -38,13 +39,14 @@ class TodoListTitle extends React.Component<PropType, StateType> {
 
     }
     render = () => {
+        console.log(this.props.disabledDeleteTodolist)
         return (
             <>
                 {!this.state.editMode &&
                 <h3 onDoubleClick={this.onEditTitleMode}
                     className="todoList-header__title">{this.state.title}
                     <button
-                        // disabled={this.props.disabled}
+                        disabled={this.props.disabledDeleteTodolist}
                         onClick={this.props.onDelete}>X</button>
                 </h3>}
 

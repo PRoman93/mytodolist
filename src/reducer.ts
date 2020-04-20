@@ -117,6 +117,19 @@ const todolistReducer = (state: InitialStateType = initialState, action: AppActi
                 ...state,
                 todolists: state.todolists.filter((tl: TodoListType) => tl.id !== action.todolistId)
             }
+        case LOADING_DELETE_TODOLIST_SUCCESS:
+            return {
+                ...state, todolists: state.todolists.map((t:TodoListType) => {
+                    if (t.id === action.todolistId) {
+                        return {
+                            ...t,
+                            disabledDeleteTodolist: action.disabled
+                        }
+                    } else {
+                        return t
+                    }
+                })
+            }
         case DELETE_TASK:
             return {
                 ...state,
@@ -166,20 +179,6 @@ const todolistReducer = (state: InitialStateType = initialState, action: AppActi
             return {
                 ...state, preloader: action.status
             }
-        // case LOADING_DELETE_TODOLIST_SUCCESS:
-        //     return {
-        //         ...state, todolists: state.todolists.map(t => {
-        //             if (t.id === action.todolistId) {
-        //                 return {
-        //                     ...state,
-        //
-        //                     disabledDeleteTodolist: action.disabled
-        //                 }
-        //             } else {
-        //                 return t
-        //             }
-        //         })
-        //     }
     }
     return state;
 }

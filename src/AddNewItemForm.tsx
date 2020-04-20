@@ -3,8 +3,9 @@ import './App.css';
 
 type PropType = {
     addItem:(newText:string)=>void,
-    disabledTodo?:boolean
-    // disabled?:any ////////////
+    disabledAddTask?:boolean,
+    // disabledDeleteTodolist?:boolean
+    disabledAddTodo?:boolean
     requestStatus?:boolean
 }
 type StateType = {
@@ -54,9 +55,8 @@ class AddNewItemForm extends React.Component<PropType, StateType> {
                        value={this.state.title}
                 />
                 <button
-                    disabled={this.props.disabledTodo}
+                    disabled={this.props.disabledAddTodo || this.props.disabledAddTask}
                     // this.props.disabled
-
                     onClick={this.onAddItemClick}>Add
                 </button>
             </div>
