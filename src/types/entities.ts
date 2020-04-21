@@ -25,7 +25,7 @@ export type TaskType = {
     disabledDeleteTask?:boolean
 }
 export type InitialStateType = {
-    todolists:any //????????????
+    todolists:TodoListType[] //????????????
     preloader:boolean,
     disabled: boolean,
     // disabledDeleteTodolist: boolean,
