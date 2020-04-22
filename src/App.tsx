@@ -5,10 +5,8 @@ import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
 import {addTodo, getTodo} from "./reducer";
 import Preloader from "./Preloader";
-import {InitialStateType, TodoListType} from "./types/entities";
-import {ThunkDispatch} from "redux-thunk";
+import {TodoListType} from "./types/entities";
 import {AppStateType} from "./store";
-import {Dispatch} from "redux";
 
 
 type MapStateToPropsType = {
@@ -16,7 +14,6 @@ type MapStateToPropsType = {
     preloader: boolean,
     disabled: boolean,
     disabledDeleteTodolist?: boolean,
-    // disabledDeleteTask: boolean,
 }
 type MapDispatchToProps = {
     setTodolists: () => void,
@@ -25,9 +22,6 @@ type MapDispatchToProps = {
 
 class App extends React.Component<MapStateToPropsType & MapDispatchToProps> {
 
-    // state = {
-    //     todolists: []
-    // }
 
     addTodoList = (newTodolist: string) => {
         this.props.addTodolist(newTodolist)
@@ -45,7 +39,6 @@ class App extends React.Component<MapStateToPropsType & MapDispatchToProps> {
         const todolists = this.props
             .todolists
             .map(tl => <TodoList
-                // disabledDeleteTask={this.props.disabledDeleteTask}
                 preloader={tl.preloader}
                 key={tl.id}
                 id={tl.id}
@@ -54,7 +47,6 @@ class App extends React.Component<MapStateToPropsType & MapDispatchToProps> {
                 disabled={tl.disabled}
                 disabledDeleteTodolist={tl.disabledDeleteTodolist}
                 todolists={this.props.todolists}
-
             />)
 
         return (
@@ -83,8 +75,6 @@ const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
         todolists: state.todolist.todolists,
         preloader: state.todolist.preloader,
         disabled: state.todolist.disabled,
-        // disabledDeleteTodolist: state.todolist.disabledDeleteTodolist,
-        // disabledDeleteTask: state.todolist.disabledDeleteTask
     }
 }
 const mapDispatchToProps = (dispatch: any): MapDispatchToProps => { //

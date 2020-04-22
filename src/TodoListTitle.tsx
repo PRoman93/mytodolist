@@ -1,8 +1,5 @@
 import React, {ChangeEvent} from 'react';
 import './App.css';
-import {connect, MapStateToProps} from "react-redux";
-import {AppStateType} from "./store";
-import {TodoListType} from "./types/entities";
 
 // type MapStateToPropsType = {
 //     disabledDeleteTodolist?:boolean,
@@ -19,9 +16,7 @@ type StateType = {
     title: string
 }
 
-class TodoListTitle extends React.Component<
-    // MapStateToPropsType &
-    PropType, StateType> {
+class TodoListTitle extends React.Component<PropType, StateType> {
 
     state = {
         editMode: false,

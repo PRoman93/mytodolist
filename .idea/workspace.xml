@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddNewItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddNewItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoListTitle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTitle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/entities.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/entities.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +32,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-way-of-samurai" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -175,13 +180,12 @@
       <workItem from="1587312051876" duration="130000" />
       <workItem from="1587365496042" duration="5578000" />
       <workItem from="1587374734816" duration="11314000" />
-    </task>
-    <task id="LOCAL-00007" summary="7-th todolist is made for sure">
-      <created>1582879905363</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1582879905363</updated>
+      <workItem from="1587463436020" duration="158000" />
+      <workItem from="1587536638013" duration="22000" />
+      <workItem from="1587540303118" duration="2287000" />
+      <workItem from="1587543074589" duration="10000" />
+      <workItem from="1587544622890" duration="180000" />
+      <workItem from="1587544928489" duration="1900000" />
     </task>
     <task id="LOCAL-00008" summary="10-th task of 9-th todolist is made">
       <created>1582959885122</created>
@@ -519,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587389545233</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="14-th lesson- add corrected type to todolists">
+      <created>1587463553079</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1587463553081</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,7 +550,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="12- th todolist is done" />
     <MESSAGE value="13-th todolist, thunk addTask isDone" />
     <MESSAGE value="13-th todolist, thunk addTask isDone, refactoring" />
     <MESSAGE value="13-th todolist, thunk addTask isDone, refactoring(delete some comments)" />
@@ -564,6 +574,7 @@
     <MESSAGE value="14-th lesson- all components are get in ts, some changes" />
     <MESSAGE value="14-th lesson- added disabled on added list and task, and falied disabled delete todo" />
     <MESSAGE value="14-th lesson- disabled delete todo and disabled delete task is done" />
-    <option name="LAST_COMMIT_MESSAGE" value="14-th lesson- disabled delete todo and disabled delete task is done" />
+    <MESSAGE value="14-th lesson- add corrected type to todolists" />
+    <option name="LAST_COMMIT_MESSAGE" value="14-th lesson- add corrected type to todolists" />
   </component>
 </project>

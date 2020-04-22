@@ -2,13 +2,12 @@ import React from 'react';
 import './App.css';
 import TodoListTasks from "./TodoListTasks";
 import TodoListFooter from "./TodoListFooter";
-import ConnectedTodolistTitle from "./TodoListTitle";
+import TodoListTitle from "./TodoListTitle";
 import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
 import {addTask, changeTitle, deleteTask, deleteTodo, getTasks, updateTask} from "./reducer";
 import Preloader from "./Preloader";
 import {TaskType, TodoListType} from "./types/entities";
-import TodoListTitle from "./TodoListTitle";
 
 
 type PropType = {

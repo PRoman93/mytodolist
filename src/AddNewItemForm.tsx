@@ -4,7 +4,6 @@ import './App.css';
 type PropType = {
     addItem:(newText:string)=>void,
     disabledAddTask?:boolean,
-    // disabledDeleteTodolist?:boolean
     disabledAddTodo?:boolean
     requestStatus?:boolean
 }
@@ -26,7 +25,6 @@ class AddNewItemForm extends React.Component<PropType, StateType> {
             this.setState({error: true});
         } else {
             this.setState({error: false});
-            // передаём новый текст наружу
             this.props.addItem(newText);
         }
     }
@@ -56,7 +54,6 @@ class AddNewItemForm extends React.Component<PropType, StateType> {
                 />
                 <button
                     disabled={this.props.disabledAddTodo || this.props.disabledAddTask}
-                    // this.props.disabled
                     onClick={this.onAddItemClick}>Add
                 </button>
             </div>
