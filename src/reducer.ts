@@ -243,6 +243,7 @@ const loadingTasksSuccess = (status: boolean, todolistId: string): loadingTasksS
 
 const loadingDeleteTodolistSuccess = (todolistId: string, disabled: boolean): loadingDeleteTodolistSuccessActionType =>
     ({type: LOADING_DELETE_TODOLIST_SUCCESS, todolistId, disabled})
+
 const loadingDeleteTaskSuccess = (todolistId: string, taskId: string, disabled: boolean): loadingDeleteTaskSuccessActionType =>
     ({type: LOADING_DELETE_TASK_SUCCESS, todolistId, taskId, disabled})
 

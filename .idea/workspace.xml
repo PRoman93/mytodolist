@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AddNewItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddNewItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoListTitle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoListTitle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/entities.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/entities.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -185,14 +187,13 @@
       <workItem from="1587540303118" duration="2287000" />
       <workItem from="1587543074589" duration="10000" />
       <workItem from="1587544622890" duration="180000" />
-      <workItem from="1587544928489" duration="1900000" />
-    </task>
-    <task id="LOCAL-00008" summary="10-th task of 9-th todolist is made">
-      <created>1582959885122</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1582959885122</updated>
+      <workItem from="1587544928489" duration="5922000" />
+      <workItem from="1587561331090" duration="14000" />
+      <workItem from="1587573164259" duration="541000" />
+      <workItem from="1587625619746" duration="26000" />
+      <workItem from="1587654304178" duration="682000" />
+      <workItem from="1587659602608" duration="2207000" />
+      <workItem from="1587666417380" duration="226000" />
     </task>
     <task id="LOCAL-00009" summary="11-th task of 9-th todolist is fail">
       <created>1582962465854</created>
@@ -530,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587463553081</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="14-th lesson- delete some comments and refactor some strings">
+      <created>1587552062350</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1587552062351</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +558,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="13-th todolist, thunk addTask isDone" />
     <MESSAGE value="13-th todolist, thunk addTask isDone, refactoring" />
     <MESSAGE value="13-th todolist, thunk addTask isDone, refactoring(delete some comments)" />
     <MESSAGE value="13-th todolist, thunk addTodo isDone" />
@@ -575,6 +582,7 @@
     <MESSAGE value="14-th lesson- added disabled on added list and task, and falied disabled delete todo" />
     <MESSAGE value="14-th lesson- disabled delete todo and disabled delete task is done" />
     <MESSAGE value="14-th lesson- add corrected type to todolists" />
-    <option name="LAST_COMMIT_MESSAGE" value="14-th lesson- add corrected type to todolists" />
+    <MESSAGE value="14-th lesson- delete some comments and refactor some strings" />
+    <option name="LAST_COMMIT_MESSAGE" value="14-th lesson- delete some comments and refactor some strings" />
   </component>
 </project>

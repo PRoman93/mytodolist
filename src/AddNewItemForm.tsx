@@ -1,5 +1,6 @@
 import React, {ChangeEvent} from 'react';
 import './App.css';
+import { Button } from 'antd';
 
 type PropType = {
     addItem:(newText:string)=>void,
@@ -52,12 +53,12 @@ class AddNewItemForm extends React.Component<PropType, StateType> {
                        onKeyPress={this.onKeyPress}
                        value={this.state.title}
                 />
-                <button
+                <Button type='primary'
                     disabled={this.props.disabledAddTodo || this.props.disabledAddTask}
                     onClick={this.onAddItemClick}>Add
-                </button>
+                </Button>
             </div>
-
+///<Button type="primary">Button</Button>
         );
     }
 }

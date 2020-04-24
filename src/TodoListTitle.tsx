@@ -45,8 +45,6 @@ class TodoListTitle extends React.Component<PropType, StateType> {
     }
     render = () => {
 
-        // let disabledDeleteTodolist = this.props.todolists.map(t=>t.disabledDeleteTodolist)
-        console.log(this.props.disabledDeleteTodolist)
         return (
             <>
                 {!this.state.editMode &&
@@ -69,13 +67,4 @@ class TodoListTitle extends React.Component<PropType, StateType> {
     }
 }
 
-// const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
-//     return {
-//         todolists: state.todolist.todolists,
-        // disabledDeleteTodolist:state.todolist.todolists.disabledDeleteTodolist
-    // }
-// }
-
-// const ConnectedTodolistTitle = connect(mapStateToProps, {})(TodoListTitle);
-// export default ConnectedTodolistTitle
 export default TodoListTitle
