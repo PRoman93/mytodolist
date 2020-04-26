@@ -5,7 +5,7 @@ import TodoListFooter from "./TodoListFooter";
 import TodoListTitle from "./TodoListTitle";
 import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
-import {addTask, changeTitle, deleteTask, deleteTodo, getTasks, updateTask} from "./reducer";
+import {addTask, changeTitle, deleteTask, deleteTodo, getTasks, updateTask} from "./BLL/reducer";
 import Preloader from "./Preloader";
 import {TaskType, TodoListType} from "./types/entities";
 

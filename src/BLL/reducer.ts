@@ -1,5 +1,5 @@
-import {api} from "./DAL/api";
-import {InitialStateType, TaskType, TodoListType} from "./types/entities";
+import {api} from "../DAL/api";
+import {InitialStateType, TaskType, TodoListType} from "../types/entities";
 import {
     addTaskSuccessActionType,
     addTodolistSuccessActionType,
@@ -14,7 +14,7 @@ import {
     setTasksSuccessActionType,
     setTodolistsSuccessActionType,
     updateTaskSuccessActionType
-} from "./types/action_creators_types";
+} from "../types/action_creators_types";
 import {ThunkAction, ThunkDispatch} from "redux-thunk";
 import {
     ADD_TASK,
@@ -30,7 +30,7 @@ import {
     SET_TASKS,
     SET_TODOLISTS,
     UPDATE_TASK
-} from "./types/constants";
+} from "../types/constants";
 
 const initialState: InitialStateType = {
     todolists: [],

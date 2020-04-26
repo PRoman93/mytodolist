@@ -3,10 +3,10 @@ import './App.css';
 import TodoList from "./TodoList";
 import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
-import {addTodo, getTodo} from "./reducer";
+import {addTodo, getTodo} from "./BLL/reducer";
 import Preloader from "./Preloader";
 import {TodoListType} from "./types/entities";
-import {AppStateType} from "./store";
+import {AppStateType} from "./BLL/store";
 
 
 type MapStateToPropsType = {
