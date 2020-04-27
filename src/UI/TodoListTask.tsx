@@ -1,6 +1,6 @@
 import React, {ChangeEvent} from 'react';
 import './App.css';
-import Preloader from "./Preloader";
+import Preloader from "./accets/Preloader";
 import {TaskType} from "./types/entities";
 import {fchmod} from "fs";
 

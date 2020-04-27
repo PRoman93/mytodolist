@@ -1,6 +1,6 @@
 import React from 'react';
-import preloader from './accets/6b449513765711.56277d303236b.gif'
-import './App.css'
+import preloader from './6b449513765711.56277d303236b.gif'
+import '../UI/App.css'
 
 type PropType = {
    preloader?:string

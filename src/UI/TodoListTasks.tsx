@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import TodoListTask from "./TodoListTask";
+import TodoListTask from "./UI/TodoListTask";
 import {TaskType} from "./types/entities";
 
 type PropType = {

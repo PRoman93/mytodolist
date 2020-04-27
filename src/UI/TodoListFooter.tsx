@@ -1,5 +1,5 @@
 import React from 'react';
-import '../src/App.css';
+import './App.css';
 
 type PropType = {
     changeFilter: (filter: string) => void,

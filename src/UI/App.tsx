@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import TodoList from "./TodoList";
-import AddNewItemForm from "./AddNewItemForm";
+import AddNewItemForm from "./UI/AddNewItemForm";
 import {connect} from "react-redux";
 import {addTodo, getTodo} from "./BLL/reducer";
 import Preloader from "./Preloader";

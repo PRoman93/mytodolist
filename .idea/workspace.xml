@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="" />
+    <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,11 +39,12 @@
     <property name="ts.external.directory.path" value="D:\React\Projects\todolist\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\React\Projects\todolist\src\accets" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\React\Projects\todolist\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\React\Projects\todolist\src\BLL" />
+      <recent name="D:\React\Projects\todolist\src\accets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -186,13 +189,10 @@
       <workItem from="1587659602608" duration="2207000" />
       <workItem from="1587666417380" duration="226000" />
       <workItem from="1587725441838" duration="62000" />
-    </task>
-    <task id="LOCAL-00010" summary="11-th task of 9-th todolist is done">
-      <created>1582962665612</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1582962665612</updated>
+      <workItem from="1587918646008" duration="105000" />
+      <workItem from="1587981894529" duration="275000" />
+      <workItem from="1587984126055" duration="267000" />
+      <workItem from="1587984533846" duration="1219000" />
     </task>
     <task id="LOCAL-00011" summary="11-th task of 9-th todolist is done">
       <created>1583076448814</created>
@@ -530,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587725482798</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="14-th lesson- add bll folder">
+      <created>1587918738682</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1587918738683</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +557,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="13-th todolist, thunk addTask isDone, refactoring(delete some comments)" />
     <MESSAGE value="13-th todolist, thunk addTodo isDone" />
     <MESSAGE value="13-th todolist, update task is failed" />
     <MESSAGE value="13-th todolist, update task is failed again" />
@@ -575,6 +581,7 @@
     <MESSAGE value="14-th lesson- add corrected type to todolists" />
     <MESSAGE value="14-th lesson- delete some comments and refactor some strings" />
     <MESSAGE value="14-th lesson- add ant design button" />
-    <option name="LAST_COMMIT_MESSAGE" value="14-th lesson- add ant design button" />
+    <MESSAGE value="14-th lesson- add bll folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="14-th lesson- add bll folder" />
   </component>
 </project>
