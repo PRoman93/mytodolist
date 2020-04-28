@@ -338,7 +338,7 @@ export const changeTitle = (todolistId: string, title: string) => (dispatch: Thu
             }
         })
 }
-export const updateTask = (todolistId: string, taskId: string, obj: any, task: TaskType) => (dispatch: ThunkDispatchType) => {///////////////
+export const updateTask = (todolistId: string, taskId: string, obj: number | string, task: TaskType) => (dispatch: ThunkDispatchType) => {///////////////
     api.changeTask(todolistId, taskId, task)
         .then(res => {
             dispatch(updateTaskSuccess(todolistId, taskId, obj))

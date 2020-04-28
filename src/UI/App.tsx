@@ -1,26 +1,26 @@
 import React from 'react';
 import './App.css';
 import TodoList from "./TodoList";
-import AddNewItemForm from "./UI/AddNewItemForm";
-import {connect} from "react-redux";
-import {addTodo, getTodo} from "./BLL/reducer";
-import Preloader from "./Preloader";
-import {TodoListType} from "./types/entities";
-import {AppStateType} from "./BLL/store";
+import {connect, MapDispatchToProps} from "react-redux";
+import AddNewItemForm from "./AddNewItemForm";
+import {TodoListType} from "../types/entities";
+import Preloader from "../accets/Preloader";
+import {AppStateType} from "../BLL/store";
+import {addTodo, getTodo} from "../BLL/reducer";
 
 
-type MapStateToPropsType = {
+type MapStateProps = {
     todolists: Array<TodoListType>,
     preloader: boolean,
     disabled: boolean,
     disabledDeleteTodolist?: boolean,
 }
-type MapDispatchToProps = {
+type MapDispatchProps = {
     setTodolists: () => void,
     addTodolist: (newTodolist: string) => void
 }
 
-class App extends React.Component<MapStateToPropsType & MapDispatchToProps> {
+class App extends React.Component<MapStateProps & MapDispatchProps> {
 
 
     addTodoList = (newTodolist: string) => {
@@ -70,11 +70,11 @@ class App extends React.Component<MapStateToPropsType & MapDispatchToProps> {
     }
 }
 
-const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
+const mapStateToProps = (state: AppStateType): MapStateProps => {
     return {
         todolists: state.todolist.todolists,
         preloader: state.todolist.preloader,
-        disabled: state.todolist.disabled,
+        disabled: state.todolist.disabled
     }
 }
 const mapDispatchToProps = (dispatch: any): MapDispatchToProps => { //
@@ -89,6 +89,6 @@ const mapDispatchToProps = (dispatch: any): MapDispatchToProps => { //
         }
     }
 }
-const ConnectedApp = connect<MapStateToPropsType, MapDispatchToProps, {}, AppStateType>(mapStateToProps, mapDispatchToProps)(App);
+const ConnectedApp = connect<MapStateProps, MapDispatchProps, {}, AppStateType>(mapStateToProps, mapDispatchToProps)(App);
 export default ConnectedApp;
 

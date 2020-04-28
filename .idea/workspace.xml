@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BLL/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/BLL/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/App.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +29,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Todolists/14-ts lesson/ts-14-lesson" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -39,12 +41,13 @@
     <property name="ts.external.directory.path" value="D:\React\Projects\todolist\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\React\Projects\todolist\src\UI" />
+      <recent name="D:\React\Projects\todolist\src\accets" />
+      <recent name="D:\React\Projects\todolist\src\BLL" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\React\Projects\todolist\src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\React\Projects\todolist\src\BLL" />
-      <recent name="D:\React\Projects\todolist\src\accets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -193,13 +196,8 @@
       <workItem from="1587981894529" duration="275000" />
       <workItem from="1587984126055" duration="267000" />
       <workItem from="1587984533846" duration="1219000" />
-    </task>
-    <task id="LOCAL-00011" summary="11-th task of 9-th todolist is done">
-      <created>1583076448814</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1583076448814</updated>
+      <workItem from="1588008067014" duration="101000" />
+      <workItem from="1588086640008" duration="966000" />
     </task>
     <task id="LOCAL-00012" summary="12-th task of 9-th todolist is done">
       <created>1583157959518</created>
@@ -537,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587918738683</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="14-th lesson- add ui folder">
+      <created>1588008148438</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1588008148439</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,7 +562,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="13-th todolist, thunk addTodo isDone" />
     <MESSAGE value="13-th todolist, update task is failed" />
     <MESSAGE value="13-th todolist, update task is failed again" />
     <MESSAGE value="13-th todolist, update task is failed again and again" />
@@ -582,6 +586,7 @@
     <MESSAGE value="14-th lesson- delete some comments and refactor some strings" />
     <MESSAGE value="14-th lesson- add ant design button" />
     <MESSAGE value="14-th lesson- add bll folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="14-th lesson- add bll folder" />
+    <MESSAGE value="14-th lesson- add ui folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="14-th lesson- add ui folder" />
   </component>
 </project>
