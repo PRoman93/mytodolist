@@ -1,5 +1,3 @@
-// action creators type
-
 import {TaskType, TodoListType} from "./entities";
 import {
     ADD_TASK,

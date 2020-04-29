@@ -22,7 +22,6 @@ type MapDispatchProps = {
 
 class App extends React.Component<MapStateProps & MapDispatchProps> {
 
-
     addTodoList = (newTodolist: string) => {
         this.props.addTodolist(newTodolist)
     }

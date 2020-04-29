@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BLL/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/BLL/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/App.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +25,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Todolists/14-ts lesson/ts-14-lesson" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -197,14 +193,7 @@
       <workItem from="1587984126055" duration="267000" />
       <workItem from="1587984533846" duration="1219000" />
       <workItem from="1588008067014" duration="101000" />
-      <workItem from="1588086640008" duration="966000" />
-    </task>
-    <task id="LOCAL-00012" summary="12-th task of 9-th todolist is done">
-      <created>1583157959518</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1583157959518</updated>
+      <workItem from="1588086640008" duration="1402000" />
     </task>
     <task id="LOCAL-00013" summary="10-th todolist is done">
       <created>1583254730859</created>
@@ -542,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588008148439</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="14-th lesson- add ui folder">
+      <created>1588087829937</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1588087829938</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
