@@ -76,7 +76,7 @@ const mapStateToProps = (state: AppStateType): MapStateProps => {
         disabled: state.todolist.disabled
     }
 }
-const mapDispatchToProps = (dispatch: any): MapDispatchToProps => { //
+const mapDispatchToProps = (dispatch: any): MapDispatchProps => { //
     return {
         setTodolists: () => {
             const thunk = getTodo();

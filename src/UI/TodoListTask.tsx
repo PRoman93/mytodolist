@@ -1,8 +1,6 @@
 import React, {ChangeEvent} from 'react';
 import './App.css';
-import Preloader from "./accets/Preloader";
-import {TaskType} from "./types/entities";
-import {fchmod} from "fs";
+import {TaskType} from "../types/entities";
 
 type PropType = {
     changeStatus: (taskId: string, status: number) => void,

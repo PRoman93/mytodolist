@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="" />
+    <list default="true" id="055e86f1-60c6-4b4b-8d9a-b96280d838fd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TodoList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/TodoListTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TodoListTask.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/TodoListTasks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TodoListTasks.tsx" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,13 +200,9 @@
       <workItem from="1587984533846" duration="1219000" />
       <workItem from="1588008067014" duration="101000" />
       <workItem from="1588086640008" duration="1402000" />
-    </task>
-    <task id="LOCAL-00013" summary="10-th todolist is done">
-      <created>1583254730859</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1583254730860</updated>
+      <workItem from="1588178576158" duration="129000" />
+      <workItem from="1588239061827" duration="7000" />
+      <workItem from="1588239425745" duration="750000" />
     </task>
     <task id="LOCAL-00014" summary="refactoring">
       <created>1583256308656</created>
@@ -538,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588087829938</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="14-th lesson- refactoring">
+      <created>1588178644059</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1588178644061</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -558,7 +567,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="13-th todolist, update task is failed" />
     <MESSAGE value="13-th todolist, update task is failed again" />
     <MESSAGE value="13-th todolist, update task is failed again and again" />
     <MESSAGE value="13-th todolist is done" />
@@ -583,6 +591,7 @@
     <MESSAGE value="14-th lesson- add ant design button" />
     <MESSAGE value="14-th lesson- add bll folder" />
     <MESSAGE value="14-th lesson- add ui folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="14-th lesson- add ui folder" />
+    <MESSAGE value="14-th lesson- refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="14-th lesson- refactoring" />
   </component>
 </project>

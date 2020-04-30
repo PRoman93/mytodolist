@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import TodoListTask from "./UI/TodoListTask";
-import {TaskType} from "./types/entities";
+import {TaskType} from "../types/entities";
+import TodoListTask from "./TodoListTask";
 
 type PropType = {
     tasks:Array<TaskType>,
