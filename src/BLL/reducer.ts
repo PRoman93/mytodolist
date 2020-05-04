@@ -203,7 +203,6 @@ const todolistReducer = (state: InitialStateType = initialState, action: AppActi
     }
     return state;
 }
-
 //Action creators
 const updateTaskSuccess = (todolistId: string, taskId: string, obj: any): updateTaskSuccessActionType =>/////////////////
     ({type: UPDATE_TASK, todolistId, taskId, obj})
