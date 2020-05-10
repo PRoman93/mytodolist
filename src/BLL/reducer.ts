@@ -248,6 +248,7 @@ const loadingDeleteTaskSuccess = (todolistId: string, taskId: string, disabled: 
 
 
 // ACTION TYPES
+
 type TodoActionType =
     updateTaskSuccessActionType
     | deleteTodolistSuccessActionType
