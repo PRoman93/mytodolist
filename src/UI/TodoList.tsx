@@ -77,7 +77,6 @@ class TodoList extends React.Component<PropType, StateType> {
 
     render = () => {
         let {tasks = []} = this.props;
-        // console.log(this.props.disabledDeleteTodolist)
         return (
             <div className="todoList">
                 <div className="todoList-header">
