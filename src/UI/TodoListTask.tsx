@@ -1,6 +1,8 @@
 import React, {ChangeEvent} from 'react';
 import './App.css';
 import {TaskType} from "../types/entities";
+import {Checkbox, IconButton, TextField} from '@material-ui/core';
+import {Delete} from '@material-ui/icons';
 
 type PropType = {
     changeStatus: (taskId: string, status: number) => void,
@@ -64,14 +66,14 @@ class TodoListTask extends React.Component<PropType, StateType> {
         return (
             <>
                 <div className={containerCssClass}>
-                    <input type="checkbox" checked={this.props.task.status === 2}
+                    <Checkbox checked={this.props.task.status === 2}
                            onChange={this.onIsDoneChanged}/>
                     {this.state.editMode
-                        ? <input onBlur={this.deactivateEditMode} onChange={this.onTitleChanged} autoFocus={true}
+                        ? <TextField onBlur={this.deactivateEditMode} onChange={this.onTitleChanged} autoFocus={true}
                                  value={this.state.title}/>
                         : <span onClick={this.activateEditMode}>{this.state.title}</span>
                     }, priority: {priorityTitle}
-                    <button disabled={this.props.task.disabledDeleteTask} onClick={this.onDeleteTask}>X</button>
+                    <IconButton disabled={this.props.task.disabledDeleteTask} onClick={this.onDeleteTask}><Delete/></IconButton>
                 </div>
             </>
         );

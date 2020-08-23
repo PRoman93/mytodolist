@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import {Button} from "@material-ui/core";
 
 type PropType = {
     changeFilter: (filter: string) => void,
@@ -40,9 +41,9 @@ class TodoListFooter extends React.Component<PropType, StateType> {
         return (
             <div className="todoList-footer">
                 {!this.state.isHidden && <div>
-                    <button onClick={this.onAllFilterClick} className={classForAll}>All</button>
-                    <button onClick={this.onCompletedFilterClick} className={classForCompleted}>Completed</button>
-                    <button onClick={this.onActiveFilterClick} className={classForActive}>Active</button>
+                    <Button color='primary' onClick={this.onAllFilterClick} className={classForAll}>All</Button>
+                    <Button color='secondary' onClick={this.onCompletedFilterClick} className={classForCompleted}>Completed</Button>
+                    <Button color='inherit' onClick={this.onActiveFilterClick} className={classForActive}>Active</Button>
                 </div>
                 }
                 {!this.state.isHidden && <span onClick={this.onShowFiltersClick}>hide</span>}

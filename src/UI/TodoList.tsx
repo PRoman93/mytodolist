@@ -63,6 +63,7 @@ class TodoList extends React.Component<PropType, StateType> {
         this.changeTask(taskId, {status: status});
     }
     changeTitle = (task: string, title: string) => {
+        debugger
         this.changeTask(task, {title: title});
     }
     deleteTodolist = () => {
@@ -124,6 +125,7 @@ const mapDispatchToProps = (dispatch: any) => {
             dispatch(thunk)
         },
         updateTask(todolistId: string, taskId: string, obj: any, task: TaskType) {
+            debugger
             const thunk = updateTask(todolistId, taskId, obj, task);
             dispatch(thunk);
         },

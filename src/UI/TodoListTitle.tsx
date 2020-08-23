@@ -1,5 +1,7 @@
 import React, {ChangeEvent} from 'react';
 import './App.css';
+import {IconButton} from '@material-ui/core';
+import {Delete} from '@material-ui/icons';
 
 // type MapStateToPropsType = {
 //     disabledDeleteTodolist?:boolean,
@@ -50,10 +52,10 @@ class TodoListTitle extends React.Component<PropType, StateType> {
                 {!this.state.editMode &&
                 <h3 onDoubleClick={this.onEditTitleMode}
                     className="todoList-header__title">{this.state.title}
-                    <button
+                    <IconButton
                         disabled={this.props.disabledDeleteTodolist}
-                        onClick={this.props.onDelete}>X
-                    </button>
+                        onClick={this.props.onDelete}><Delete/>
+                    </IconButton>
                 </h3>}
 
                 {this.state.editMode && <input type="text"

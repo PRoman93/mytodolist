@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import TodoList from "./TodoList";
-import {connect, MapDispatchToProps} from "react-redux";
+import {connect} from "react-redux";
 import AddNewItemForm from "./AddNewItemForm";
 import {TodoListType} from "../types/entities";
 import Preloader from "../accets/Preloader";

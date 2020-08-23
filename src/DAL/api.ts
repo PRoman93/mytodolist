@@ -22,6 +22,7 @@ export const api = {
         return instance.get<TodoListType[]>(``)
     },
     changeTask(todolistId:string, taskId:string, task:TaskType) {
+        debugger
         return instance.put(`${todolistId}/tasks/${taskId}`, task)
     },
     deleteTodolist(id:string) {

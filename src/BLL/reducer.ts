@@ -177,10 +177,12 @@ const todolistReducer = (state: InitialStateType = initialState, action: AppActi
                 })
             }
         case UPDATE_TASK:
+            debugger
             return {
                 ...state,
                 todolists: state.todolists.map((tl: TodoListType) => {
                     if (tl.id === action.todolistId) {
+                        debugger
                         return {
                             ...tl,
                             tasks: tl.tasks.map(t => {
