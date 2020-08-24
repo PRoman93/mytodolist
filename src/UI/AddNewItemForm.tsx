@@ -1,6 +1,7 @@
 import React, {ChangeEvent} from 'react';
 import './App.css';
-import {Button, TextField} from "@material-ui/core";
+import {Button, TextField, IconButton} from "@material-ui/core";
+import {AddBox} from "@material-ui/icons";
 
 type PropType = {
     addItem: (newText: string) => void,
@@ -50,18 +51,20 @@ class AddNewItemForm extends React.Component<PropType, StateType> {
         return (
             <div className="todoList-newTaskForm">
                 <TextField error={this.state.error} type="text" placeholder="New item name"
-                       onChange={this.onTitleChanged}
-                       onKeyPress={this.onKeyPress}
-                       value={this.state.title}
+                           onChange={this.onTitleChanged}
+                           onKeyPress={this.onKeyPress}
+                           value={this.state.title}
                            label='Title'
                            helperText={this.state.error}
                 />
-                <Button variant='contained' color='primary'
-                        disabled={this.props.disabledAddTodo || this.props.disabledAddTask}
-                        onClick={this.onAddItemClick}>Add
-                </Button>
+                {/*<Button variant='contained' color='primary'*/}
+                {/*        disabled={this.props.disabledAddTodo || this.props.disabledAddTask}*/}
+                {/*        onClick={this.onAddItemClick}>Add*/}
+                {/*</Button>*/}
+                <IconButton color='primary' onClick={this.onAddItemClick} disabled={this.props.disabledAddTodo || this.props.disabledAddTask}>
+                    <AddBox/>
+                </IconButton>
             </div>
-///<Button type="primary">Button</Button>
         );
     }
 

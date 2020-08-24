@@ -1,33 +1,32 @@
-@import '../../node_modules/antd/dist/antd.css';
-.App {
-  display: flex;
-  flex-direction: row;
-}
+/*.App {*/
+/*  display: flex;*/
+/*  flex-direction: row;*/
+/*}*/
 
-.todoList {
-  width: 300px;
-}
+/*.todoList {*/
+/*  width: 300px;*/
+/*}*/
 
-.todoList > div {
-  padding: 10px;
-}
+/*.todoList > div {*/
+/*  padding: 10px;*/
+/*}*/
 
-.todoList-task {
+/*.todoList-task {*/
 
-}
+/*}*/
 
-.todoList-task.done {
-  opacity: 0.5;
-}
+/*.todoList-task.done {*/
+/*  opacity: 0.5;*/
+/*}*/
 
-.filter-active {
-  background-color: blue;
-}
+/*.filter-active {*/
+/*  background-color: blue;*/
+/*}*/
 
-.error {
-  border-color: red;
-}
-.preloader{
-  width: 100px;
-  height: 100px;
-}
+/*.error {*/
+/*  border-color: red;*/
+/*}*/
+/*.preloader{*/
+/*  width: 100px;*/
+/*  height: 100px;*/
+/*}*/

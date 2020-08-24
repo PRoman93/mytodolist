@@ -7,6 +7,7 @@ import {TodoListType} from "../types/entities";
 import Preloader from "../accets/Preloader";
 import {AppStateType} from "../BLL/store";
 import {addTodo, getTodo} from "../BLL/reducer";
+import {AppBar, Container, Grid, IconButton, Paper} from "@material-ui/core";
 
 
 type MapStateProps = {
@@ -37,16 +38,24 @@ class App extends React.Component<MapStateProps & MapDispatchProps> {
     render = () => {
         const todolists = this.props
             .todolists
-            .map(tl => <TodoList
-                preloader={tl.preloader}
-                key={tl.id}
-                id={tl.id}
-                title={tl.title}
-                tasks={tl.tasks}
-                disabled={tl.disabled}
-                disabledDeleteTodolist={tl.disabledDeleteTodolist}
-                todolists={this.props.todolists}
-            />)
+            .map(tl =>
+                    <Container fixed>
+                        <Grid container spacing={3} item>
+                            <Paper style={{padding: '10px'}}>
+                                <TodoList
+                                    preloader={tl.preloader}
+                                    key={tl.id}
+                                    id={tl.id}
+                                    title={tl.title}
+                                    tasks={tl.tasks}
+                                    disabled={tl.disabled}
+                                    disabledDeleteTodolist={tl.disabledDeleteTodolist}
+                                    todolists={this.props.todolists}
+                                />
+                            </Paper>
+                        </Grid>
+                    </Container>
+            )
 
         return (
             <>
@@ -54,13 +63,22 @@ class App extends React.Component<MapStateProps & MapDispatchProps> {
                     this.props.preloader
                         ? <Preloader/>
                         : <>
-                            <div>
-                                <AddNewItemForm addItem={this.addTodoList}
-                                                disabledAddTodo={this.props.disabled}
-                                />
-                            </div>
-                            <div className="App">
-                                {todolists}
+                            <div className="App"    >
+                                <AppBar position='static'>
+                                <Grid container spacing={3} style={{padding: '20px'}}>
+                                    <AddNewItemForm addItem={this.addTodoList}
+                                                    disabledAddTodo={this.props.disabled}
+                                    />
+                                </Grid>
+                                    {/*<Container fixed>*/}
+                                    {/*    <Grid container spacing={3} item>*/}
+                                    {/*        <Paper style={{padding:'10px'}}>*/}
+                                    {todolists}
+                                    {/*        </Paper>*/}
+
+                                    {/*    </Grid>*/}
+                                    {/*</Container>*/}
+                                </AppBar>
                             </div>
                         </>
                 }

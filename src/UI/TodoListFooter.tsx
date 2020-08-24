@@ -41,9 +41,9 @@ class TodoListFooter extends React.Component<PropType, StateType> {
         return (
             <div className="todoList-footer">
                 {!this.state.isHidden && <div>
-                    <Button color='primary' onClick={this.onAllFilterClick} className={classForAll}>All</Button>
-                    <Button color='secondary' onClick={this.onCompletedFilterClick} className={classForCompleted}>Completed</Button>
-                    <Button color='inherit' onClick={this.onActiveFilterClick} className={classForActive}>Active</Button>
+                    <Button color='secondary' onClick={this.onAllFilterClick} variant={classForAll as any}>All</Button>
+                    <Button color='secondary' onClick={this.onCompletedFilterClick} variant={classForCompleted as any}>Completed</Button>
+                    <Button color='secondary' onClick={this.onActiveFilterClick} variant={classForActive as any}>Active</Button>
                 </div>
                 }
                 {!this.state.isHidden && <span onClick={this.onShowFiltersClick}>hide</span>}
