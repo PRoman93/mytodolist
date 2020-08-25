@@ -39,22 +39,22 @@ class App extends React.Component<MapStateProps & MapDispatchProps> {
         const todolists = this.props
             .todolists
             .map(tl =>
-                    <Container fixed>
-                        <Grid container spacing={3} item>
-                            <Paper style={{padding: '10px'}}>
-                                <TodoList
-                                    preloader={tl.preloader}
-                                    key={tl.id}
-                                    id={tl.id}
-                                    title={tl.title}
-                                    tasks={tl.tasks}
-                                    disabled={tl.disabled}
-                                    disabledDeleteTodolist={tl.disabledDeleteTodolist}
-                                    todolists={this.props.todolists}
-                                />
-                            </Paper>
-                        </Grid>
-                    </Container>
+                <Container fixed>
+                    <Grid container spacing={3} item>
+                        <Paper style={{padding: '10px', margin:'20px'}}>
+                            <TodoList
+                                preloader={tl.preloader}
+                                key={tl.id}
+                                id={tl.id}
+                                title={tl.title}
+                                tasks={tl.tasks}
+                                disabled={tl.disabled}
+                                disabledDeleteTodolist={tl.disabledDeleteTodolist}
+                                todolists={this.props.todolists}
+                            />
+                        </Paper>
+                    </Grid>
+                </Container>
             )
 
         return (
@@ -63,13 +63,13 @@ class App extends React.Component<MapStateProps & MapDispatchProps> {
                     this.props.preloader
                         ? <Preloader/>
                         : <>
-                            <div className="App"    >
+                            <div className="App">
                                 <AppBar position='static'>
-                                <Grid container spacing={3} style={{padding: '20px'}}>
-                                    <AddNewItemForm addItem={this.addTodoList}
-                                                    disabledAddTodo={this.props.disabled}
-                                    />
-                                </Grid>
+                                    <Grid container spacing={3} style={{padding: '40px'}}>
+                                        <AddNewItemForm addItem={this.addTodoList}
+                                                        disabledAddTodo={this.props.disabled}
+                                        />
+                                    </Grid>
                                     {/*<Container fixed>*/}
                                     {/*    <Grid container spacing={3} item>*/}
                                     {/*        <Paper style={{padding:'10px'}}>*/}
